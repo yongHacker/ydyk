@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../public/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../public/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/shopSet.css"/>
+		<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../public/js/common.js" ></script>
+		<script type="text/javascript" src="../public/js/shopSet.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<ul class="nav nav-tabs" id="tabs">
+				<li>
+					<h4>商城设置  <small>网站全局内容基本选项设置</small></h4>
+				</li>
+				<li>
+					<a href="shopSet.html" >商城信息</a>
+				</li>
+				<li class="active">
+					<a href="shopSet1.html" >基本设置</a>
+				</li>
+				<li>
+					<a href="shopSet2.html" >短信设置</a>
+				</li>
+				<li>
+					<a href="shopSet3.html" >邮件设置</a>
+				</li>
+				<li>
+					<a href="shopSet4.html" >水印设置</a>
+				</li>
+			</ul>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>网站全局基本设置，商城及其他模块相关内容在其各自栏目设置项内进行操作。</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form">
+			   <div class="form-group">
+			      <label for="firstname" class="col-xs-4 col-sm-2 control-label">网站备案号</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="firstname" 
+			            placeholder="请输入网站备案号">
+			        <small>网站备案号，将显示在前台底部欢迎信息等位置</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">网站名称</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入网站名称">
+			         <small>网站名称，将显示在前台顶部欢迎信息等位置</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">网站Logo</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入网站名称">
+			         <small>默认网站首页LOGO,通用头部显示，最佳显示尺寸为230*58像素</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">网站标题</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入网站标题">
+			         <small>网站标题，将显示在前台顶部欢迎信息等位置</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">网站描述</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入网站描述">
+			         <small>网站描述，便于SEO</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">网站关键字</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入网站关键字">
+			         <small>网站关键字，便于SEO</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">联系人名称</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入联系人名称">
+			         <small>联系人名称，方便商家遇到问题时咨询</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">联系电话</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入联系电话">
+			         <small>联系电话，方便商家遇到问题时咨询</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">平台客服QQ</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入平台客服QQ">
+			         <small>平台客服QQ，方便商家遇到问题时咨询</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+	</body>
+</html>

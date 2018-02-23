@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../public/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../public/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/shopSet.css"/>
+		<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../public/js/common.js" ></script>
+		<script type="text/javascript" src="../public/js/shopSet.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<ul class="nav nav-tabs" id="tabs">
+				<li>
+					<h4>商城设置  <small>网站全局内容基本选项设置</small></h4>
+				</li>
+				<li>
+					<a href="shopSet.html" >商城信息</a>
+				</li>
+				<li class="active">
+					<a href="shopSet2.html" >短信设置</a>
+				</li>
+				<li>
+					<a href="shopSet3.html" >邮件设置</a>
+				</li>
+				<li>
+					<a href="shopSet4.html" >水印设置</a>
+				</li>
+			</ul>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>网站全局基本设置，商城及其他模块相关内容在其各自栏目设置项内进行操作。</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form">
+			   <div class="form-group">
+			      <label for="firstname" class="col-xs-4 col-sm-2 control-label">短信平台名称</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="firstname" 
+			            placeholder="请输入短信平台名称">
+			        <small>短信平台</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">短信平台[appkey]</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入短信平台appkey">
+			         <small>短信平台配置appkey/keyid</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">短信平台[secretKey]</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入短信平台secretKey">
+			         <small>短信平台配置secretKey</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">公司名/品牌名/产品名</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入公司名/品牌名/产品名">
+			         <small>公司名/品牌名/产品名</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">用户注册时</label>
+			      <div class="col-xs-8">
+			      	<div class="myradio checked" onclick="check(this)">
+			         <input type="radio" name="radio1" value="1" checked> 是
+			        </div>
+			        <div class="myradio" onclick="check(this)">
+			         <input type="radio" name="radio1" value="0"> 否
+			        </div>
+			         <small>用户注册时使用短信验证</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			        <label for="lastname" class="col-sm-2 control-label">用户找回密码时</label>
+			        <div class="col-xs-8">
+						<div class="myradio checked" onclick="check(this)">
+							<input type="radio" name="radio2" value="1" checked> 是
+						</div>
+						<div class="myradio" onclick="check(this)">
+							<input type="radio" name="radio2" value="0"> 否
+						</div>
+						<small>用户找回密码时使用短信验证</small>
+					</div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">身份验证时</label>
+			      <div class="col-xs-8">
+			            <div class="myradio checked" onclick="check(this)">
+							<input type="radio" name="radio3" value="1" checked> 是
+						</div>
+						<div class="myradio" onclick="check(this)">
+							<input type="radio" name="radio3" value="0"> 否
+						</div>
+			         <small>用户身份验证时使用短信验证</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">用户下单时是否发送短信给商家</label>
+			      <div class="col-xs-8">
+			        	<div class="myradio checked" onclick="check(this)">
+							<input type="radio" name="radio4" value="1" checked> 是
+						</div>
+						<div class="myradio" onclick="check(this)">
+							<input type="radio" name="radio4" value="0"> 否
+						</div>
+			         <small>用户下单时是否发送短信给商家</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">客户支付时是否发短信给商家</label>
+			      <div class="col-xs-8">
+			         	<div class="myradio checked" onclick="check(this)">
+							<input type="radio" name="radio5" value="1" checked> 是
+						</div>
+						<div class="myradio" onclick="check(this)">
+							<input type="radio" name="radio5" value="0"> 否
+						</div>
+			         <small>客户支付时是否发短信给商家</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">商家发货时是否给客户发短信</label>
+			      <div class="col-xs-8">
+			      		<div class="myradio checked" onclick="check(this)">
+							<input type="radio" name="radio6" value="1" checked> 是
+						</div>
+						<div class="myradio" onclick="check(this)">
+							<input type="radio" name="radio6" value="0"> 否
+						</div>
+			         <small>商家发货时是否给客户发短信</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">短信码超时时间</label>
+			      <div class="col-xs-8">
+			          <select class="form-control">
+				         <option>1</option>
+				         <option>2</option>
+				         <option>3</option>
+				         <option>4</option>
+				         <option>5</option>
+				      </select>
+			         <small>发送短信验证码间隔时间</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+		<!--formlist end-->
+	</body>
+</html>

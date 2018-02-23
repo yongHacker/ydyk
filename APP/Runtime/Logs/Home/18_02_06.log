@@ -1,0 +1,88 @@
+[ 2018-02-06T20:25:43+08:00 ] 127.0.0.1 /index.php?m=home&c=Shopcar&a=addCar
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+
+[ 2018-02-06T20:26:02+08:00 ] 127.0.0.1 /index.php?m=home&c=Shopcar&a=addCar
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T20:26:58+08:00 ] 127.0.0.1 /index.php?m=home&c=user&a=login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `my_user` [ RunTime:0.0080s ]
+NOTIC: [8] Undefined index: validate E:\PHP\wamp\www\shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto E:\PHP\wamp\www\shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: SELECT * FROM `my_user` WHERE `uname` = '13113172702' LIMIT 1   [ RunTime:0.0010s ]
+SQL: update `my_user` set state='1' where uid='10' [ RunTime:0.0670s ]
+SQL: SHOW COLUMNS FROM `my_user` [ RunTime:0.0050s ]
+SQL: SELECT `uid` FROM `my_user` WHERE ( uname='13113172702' ) LIMIT 1   [ RunTime:0.0010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-02-06T20:27:13+08:00 ] 127.0.0.1 /index.php?m=home&c=Shopcar&a=addCar
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() E:\PHP\wamp\www\shop\APP\Home\Controller\PublicController.class.php 第 37 行.
+
+[ 2018-02-06T20:27:29+08:00 ] 127.0.0.1 /index.php?m=home&c=shopcar&a=shopcar_ajax
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+
+[ 2018-02-06T20:28:03+08:00 ] 127.0.0.1 /index.php?m=home&c=order&a=postInfo
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.007001s ]
+SQL: SHOW COLUMNS FROM `my_userinfo` [ RunTime:0.0050s ]
+NOTIC: [8] Undefined index: validate E:\PHP\wamp\www\shop\ThinkPHP\Library\Think\Model.class.php 第 1185 行.
+NOTIC: [8] Undefined index: auto E:\PHP\wamp\www\shop\ThinkPHP\Library\Think\Model.class.php 第 1128 行.
+SQL: INSERT INTO `my_userinfo` (`uname`,`address`,`city`,`uphone`,`flag`,`uid`) VALUES ('deng','东莞理工学院','广东省东莞市','13113172702','0','10') [ RunTime:0.0720s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T20:28:09+08:00 ] 127.0.0.1 /index.php?m=home&c=order&a=postOrder
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `my_order` [ RunTime:0.0050s ]
+SQL: SHOW COLUMNS FROM `my_norms` [ RunTime:0.0030s ]
+SQL: SELECT `price` FROM `my_norms` WHERE `normid` = '1' LIMIT 1   [ RunTime:0.0000s ]
+SQL: INSERT INTO `my_order` (`amount`,`ornum`,`addtime`,`info`,`uid`,`infoid`) VALUES ('300','1517920089','1517920089','','10','23') [ RunTime:0.0000s ]
+SQL: SHOW COLUMNS FROM `my_orderinfo` [ RunTime:0.0040s ]
+SQL: INSERT INTO `my_orderinfo` (`gid`,`num`,`normid`,`orid`) VALUES ('1','3','1','38') [ RunTime:0.0000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2018-02-06T20:28:32+08:00 ] 127.0.0.1 /index.php/Home/User/verify_img.html
+ERR: 非法操作:verify_img
+
+[ 2018-02-06T20:28:36+08:00 ] 127.0.0.1 /index.php/Home/User/verify_img.html
+ERR: 非法操作:verify_img
+
+[ 2018-02-06T20:28:39+08:00 ] 127.0.0.1 /index.php/Home/User/verify_img.html
+ERR: 非法操作:verify_img
+
+[ 2018-02-06T20:28:41+08:00 ] 127.0.0.1 /index.php/Home/User/verify_img.html
+ERR: 非法操作:verify_img
+
+[ 2018-02-06T20:28:49+08:00 ] 127.0.0.1 /index.php/Home/User/verify_img.html
+ERR: 非法操作:verify_img
+
+[ 2018-02-06T20:28:49+08:00 ] 127.0.0.1 /index.php/Home/User/verify_img.html
+ERR: 非法操作:verify_img
+
+[ 2018-02-06T20:28:51+08:00 ] 127.0.0.1 /index.php/Home/User/verify_img.html
+ERR: 非法操作:verify_img
+
+[ 2018-02-06T20:29:49+08:00 ] 127.0.0.1 /index.php?m=home&c=Shopcar&a=addCar
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+

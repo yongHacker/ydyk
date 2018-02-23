@@ -1,0 +1,141 @@
+body{
+		margin: 0;
+}
+
+#top{
+	width: 100%;
+	height: 150px;
+	background: #ccc;
+}
+.breadcrumb_nav{
+	width: 300px;
+	height: 77px;
+	/*background:#f0f;*/
+	position: absolute;
+	left: 80px;
+	top: -10px;
+	margin-bottom:20px;
+}
+.breadcrumb_nav a{
+	text-decoration:none;
+}
+.breadcrumb_nav span{
+	line-height:77px;
+	font-size:15px;
+	color:#555555;
+}
+.layout{
+	width: 1300px;
+	height: 500px;
+	/*background:#ccc;*/
+	margin: 0 auto;
+}
+.layout .layout_tt{
+	width: 1300px;
+	height: 50px;
+	background:  url(../userimg/order/订单.png) no-repeat left;
+	line-height: 50px;
+	color: #000;
+	font-size: 18px;
+}
+.layout .list{
+	width: 1300px;
+	height: 450px;
+	float: left;
+	/*background: #ccc;*/
+}
+.layout .list .order_table{
+	width: 1300px;
+	height: 60px;
+	margin-top:20px;
+	/*background: #0f0;*/
+}
+.layout .list .order_table .period{
+	width: 120px;
+	height: 33px;
+	/*background: #ccc;*/
+	/*line-height: 30px;*/
+	float: left;
+	text-align: center;
+}
+.layout .list .order_table .period a{
+	text-decoration: none;
+	color: #666666;
+}
+.layout .list .order_table .period .btn{
+	width: 120px;
+	height: 33px;
+	background: #DDDDDD;
+	margin-bottom: 10px;
+}
+.layout .list .order_table .period:hover .options{
+	display: block;
+}
+.layout .list .order_table .period .options{
+	width: 118px;
+	height: 55px;
+	border: 1px #ddd solid;
+	/*background: #ccc;*/
+	padding-top: 10px;
+	position: relative;
+	bottom: 10px;
+	display: none;
+}
+.layout .list .order_table .period .options span{
+	display: block;
+	width: 100px;
+	height: 30px;
+	/*background: #aaa;*/
+	margin: -10px auto;
+}
+.layout .list .order_table .period .options span:hover{
+	background: #FF6000;
+	color: #fff;
+}
+.layout .list .order_table .th{
+	float: left;
+	margin-left: 150px;
+	color: #666666;
+}
+
+.dindan-item{
+    width: 1200px;
+    height: auto;
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    text-align: left;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+}
+.dindan-item .dindan-title{
+    height: 30px;
+    line-height: 30px;
+    border-bottom: 1px dashed #ccc;
+}
+.dindan-item .dindan-content{
+    padding-top: 20px;
+}
+.dindan-item .shop{
+    width: 220px;
+    display: inline-block;
+}
+.dindan-item .price{
+    width: 150px;
+    display: inline-block;
+}
+.dindan-item .date{
+    width: 250px;
+    display: inline-block;
+}
+.dindan-item .state{
+    width: 200px;
+    display: inline-block;
+}
+.dindan-item .pay{
+    width: 200px;
+    display: inline-block;
+}
+.dindan-item .operation{
+    width: 130px;
+    display: inline-block;
+}

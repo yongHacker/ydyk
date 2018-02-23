@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>网站导航</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="{$smarty.const.CSS_URL}bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{$smarty.const.Public_URL}fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}normalize.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}ydyk.css">
+    <script src="{$smarty.const.JS_URL}jquery_3.2.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="{$smarty.const.JS_URL}bootstrap.min.js"></script>
+    <script src="{$smarty.const.Public_URL}/layer/layer.js"></script>
+	<style type="text/css">
+		.layout {
+		    width: 1200px;
+		    margin: 0 auto;
+		    /* overflow: hidden; */
+			}
+		.breadcrumb_nav {
+		    float: left;
+		    margin-top: 35px;
+		    margin-bottom: 23px;
+		    color: #555;
+		    font-size: 14px;
+		}
+		.clear {
+		    clear: both;
+		}
+		.site_map {
+		    color: #666;
+		}
+		.site_map li ._tag {
+		    line-height: 36px;
+		    text-align: center;
+		    color: #fff;
+		    background: url({$smarty.const.IMAGES_URL}guide-img12.png);
+		    width: 130px;
+		    height: 45px;
+		    position: absolute;
+		    top: 55px;
+		    left: -170px;
+		}
+		.site_map li .item {
+		    width: 190px;
+		    height: 65px;
+		    text-align: center;
+		    display: inline-block;
+		    line-height: 65px;
+		}
+		.site_map ul{
+			list-style: none;
+		    padding-left: 175px;
+		    margin-bottom: 60px;
+		}
+		.site_map li{
+		    position: relative;
+		    border-bottom: 1px solid #ccc;
+		    padding-top: 50px;padding-bottom: 23px;
+		}
+		a {
+		    cursor: pointer;
+		    text-decoration: none;
+		    color: inherit;
+		}
+</style>
+</head>
+<body>
+
+<!-- 头部导航条位置 -->
+<header id="shopDetailHead" class="shopDetail-nav">
+    {include file="./nav.html"}
+</header>
+<!-- 结束 -->
+
+<div class="layout">
+    <div>
+        <div class="breadcrumb_nav">
+            <span><a href="index.php">首页</a>&gt;<a>站点地图</a></span>
+        </div>
+        <div class="clear"></div>
+    </div>
+
+    <div style="margin-top: 40px;" class="site_map">
+        <p style="font-size: 30px;padding-bottom: 12px;border-bottom: 1px solid #ccc;text-align: center;">网站导航</p>
+        <ul>
+            <li>
+                <div class="_tag">壹点壹客官网</div>
+                <div class="item"><a href="index.php">首页</a></div>
+                <div class="item"><a href="index.php?m=home&c=shopcar&a=shopcar">购物车</a></div>
+                <div class="item"><a href="index.php?m=home&c=login&a=register">免费注册</a></div>
+                <div class="item"><a href="index.php?m=home&c=login&a=login">登录</a></div>
+                <div class="item"><a href="index.php?m=home&c=center">会员中心</a></div>
+            </li>
+            <li>
+                <div class="_tag">壹点壹客产品</div>
+                <div class="item"><a href="">黑金暗香</a></div>
+                <div class="item"><a href="goods-378.html">琉璃之心</a></div>
+                <div class="item"><a href="goods-357.html">蓝莓潘多拉</a></div>
+                <div class="item"><a href="goods-71.html">榴芒双拼</a></div>
+                <div class="item"><a href="goods-16.html">芒果慕斯</a></div>
+                <div class="item"><a href="goods-61.html">四季</a></div>
+                <div class="item"><a href="goods-347.html">少糖版榴莲忘返</a></div>
+                <div class="item"><a href="goods-3.html">榴莲忘返</a></div>
+                <div class="item"><a href="goods-44.html">玫瑰情人</a></div>
+                <div class="item"><a href="goods-332.html">爱之唤醒套餐</a></div>
+                <div class="item"><a href="goods-4.html">果篮</a></div>
+                <div class="item"><a href="goods-237.html">宇治微风</a></div>
+                <div class="item"><a href="goods-10.html">蓝莓芝士</a></div>
+                <div class="item"><a href="goods-256.html">瓦朗斯夏日</a></div>
+
+                <div class="item"><a href="goods-20.html">香蕉榛子慕斯</a></div>
+                <div class="item"><a href="goods-47.html">樱桃百香果慕斯</a></div>
+                <div class="item"><a href="goods-183.html">新鲜水果挞</a></div>
+                <div class="item"><a href="goods-70.html">诺贝尔点心</a></div>
+                <div class="item"><a href="goods-12.html">黑森林</a></div>
+
+                <div class="item"><a href="goods-37.html">提拉米苏</a></div>
+                <div class="item"><a href="goods-284.html">法芙娜魔方</a></div>
+                <div class="item"><a href="goods-184.html">布丁慕斯杯</a></div>
+                <div class="item"><a href="goods-52.html">榴莲芝士</a></div>
+                <div class="item"><a href="goods-37.html">提拉米苏(木糖醇)</a></div>
+
+                <div class="item"><a href="goods-185.html">杯子蛋糕</a></div>
+                <div class="item"><a href="goods-34.html">王室沙哈</a></div>
+                <div class="item"><a href="goods-5.html">法国榛子</a></div>
+                <div class="item"><a href="goods-317.html">午后的栗</a></div>
+                <div class="item"><a href="goods-186.html">健康坚果挞</a></div>
+
+                <div class="item"><a href="goods-46.html">西西里美丽传说</a></div>
+                <div class="item"><a href="goods-112.html">手工饼干礼盒装</a></div>
+                <div class="item"><a href="goods-174.html">手工饼干铁盒装</a></div>
+                <div class="item"><a href="goods-355.html">蛋糕提货卡</a></div>
+                <div class="item"><a href="goods-74.html">手工饼干纸袋装</a></div>
+
+                <div class="item"><a href="goods-77.html">燕麦提子饼干</a></div>
+                <div class="item"><a href="goods-78.html">红枣碧根果饼干</a></div>
+                <div class="item"><a href="goods-76.html">巧克力核桃饼干</a></div>
+                <div class="item"><a href="goods-81.html">抹茶杏仁饼干</a></div>
+                <div class="item"><a href="goods-79.html">香草开心果饼干</a></div>
+
+                <div class="item"><a href="goods-80.html">柠檬榛子饼干</a></div>
+            </li>
+            <li>
+                <div class="_tag">品牌故事</div>
+                <div class="item"><a href="brand.html">品牌故事</a></div>
+                <div class="item"><a href="intros.html">壹动态</a></div>
+                <div class="item"><a href="article_cat-15.html">原料之旅</a></div>
+            </li>
+            <li>
+                <div class="_tag">会员中心</div>
+                <div class="item"><a href="user.php">个人中心</a></div>
+                <div class="item"><a href="user.php?act=profile">我的信息</a></div>
+                <div class="item"><a href="user.php?act=edit_password">修改密码</a></div>
+                <div class="item"><a href="user.php?act=account_deposit">账户充值</a></div>
+                <div class="item"><a href="user.php?act=message_list">留言</a></div>
+                <div class="item"><a href="user.php?act=order_list">我的订单</a></div>
+                <div class="item"><a href="user.php?act=address_list">收货地址</a></div>
+            </li>
+            <li>
+                <div class="_tag">订购指南</div>
+                <div class="item"><a href="guide_flow.html">订购指南</a></div>
+                <div class="item"><a href="guide_shipping.html">配送范围</a></div>
+				<div class="item"><a href="guide_packing.html">包装展示</a></div>
+				<div class="item"><a href="guide_faq.html">常见问题</a></div>
+                <div class="item"><a href="member_rights.html">壹club</a></div>
+                <div class="item"><a href="enterprise.html">集团订购</a></div>
+                <div class="item"><a href="contact.html">联系我们</a></div>
+            </li>
+        </ul>
+        <img src="{$smarty.const.IMAGES_URL}guide-img01.png" width="100%">
+        <div style="height: 50px;"></div>
+
+    </div>
+</div>
+
+<footer id="shopDetailFooter">
+    {include file="./footer.html"}
+</footer>
+
+<div class="commonModal">
+    {include file="./modal.html"}
+</div>
+<script src="{$smarty.const.JS_URL}ydyk.js"></script>
+</body>
+</html>

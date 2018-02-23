@@ -1,0 +1,14 @@
+body{
+		margin: 0;
+}
+
+#top{
+	width: 100%;
+	height: 150px;
+	background: #ccc;
+}
+.breadcrumb_nav{
+	width: 1200px;
+	height: 77px;
+	background: #f0f;
+}

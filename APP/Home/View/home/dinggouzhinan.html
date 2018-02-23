@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>订购指南</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<!-- 引入 Bootstrap -->
+	<link href="{$smarty.const.CSS_URL}bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{$smarty.const.Public_URL}fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}normalize.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}ydyk.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}link.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}link1.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}link2.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}link3.css">
+	<script src="{$smarty.const.JS_URL}jquery_3.2.1.min.js"></script>
+	<!-- 包括所有已编译的插件 -->
+	<script src="{$smarty.const.JS_URL}bootstrap.min.js"></script>
+	<script src="{$smarty.const.Public_URL}/layer/layer.js"></script>
+	<script>
+		$(document).ready(function () 
+		{
+			$('#wen .buttom').eq(0).css('background','#F55A19');
+			$('#wen .buttom').eq(0).css('color','white');
+			$('#shun').css('display','block');
+		});	
+		$(function(){
+			$('.buttom').each(function(){
+				var n=$('.buttom').index($(this));
+				$(this).click(function(){
+					if(n==0)
+					{
+						$('#wen .buttom').css('background','white');
+						$('#wen .buttom').eq(0).css('background','#F55A19');
+						$('#wen .buttom').css('color','#666');
+						$('#wen .buttom').eq(0).css('color','white');
+						$('#shun').css('display','none');
+						$('#jin').css('display','none');
+						$('#kai').css('display','none');
+						$('#yi').css('display','none');
+						$('#shun').css('display','block');
+					}
+					else if(n==1)
+					{
+						$('#wen .buttom').css('background','white');
+						$('#wen .buttom').eq(1).css('background','#F55A19');
+						$('#wen .buttom').css('color','#666');
+						$('#wen .buttom').eq(1).css('color','white');
+						$('#shun').css('display','none');
+						$('#jin').css('display','none');
+						$('#kai').css('display','none');
+						$('#yi').css('display','none');
+						$('#jin').css('display','block');
+					}
+					else if(n==2)
+					{
+						$('#wen .buttom').css('background','white');
+						$('#wen .buttom').eq(2).css('background','#F55A19');
+						$('#wen .buttom').css('color','#666');
+						$('#wen .buttom').eq(2).css('color','white');
+						$('#shun').css('display','none');
+						$('#jin').css('display','none');
+						$('#kai').css('display','none');
+						$('#yi').css('display','none');
+						$('#kai').css('display','block');
+					}
+					else if(n==3)
+					{
+						$('#wen .buttom').css('background','white');
+						$('#wen .buttom').eq(3).css('background','#F55A19');
+						$('#wen .buttom').css('color','#666');
+						$('#wen .buttom').eq(3).css('color','white');
+						$('#shun').css('display','none');
+						$('#jin').css('display','none');
+						$('#kai').css('display','none');
+						$('#yi').css('display','none');
+						$('#yi').css('display','block');
+					}
+				})
+			})
+		})
+	</script>
+</head>
+<body>
+
+	<!-- 头部导航条位置 -->
+	<header id="shopDetailHead" class="shopDetail-nav" style="">
+		{include file="./nav.html"}
+	</header>
+	<!-- 结束 -->
+
+	<div id="shouye">
+	<a href="" id="jian">首页></a>
+	<a href="" id="jian2">订购指南</a>
+	</div>
+	<div id="wen">
+	   <div class="buttom" id="jianjian">订购流程</div>
+	   <div class="buttom" id="jianjian1">配送范围</div>
+	   <div class="buttom" id="jianjian2">包装展示</div>
+	   <div class="buttom" id="jianjian3">常见问题</div>
+	</div><br>
+	<!-- <div id="jianjian"> -->
+	<div id="shun">
+	<div id="jian">
+		<img src="{$smarty.const.IMAGES_URL}nihao.png" alt="">
+	</div>
+	<div id="shi">
+	<span id="wenwen">电话订购</span><br>
+	<span id="wenwen2">4006-517-217</span>
+	</div>
+	<div id="wenwen3">
+		<img src="{$smarty.const.IMAGES_URL}guanwang.png" alt="">
+	</div>
+	<div id="wenwen4">
+		<span>壹点壹客蛋糕产品的规格及适用人数</span>
+	</div>
+	<div id="wenwen5">
+	<img src="{$smarty.const.IMAGES_URL}zhiliang.png" alt="">
+	</div>
+	<div id="wenwen6">
+		<span id="jian3">特别提示</span></p>
+		<span id="jian4">5磅以上的蛋糕，请与客服人员联系，我们将派专人为您跟踪服务。</span></p>
+		<span id="jian5">请提前7小时订购，当日产品需在下午2点前预订；</span></p>
+		<span id="jian6">部分产品需提前24小时订购，如西西里美丽传说、谁动了我的奶酪。</span></p>
+		<span id="jian7">如需要修改蛋糕类或送货时间，送货时间将根据修改内容延后7小时完成。</span></p>
+	</div>
+	<div id="wenwen7">
+	<div id="wenwen8">
+		<span id="wenge1">配送方式</span>
+		<ul>
+			<li>壹点壹客提供深圳市免费配送范围最广的送货上门服务</li>
+			<li>蛋糕由壹点壹客自建专业配送团队配送，保证将蛋糕低温保鲜、准时送达至您指定的地址，除了免除您携带蛋糕的路途奔波之苦，还能最大程度的保证蛋糕在运送过程中的卫生安全。</li>
+		</ul>
+	</div>
+	<div id="wenwen9">
+		<span id="wenge2">如何收货</span>	
+		<ul>
+			<li>您在收到商品时，请根据壹点壹客发货单仔细检查、验收所收到的商品，验收无误后再进行签收。如果发现商品短少、缺失、脏污、破损、配送错误 等问题，请验收当时指出，务必当时电话与我们的客服人员联系确认，壹点壹客将免费重新配送，过后可能不予受理此类问题。</li>
+			<li>如订购商品出现断货现象，客服人员会及时与您联系，寻求您的指示，是等待更换或者取消订单，若您已经支付货款，取消订单后，我们会将货款及时为您退回。</li>
+			<li>如有特殊收货时间要求，请在订单留言处详细注明。</li>
+		</ul>
+	</div >
+		
+	</div>
+	</div>
+	<div id="jin">
+		<div id="shi">
+	<div id="shi2"><span>配送区域</span>	</div>
+	
+	</div>
+	<div id="shi3">
+	<span id="shi4">深圳区域</span><br><br>
+	<span>罗湖区、福田区、南山区｜全区域</span><br><br>
+	<span>宝安区｜机场南路以东</span><br><br>
+	<span>龙华区｜龙观西路以东、雪岗北路以南、坂雪岗大道以西。</span><br><br>
+	<span>布吉｜科技园路、盛宝路以南、丹沙路以西。</span><br><br>
+	<span>横岗｜水官高速、长深高速以南，龙岗大道以北。</span><br><br>
+	<span>龙岗中心城｜龙飞大道以东、北通道以南、碧新路以西、深惠路以北。</span><br><br>
+	<span>（每天上午10：00－12：00，下午15：00－21：00可免费配送，其他时间不配送。）</span><br><br>
+	<span>盐田区｜仅配送中心区（周末、节假日不配送。）</span><br><br>
+	<span>大亚湾自提点地址｜大亚湾核电基地加油站对面的停车场</span><br><br>
+	<span>（周二：15：30－16：00、周五：15：30－16：00）</span><br><br>
+	</div>
+	<div id="shi5">
+	<a href=""><img src="{$smarty.const.IMAGES_URL}ditu.jpg" alt=""></a>
+	</div>
+	<div id="shi6">
+		<span id="shi7">成都区域</span><br><br>
+		<span>成都市三环内</span><br><br><br><br>
+		<span>温江区主城区及国色天香片区</span><br><br>
+		<span>北至温邛高速（国色天香区域：北至春江西路 南至成温邛高速 东至春江南路 西至生态大道）</span><br><br>
+		<span>南至骑士大道</span><br><br>
+		<span>东至凤凰北大街</span><br><br>
+		<span>西至双新路</span><br><br><br><br>
+		<span>天府新城片区</span><br><br>
+		<span>东至成仁快速到皇经楼路；南至牧华路；西至京昆高速；北至南三环。</span><br><br>
+	</div>
+	<div id="shi8">
+		<img src="{$smarty.const.IMAGES_URL}ditu2.jpg"  alt="">
+		<img src="{$smarty.const.IMAGES_URL}ditu3.jpg"  alt="">
+		<img src="{$smarty.const.IMAGES_URL}ditu4.jpg"  alt="">
+	</div>
+	<div  style='clear: both;'></div>
+	<div id="shi9">
+	<span id="shi10">配送方式</span><br><br>
+	<span>蛋糕由壹点壹客专业配送团队配送，保证将蛋糕低温保鲜、准时送达至您指定的地址，除了免除您携带蛋糕的路途奔波之苦，还能最大程度的保证蛋糕在运送过程中的卫生安全。</span>
+	</div>
+	</div>
+	<div id="kai">
+		<div id="shi">
+	    <img src="{$smarty.const.IMAGES_URL}yuding.png" alt="">
+	</div>
+	<div id="shi2">
+		<img src="{$smarty.const.IMAGES_URL}liwu.png" alt=""></div>
+
+		<div id=shi3>
+		<span class="wenge">蛋糕盒 |</span>
+		<span class="wenge2"> 材质是结实的牛皮纸盒，很宜家、很淳朴；主题是从 1 开始的美好生活，诸多画面将逐一推出。</span><br><br>
+		<span class="wenge">环保分餐盘| </span>
+		<span class="wenge2">硬朗、可降解的精致分餐碟，不同于那些软塌塌的纸盘，都是一次性的，壹点壹客定制的分餐碟让人感觉更安全。每磅蛋糕都有免费标配。</span><br><br>
+		<span class="wenge">安全的餐具|</span>
+		<span class="wenge2">有点Q的刀叉，质量极好，浑圆、小巧，可以重复使用、减少浪费、对儿童也是安全的；免费标配。</span><br><br>
+		<span class="wenge">优雅的卡片|</span>
+		<span class="wenge2">一张淡雅、温馨的贺卡，你的祝福、私语……尽跃纸上，免费奉送。</span><br><br>
+		<span class="wenge">浪漫的蜡烛|</span>
+		<span class="wenge2">壹点壹客定制的付费蜡烛，用于生日或浪漫的烛光晚餐，可以多次使用，环保又卫生。另有免费蜡烛提供，请点选“蛋糕名录”-“蛋糕配件”。</span>
+		</div>
+		<div id="shi4">
+			<img src="{$smarty.const.IMAGES_URL}shiping.jpg" alt="">
+		</div>
+	</div>
+	<div id="yi">
+		<div id="shi">
+		<span class="wenge">1.蛋糕送货时间？</span><br>
+		<span class="wenge2">答：龙岗中心城 10：00-12：00 15：00-21：00； 其他配送区域 09：30-21：00（每周五 10：00-21：00）</span>
+	</div>
+	<div id="shi">
+		<span class="wenge">2.某某地方能送吗？</span><br>
+		<span class="wenge2">答：请看壹点壹客配送范围 : <a href="">http://www.1date1cake.com/guide_shipping.html</a></span>
+	</div>
+	<div id="shi">
+		<span class="wenge">3.订购蛋糕配叉碟吗？</span><br>
+		<span class="wenge2">答：每磅蛋糕标配5套叉碟；即叉碟套数=磅数*5</span>
+	</div>
+	<div id="shi">
+		<span class="wenge">4.订购蛋糕配蜡烛吗？</span><br>
+		<span class="wenge2">答：有免费蜡烛提供，客户可根据需求点选需要或不需要。</span>
+	</div>
+	<div id="shi2">
+		<span class="wenge3">5.订购蛋糕都要买保温包吗？不买保温包蛋糕会不会化了？</span><br>
+		<span class="wenge4">答：收到蛋糕如不马上吃，需放入冰箱冷藏（0℃－4℃）；常温下一般不可摆放超过1小时，否则会融化。</span><br>
+		<span class="wenge5">保温包是提供给外带客户使用，出口品质的保温包，室内保冷约4小时，室外保冷约3小时，同时配套赠送可循环使用的冰袋。</span><br>
+		<span class="wenge6">您可在购物车页面购买。</span>
+	</div>
+
+	<div id="shi">
+		<span class="wenge">6.您们至少要提前多久时间下订单？</span><br>
+		<span class="wenge2">答：最少提前7小时下单。</span>
+	</div>
+	<div id="shi">
+		<span class="wenge">7.如果我想今天收到蛋糕，最晚的下订单时间是什么时候？
+</span><br>
+		<span class="wenge2">答：龙岗中心城片区当天下午13：00截止订单，其他配送区域当天15：00截止当天订单。为保障生产品质和服务质量，如遇节假日订单较多，可能会提早截止订单。</span>
+	</div>
+	<div id="shi">
+		<span class="wenge">8.会员权益怎么用呀？</span><br>
+		<span class="wenge2">答：只要注册，即成为壹点壹客会员，每月第二个星期一，均可享受会员日82折；此外，客户单张订单满168元即可使用一项权益；</span>
+	</div>
+	<div id="shi2">
+		<span class="wenge3">9.怎么查看提货卡提到期时间？</span><br>
+		<span class="wenge4">答：提货卡无具体使用期限，因提货卡不实名担心客户遗失后造成损失，故卡面上会提醒客户在销售之日起2年内使用。</span><br>
+		<span class="wenge5">您可以到此处购买提货卡 <a href="">http://www.1date1cake.com/goods-355.html</a> </span><br>
+		<span class="wenge6">我们将统一用顺丰快递发给您。</span>
+	</div>
+	<div id="shi3">
+	<span class="wenge3">10.购买的产品时用提货卡支付不够怎么办？</span><br>
+	<span
+	class="wenge4">答：如卡内金额不够支付订单金额，可再选择货到付款或网上支付余下金额。</span><br>
+	<span class="wenge5">具体操作如下</span><br>
+	<span class="wenge6">结算中心>>使用提货卡</span><br>
+	<img src="{$smarty.const.IMAGES_URL}tihuo.png" alt=""><br>
+	<!-- <div id="shi4"></div> -->
+	<span class="wenge4">不足金额部分可选择在线支付或者货到付款。 </span>
+	</div>
+	<div id="shi">
+		<span class="wenge">11.使用提货卡需要一次性用完吗？</span><br>
+		<span class="wenge2">答：不需要一次性使用完，未用完的金额仍会保留在提货卡上，下次再用即可。
+</span>
+	</div>
+	<div id="shi4">
+	<span class="wenge3">12.怎么把提货卡里的金额充到我的会员帐户里去？</span><br>
+	<span class="wenge4">答：壹点壹客官方网站，会员中心→会员充值→用提货卡充值→提货卡密码框 输入提货卡防伪编码，点击充值即可。</span><br>
+	<span class="wenge7">点击进入会员充值：<a href="">http://www.1date1cake.com/user.php?act=account_deposit</a>
+</span>
+<img src="{$smarty.const.IMAGES_URL}zhanghu.png" alt="">
+	</div>
+	</div>
+
+<!-- </div> -->
+
+
+	<footer id="shopDetailFooter">
+		{include file="./footer.html"}
+	</footer>
+
+	<div class="commonModal">
+		{include file="./modal.html"}
+	</div>
+	<script src="{$smarty.const.JS_URL}ydyk.js"></script>
+</body>
+</html>
+
+
+
+
+
+

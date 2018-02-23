@@ -1,0 +1,127 @@
+
+<!--slide-menu-->
+<div class="slide-menu">
+    <a href="#">
+        <i class="fa fa-shopping-cart"></i>
+        <p>购物车</p>
+        <span class="badge">1</span>
+    </a>
+    <a href="#">
+        <i class="slider-icon02"></i>
+        <p>在线客服</p>
+    </a>
+    <a href="#">
+        <i class="slider-icon03"></i>
+        <p>新人红包</p>
+    </a>
+    <a href="javascript:void(0);" id="return-top">
+        <i class="fa fa-arrow-circle-o-up"></i>
+        <p>回顶部</p>
+    </a>
+</div>
+
+<!--nav-top-->
+<div class="nav-top navbar-fixed-top container-fluid">
+    <div class="container clearfix">
+        <div class="pull-left">
+            <i class="fa fa-map-marker" aria-hidden="true"></i>
+            <span>深圳</span>
+            <span class="caret" style="font-size: 10px"></span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-user-o"></i>
+            <span class="user">Hi , 欢迎访问壹点壹客</span>
+            [ <a href="javascript:void(0);" id="login" style="color: #DD541B;font-weight: bold">登录</a>&nbsp|&nbsp<a href="#" id="register">注册</a> ] <a href="#">[ 会员中心 ]</a>
+        </div>
+        <div class="pull-right">
+            <span class="phone">客服电话：4006-517-217 / 0755-36885360 </span>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-question-circle"></i>
+            <span>订购指南</span>
+            <i class="fa fa-navicon"></i>
+            <span>网站导航</span>
+        </div>
+    </div>
+</div>
+<!--nav-top-->
+
+<!--nav-->
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="index.html"><img src="imgs/logo.png" width="150" height="40" alt="logo" id="nav-logo"></a>
+        </div>
+        <div>
+            <ul class="nav navbar-nav" id="nav-ul">
+                <li><a href="index.html">HOME<br>首页</a></li>
+                <li><a href="./shengridangao/dingdangao.html">BIRTHDAY CAKE<br>生日蛋糕</a></li>
+                <li><a href="#">BIRTHDAY PARTY<br>儿童生日会</a></li>
+                <li><a href="./shengrizhoubian/shengri-lipin.html">SURROUNDING<br>生日周边</a></li>
+                <li>
+                    <div class="band">
+                        <a href="brandStory.html" class="band-story" id="band-story">BRAND STORY<br>品牌故事</a>
+                        <div class="band-body" style="display: none;">
+                            <a href="brandStory.html">品牌介绍</a>
+                            <a href="brandIdea.html">品牌理念</a>
+                            <a href="brandTrip.html">原料之旅</a>
+                        </div>
+                    </div>
+                </li>
+                <li><div class="garden"><a href="#">家庭烘焙教师</a> | <a href="#">散漫后花园</a></div></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--nav-->
+
+ <script>
+     // login&register
+     $(function () {
+         // modal框居中
+         var clientHeight = $('.modal').height();
+         $('.modal-dialog').css({
+             "marginTop":clientHeight/2-150
+         });
+         // 点击事件
+         $('#login').click(function () {
+             $('#tab-login').addClass('active').siblings().removeClass('active');
+             $('#reg').removeClass('in active').prev().addClass('in active');
+             $('#myLoginModal').modal({
+                 keyboard:true
+             });
+             $('#myLoginModal').on('hidden.bs.modal',
+                 function() {
+                     $('#tab-login').addClass('active').siblings().removeClass('active');
+                 });
+
+         });
+         $('#register').click(function () {
+             $('#tab-register').addClass('active').siblings().removeClass('active');
+             $('#log').removeClass('in active').next().addClass('in active');
+             $('#myLoginModal').modal({
+                 keyboard:true
+             });
+             $('#myLoginModal').on('hidden.bs.modal',
+                 function() {
+                     $('#tab-register').addClass('active').siblings().removeClass('active');
+                 });
+         });
+     });
+      // 导航栏
+      $(function () {
+          $('.band-story').hover(function () {
+              $('.band').css('border','1px solid #fff');
+              $('.band-body').show();
+          },function () {
+              $('.band').mouseleave(function () {
+                  $('.band').css('border','none');
+                  $('.band-body').hide();
+              });
+          });
+      });
+      //回到顶部
+      $(function () {
+          $('#return-top').click(function () {
+              $('html,body').animate({scrollTop:0},500);
+          });
+      });
+  </script>

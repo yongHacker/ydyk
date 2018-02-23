@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}goods.css" />
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}goods.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>商品分类管理 <small>网站分类添加与管理  </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>网站分类添加与管理</span>
+				<span>分类排序数字越小，排序越靠前</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div>
+			<table class="table table-bordered">
+			   <caption>网站分类列表<small>(共{$count}条记录)</small>
+			   </caption>
+			   <thead>
+			      <tr>
+			         <th>ID</th>
+			         <th>分类名称(中文)</th>
+			         <th>分类名称(英文)</th>
+			         <th>上级分类</th>
+			         <th>分类级别</th>
+			         <th>分类排序</th>
+			         <th>创建时间</th>
+			         <th>操作</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	  <tr>
+			   	  	<td colspan="8">
+			   	  		<a class="btn btnA btn-warning" href="index.php?m=admin&c=sort&a=add">添加分类</a>
+			   	  		<form class="form-inline" role="form" method="post" 
+							action="{$url}">
+						  <div class="form-group">
+						    <input type="text" class="form-control" name="contant"
+						    required="required" oninvalid="setCustomValidity('请输入搜索内容')"
+			         		oninput="setCustomValidity('')" value="{$c}"
+						     placeholder="请输入搜索内容">
+						  </div>
+						    <select class="form-control" name="where">
+						      <option value="cid">分类ID</option>
+						      <option value="cname">分类名称</option>
+						    </select>
+						  <button type="submit" class="btn btn-info">提交</button>
+						</form>
+			   	  	</td>
+			   	  </tr>
+			   	  {foreach item=i from=$list}
+			      <tr class="tableTd">
+			         <td>{$i.cid}</td>
+			         <td>{$i.cname1}</td>
+			         <td>{$i.cname2}</td>
+			         <td>
+			         {foreach item=u from=$up}
+			         {if $i.upid eq $u.cid}{$u.cname1}{break}
+			         {/if}
+			         {/foreach}
+			         </td>
+			         <td>{$i.level}</td>
+			         <td>{$i.sort}</td>
+			         <td>{$i.addtime|date_format:'%Y-%m-%d %H:%M:%S'}</td>
+			         <td>
+			         	<a href="index.php?m=admin&c=sort&a=update&id={$i.cid}">编辑</a>
+			         </td>
+			      </tr>
+			      {/foreach}
+			      
+			   </tbody>
+			</table>
+		</div>
+	</body>
+</html>

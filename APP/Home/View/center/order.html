@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{include file="common/commonHeader.html"}
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}huiyuan/order.css">
+</head>
+<body>
+
+	<!-- 首页-产品-xxx -  -->
+	<div class='breadcrumb_nav'>
+		<div>
+			<a href="index.php?m=home&c=index&a=index"><span>首页</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=index"><span>个人中心</span></a>
+			<span>></span>
+			<a href="#"><span>我的订单</span></a>
+		</div>
+	</div>
+
+
+	<div class='layout'>
+		<div class='layout_tt'>
+			<span style="margin-left: 60px;">我的订单</span>
+		</div>
+		<div class = 'list'>
+			<div class = 'order_table'>
+				<div class = 'period'>
+					<div class = 'btn'>
+						<a href="#"><span>近三个月之内</span></a>
+					</div>
+					<div class = 'options'>
+						<a href="#"><span>近三个月订单</span></a><br>
+						<a href="#"><span>三个月之前</span></a>
+					</div>
+				</div>
+				<div class='th'>
+					<span>订单总额</span>
+				</div>
+				<div class='th'>
+					<span>下单时间</span>
+				</div>
+				<div class='th'>
+					<span>订单状态</span>
+				</div>
+				<div class='th'>
+					<span>支付方式</span>
+				</div>
+				<div class='th'>
+					<span>操作</span>
+				</div>
+			</div>
+            <div class="dindan-box">
+				{foreach item=i from=$list}
+                <div class="dindan-item">
+                    <div class="dindan-title">
+                        订单编号:{$i.ornum}
+                    </div>
+                    <div class="dindan-content">
+                        <div class="shop">
+                            {foreach item=g from=$goods[$i.orid]}
+                            <img src="/Public/upload/{$g.img}" width="65" height="65">
+                            {/foreach}
+                        </div>
+
+                        <div class='th price'>
+                            <span>{$i.amount}元</span>
+                        </div>
+                        <div class='th date'>
+                            <span>{$i.addtime|date_format:'%Y-%m-%d %H:%M:%S'}</span>
+                        </div>
+                        <div class='th state'>
+                            <span>
+                                 {if $i.state eq 0}待支付
+                                 {elseif $i.state eq 1}已支付
+                                 {elseif $i.state eq 2}已发货
+                                 {elseif $i.state eq 3}已完成
+                                 {elseif $i.state eq 4}已取消
+                                 {else}异常
+                                 {/if}
+                            </span>
+                        </div>
+                        <div class='th pay'>
+                            <span>支付宝</span>
+                        </div>
+                        <div class='th operation'>
+                            <a href="index.php?m=home&c=center&a=order&act=seeOrder&orid={$i.orid}">查看订单</a> <br>
+                            <a href="index.php?m=home&c=center&a=order&act=delOrder&orid={$i.orid}" style="color: red">[取消订单]</a>
+                        </div>
+                    </div>
+                </div>
+                {/foreach}
+            </div>
+
+			<div id="pager" class="pagebar" style="float:right;">
+   				 <span class="f_l" style="margin-right:30px;"><a href="{$pageurl}{$pageUp}">上一页</a>&nbsp;&nbsp;&nbsp;&nbsp; <a href="{$pageurl}{$pageDown}">下一页</a>&nbsp;&nbsp;总计 | {$count}条记录 | 共 {$pageNum} 页 | 	</span>
+    		</div>
+		</div>
+	</div>
+
+    <div style="clear: both;height: 500px;"></div>
+    {include file="common/footer.html"}
+
+</body>
+</html>
+
+
+
+
+					
+					
+					

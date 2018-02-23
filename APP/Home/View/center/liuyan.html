@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{include file="common/commonHeader.html"}
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}huiyuan/liuyan.css">
+	<script>
+        function del(a){
+            var obj = $(a).parent().remove();
+        }
+        // function add(a){
+        // 	 	var obj = $(a).prev().append("<div id='bir'><span style='color: #F55A19;margin-left: 32px;'>*</span><span>生日：</span><select name='' placeholder=''><option>--请选择--</option> <option value='0'>儿子</option><option value='1'>爸爸</option><option value='2'>妈妈</option><option value='3'>爷爷</option><option value='4'>奶奶</option><option value='5'>姑姑</option></select><input type='date' name='user_date' class='ip_1' /><input type='button' class='btn1' value='删 除' onclick='del(this)'><br></div>"
+        // 	 		);
+        // 	 	// alert($('#bir'));
+        // }
+        function add(a){
+
+            var obj = $(a).prev().append("<div>"+$("#bir").html()+"</div>");
+
+        }
+	</script>
+</head>
+<body>
+	<!-- 首页-产品-xxx -  -->
+	<div class='breadcrumb_nav'>
+		<div>
+			<a href="index.php?m=home&c=index&a=index"><span>首页</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=index"><span>个人中心</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=liuyan"><span>留言</span></a>
+		</div>
+	</div>
+	<div class='message_tt'>
+		<img src="{$smarty.const.IMAGES_URL}huiyuanImg/会员.png" width="25px" height="25px">
+		<span style="margin-left: 10px; font-size: 18px;">留言</span>
+		<span style="margin-left: 10px;font-size: 14px;color: #CCCCCC;">| 请尽量完整填写您的个人信息，方便店家与您联系。</span>
+	</div>
+
+	<div class='message_form'>
+		<form action="">
+			<span>主题：</span><input type="text" placeholder="请输入主题"><br>
+			<span class='cont'>内容：</span><textarea name="" id="" placeholder="请输入内容"></textarea><br>
+			<input type="button" value="提   交" class='btn' name='btn'>
+		</form>
+	</div>
+	<div class='message_list'>
+		<div class='ml_tt'>
+			<span>留言列表</span>
+		</div>
+		<div class='ml_ls'>
+			<span class='ml_ft'>总计 | 0 | 共 1 页 |</span>
+		</div>
+	</div>
+	<div style="clear: both;height: 400px;"></div>
+	{include file="common/footer.html"}
+
+</body>
+</html>
+
+
+
+					
+					
+					

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <title>brandTrip</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta charset="UTF-8">
+        <!-- 引入 Bootstrap -->
+        <link href="{$smarty.const.CSS_URL}bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{$smarty.const.Public_URL}fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{$smarty.const.CSS_URL}normalize.css">
+        <link rel="stylesheet" href="{$smarty.const.CSS_URL}ydyk.css">
+        <script src="{$smarty.const.JS_URL}jquery_3.2.1.min.js"></script>
+        <!-- 包括所有已编译的插件 -->
+        <script src="{$smarty.const.JS_URL}bootstrap.min.js"></script>
+        <script src="{$smarty.const.Public_URL}/layer/layer.js"></script>
+
+    </head>
+</head>
+<body style="background-color:#ffab00">
+
+    <header id="shopDetailHead" class="brand-nav">
+        {include file="./nav.html"}
+    </header>
+
+    <div style="width: 1200px;height: 760px;margin: 0 auto;position:relative;overflow-x:hidden;
+		background: url('{$smarty.const.IMAGES_URL}brand_trip/map.gif') no-repeat 0 0;">
+
+        <div style="width:18px;height:18px;position: absolute;top:39.6%;left:14.1%;" id="canada">
+            <div style="width:245px;height:120px;position: absolute;top:6px;left:16px;display:none" 
+            id="canada_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/canada.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:51.9%;left:17.9%;" id="usa">
+            <div style="width:208px;height:117px;position: absolute;top:6px;left:16px;display:none" id="usa_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/usa.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:48.3%;left:49.3%;" id="qkl">
+            <div style="width:241px;height:120px;position: absolute;top:19px;left:-115px;display:none" id="qkl_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/qiaokeli.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:48.3%;left:51.3%;" id="french">
+            <div style="width:239px;height:122px;position: absolute;top:-120px;left:-107px;display:none" id="french_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/french.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:51.8%;left:56.5%;" id="Italy">
+            <div style="width:244px;height:125px;position: absolute;top:-125px;left:-127px;display:none" id="Italy_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/Italy.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:64.5%;left:65.4%;" id="lanka">
+            <div style="width:218px;height:131px;position: absolute;top:-134px;left:-106px;display:none" id="lanka_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/lanka.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:65.5%;left:72%;" id="Thailand">
+            <div style="width:205px;height:125px;position: absolute;top:17px;left:-93px;display:none" id="Thailand_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/Thailand.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:51.5%;left:77%;" id="korea">
+            <div style="width:205px;height:125px;position: absolute;top:-129px;left:-93px;display:none" id="korea_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/korea.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:53%;left:81.5%;" id="japan">
+            <div style="width:205px;height:125px;position: absolute;top:20px;left:-89px;display:none" id="japan_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/japan.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+        <div style="width:18px;height:18px;position: absolute;top:88.9%;left:89.8%;" id="Zealand">
+            <div style="width:205px;height:125px;position: absolute;top:-130px;left:-99px;display:none" id="Zealand_show">
+                <img src="{$smarty.const.IMAGES_URL}brand_trip/area/Zealand.png" alt="寻味之旅"/>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div style="width:100%; height:100%;overflow-x:hidden;position:relative;">
+        <img src="{$smarty.const.IMAGES_URL}brand_trip/5.jpg" alt="草莓蛋糕" width='100%' height='100%'>
+        <div style="width:100%; height:100%;">
+            <a href="index.php?m=home&a=berries" target="_blank"><img style="width:10%; height:10%;display:block;position:absolute;left:60.6%;bottom:40%; " src="../imgs/brand_trip/btn.png"></a>
+        </div>
+    </div>
+
+    <div style="width:100%; height:100%;overflow-x:hidden;position:relative;">
+        <img src="{$smarty.const.IMAGES_URL}brand_trip/4.jpg" alt="抹茶蛋糕" width='100%' height='100%'>
+        <div style="width:100%; height:100%;">
+            <a href="index.php?m=home&a=berries" target="_blank"><img style="width:10%; height:10%;display:block;position:absolute;left:60.6%;bottom:40%; " src="../imgs/brand_trip/btn.png"></a>
+        </div>
+    </div>
+
+    <div style="width:100%; height:100%;overflow-x:hidden;position:relative;">
+        <img src="{$smarty.const.IMAGES_URL}brand_trip/3.jpg" alt="榴莲蛋糕" width='100%' height='100%'>
+        <div style="width:100%; height:100%;">
+            <a href="index.php?m=home&a=berries" target="_blank"><img style="width:10%; height:10%;display:block;position:absolute;left:60.6%;bottom:40%; " src="../imgs/brand_trip/btn.png"></a>
+        </div>
+    </div>
+
+    <div style="width:100%; height:100%;overflow-x:hidden;position:relative;">
+        <img src="{$smarty.const.IMAGES_URL}brand_trip/2.jpg" alt="奶油蛋糕" width='100%' height='100%'>
+        <div style="width:100%; height:100%;">
+            <a href="index.php?m=home&a=berries" target="_blank"><img style="width:10%; height:10%;display:block;position:absolute;left:60.6%;bottom:40%; " src="../imgs/brand_trip/btn.png"></a>
+        </div>
+    </div>
+
+    <div style="width:100%; height:100%;overflow-x:hidden;position:relative;margin-bottom:-75px;">
+        <img src="{$smarty.const.IMAGES_URL}brand_trip/1.jpg" alt="果茸蛋糕" width='100%' height='100%'>
+        <div style="width:100%; height:100%;">
+            <a href="index.php?m=home&a=berries" target="_blank"><img style="width:10%; height:10%;display:block;position:absolute;left:60.6%;bottom:40%; " src="../imgs/brand_trip/btn.png"></a>
+        </div>
+    </div>
+
+
+
+    <footer id="shopDetailFooter" style="margin-top: 75px;">
+        {include file="./footer.html"}
+    </footer>
+
+    <div class="commonModal">
+        {include file="./modal.html"}
+    </div>
+
+    <script src="{$smarty.const.JS_URL}ydyk.js"></script>
+    <script>
+        $(function(){
+            $("#canada").hover(
+                function(){
+                    $('#canada_show').css("display","block");
+                },
+                function(){
+                    $('#canada_show').css("display","none");
+                }
+            );
+
+            $("#usa").hover(
+                function(){
+                    $('#usa_show').css("display","block");
+                },
+                function(){
+                    $('#usa_show').css("display","none");
+                }
+            );
+
+            $("#qkl").hover(
+                function(){
+                    $('#qkl_show').css("display","block");
+                },
+                function(){
+                    $('#qkl_show').css("display","none");
+                }
+            );
+
+            $("#french").hover(
+                function(){
+                    $('#french_show').css("display","block");
+                },
+                function(){
+                    $('#french_show').css("display","none");
+                }
+            );
+
+            $("#Italy").hover(
+                function(){
+                    $('#Italy_show').css("display","block");
+                },
+                function(){
+                    $('#Italy_show').css("display","none");
+                }
+            );
+
+            $("#lanka").hover(
+                function(){
+                    $('#lanka_show').css("display","block");
+                },
+                function(){
+                    $('#lanka_show').css("display","none");
+                }
+            );
+
+            $("#Thailand").hover(
+                function(){
+                    $('#Thailand_show').css("display","block");
+                },
+                function(){
+                    $('#Thailand_show').css("display","none");
+                }
+            );
+
+            $("#Zealand").hover(
+                function(){
+                    $('#Zealand_show').css("display","block");
+                },
+                function(){
+                    $('#Zealand_show').css("display","none");
+                }
+            );
+
+            $("#korea").hover(
+                function(){
+                    $('#korea_show').css("display","block");
+                },
+                function(){
+                    $('#korea_show').css("display","none");
+                }
+            );
+
+            $("#japan").hover(
+                function(){
+                    $('#japan_show').css("display","block");
+                },
+                function(){
+                    $('#japan_show').css("display","none");
+                }
+            );
+
+        })
+
+    </script>
+
+</body>
+</html>

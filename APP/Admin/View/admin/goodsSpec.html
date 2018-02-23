@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>商品规格</title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}goods.css" />
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}goods.js" ></script>
+		<style type="text/css">
+		.tableTd>td{
+	      line-height:100px !important;
+	      white-space: nowrap; 
+	 	}
+		</style>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>商品规格  <small>商品规格索引及管理  </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>商品规格是购买商品时用户可以选择的, 如衣服颜色, 尺寸等.</span>
+				<span>添加商品时需要先设置商品规格</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div>
+			<table class="table table-bordered">
+			   <caption>网站规格列表<small>(共{$count}条记录)</small>
+			   </caption>
+			   <thead>
+			      <tr>
+			         <th>ID</th>
+			         <th>规格名称</th>
+			         <th>价格</th>
+			         <th>图片</th>
+			         <th>规格重量</th>
+			         <th>实际重量</th>
+			         <th>附件</th>
+			         <th>创建时间</th>
+			         <th>操作</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	  <tr>
+			   	  	<td colspan="9">
+			   	  		<a class="btn btnA btn-warning" href="index.php?m=admin&c=spec&a=add">添加规格</a>
+			   	  		<form class="form-inline" role="form" method="post" 
+							action="{$url}">
+						  <div class="form-group">
+						    <input type="text" class="form-control" name="contant"
+						    required="required" oninvalid="setCustomValidity('请输入搜索内容')"
+			         		oninput="setCustomValidity('')" value="{$c}"
+						     placeholder="请输入搜索内容" />
+						  </div>
+						    <select class="form-control" name="where">
+						      <option value="id">规格ID</option>
+						      <option value="name">规格名称</option>
+						    </select>
+						  <button type="submit" class="btn btn-info">提交</button>
+						</form>
+			   	  	</td>
+			   	  </tr>
+			   	  {foreach item=i from=$list}
+			      <tr class="tableTd">
+			         <td>{$i.normid}</td>
+			         <td>{$i.norname}</td>
+			         <td>{$i.price}</td>
+			         <td>
+			         	<img alt="图片" src="{$smarty.const.upload_url}{$i.photo}"/>
+			         </td>
+			         <td>{$i.weight1}</td>
+			         <td>{$i.weight2}</td>
+			         <td>{$i.enclosure}</td>
+			         <td>{$i.addtime|date_format:'%Y-%m-%d %H:%M:%S'}</td>
+			         <td>
+			         	<a href="index.php?m=admin&c=spec&a=update&id={$i.normid}">编辑</a>
+			         </td>
+			      </tr>
+			      {/foreach}
+			      
+			   </tbody>
+			</table>
+		</div>
+	</body>
+</html>

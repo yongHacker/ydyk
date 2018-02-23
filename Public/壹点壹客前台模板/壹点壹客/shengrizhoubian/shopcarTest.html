@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>购物车按钮弹窗层页面</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <script src="../js/jquery_3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../layer-v3.1.1/layer/layer.js"></script>
+
+    <style>
+        .dialog{
+            background: #fff;
+            width: 730px;
+            height: auto;
+            border: 4px solid rgba(0,0,0,0.6);
+            margin: 0 auto;
+            padding: 5px;
+        }
+        .dialog .dialog-title{
+            border-bottom: 1px solid #ccc;
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            color: #737373;
+            position: relative;
+            padding-bottom: 35px;
+        }
+        .dialog .dialog-title .close-popup{
+            font-size: 24px;
+            position: absolute;
+            right: 5px;
+            top:5px;
+            cursor: pointer;
+        }
+        .dialog .dialog-body{
+            padding-top: 50px;
+        }
+        .dialog .dialog-body .guige{
+            padding-left: 120px;
+        }
+        .select-box{
+            display: inline-block;
+            width: 110px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            color: #737373;
+            position: relative;
+            cursor: pointer;
+            margin-right: 15px;
+        }
+        .select-box.on{
+            border: 1px solid #F55A19;
+            color: #F55A19;
+        }
+        .select-box .triangle{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: url("../imgs/sprite.png") no-repeat -83px -172px;
+            position: absolute;
+            right: -1px;
+            bottom: -1px;
+        }
+        .num-select{
+            padding-left: 120px;
+            color:#666666;
+            font-size: 18px;
+            margin: 20px 10px;
+        }
+        .num-select i{
+            cursor: pointer;
+        }
+        .num-select i:hover{
+            color: rgba(102,102,102,0.8);
+            font-size: 19px;
+        }
+        .num-select .num{
+            margin: 0 15px;
+            font-size: 20px;
+        }
+        .sum-price{
+            margin-left: 120px;
+            width: 480px;
+            height: 40px;
+            background: #F55A19;
+            text-align: center;
+            line-height: 40px;
+            color:#fff;
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-bottom: 40px;
+        }
+    </style>
+
+</head>
+<body>
+        <button class="btn btn-default">弹窗</button>
+
+        <div class="dialog" id="dialog" style="display: none">
+            <div class="dialog-title">
+                <i class="fa fa-bell-o"></i> <span>提醒</span>
+                <i class="close-popup fa fa-close"></i>
+            </div>
+
+            <div class="dialog-body">
+                <p>请选择商品属性:</p>
+                <div class="guige">
+                    <p>规格</p>
+                    <div class="select-box on">一位 <i class="triangle"></i></div>
+                    <div class="select-box">二位 <i class="triangle"></i></div>
+                    <div class="select-box">三位 <i class="triangle"></i></div>
+                </div>
+                <div class="num-select">
+                    <i class="fa fa-minus-circle"></i>
+                    <span class="num">1</span>
+                    <i class="fa fa-plus-circle"></i>
+                </div>
+                <div class="sum-price">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span class="sum">30</span>元
+                </div>
+            </div>
+        </div>
+
+        <script>
+            //弹窗
+            $(function () {
+                //打开弹窗
+                $('.btn').click(function () {
+                    layer.open({
+                        type:1,
+                        title:false,
+                        closeBtn:0,
+                        shadeClose:false,
+                        area:['730px'],
+                        scrollbar:false,
+                        content:$('#dialog')
+                    });
+                });
+                //关闭弹窗
+                $('.close-popup').click(function () {
+                    layer.closeAll();
+                });
+                //规格选择
+                $('.select-box').click(function () {
+                   $(this).addClass('on').siblings().removeClass('on');
+                });
+                //-1
+                $('.num-select .fa-minus-circle').click(function () {
+                   var num = $('.num-select .num').text();
+                   num--;
+                   if(num<1){num=1}
+                   $('.num-select .num').text(num);
+                    var sum = parseInt($('.sum-price .sum').text());
+                    var price = 100;
+                    sum = num*price;
+                    $('.sum-price .sum').text(sum);
+                });
+                //+1
+                $('.num-select .fa-plus-circle').click(function () {
+                    var num = $('.num-select .num').text();
+                    num++;
+                    $('.num-select .num').text(num);
+                    var sum = parseInt($('.sum-price .sum').text());
+                    var price = 100;
+                    sum = num*price;
+                    $('.sum-price .sum').text(sum);
+                });
+                var sum = parseInt($('.sum-price .sum').text());
+                var num = parseInt($('.num-select .num').text());
+                var price = 100;
+                sum = num*price;
+                $('.sum-price .sum').text(sum);
+            });
+        </script>
+
+</body>
+</html>

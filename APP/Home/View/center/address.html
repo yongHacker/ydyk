@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{include file="common/commonHeader.html"}
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}huiyuan/address.css">
+	<script src="{$smarty.const.JS_URL}js/distpicker.data.js"></script>
+	<script src="{$smarty.const.JS_URL}js/distpicker.js"></script>
+	<script src="{$smarty.const.JS_URL}js/main.js"></script>
+</head>
+<body>
+{include file="common/Header.html"}
+
+<!-- 首页-产品-xxx -  -->
+	<div class='breadcrumb_nav' >
+		<div>
+			<a href="index.php?m=home&c=index&a=index"><span>首页</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=index"><span>个人中心</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=address"><span>收货地址</span></a>
+		</div>
+	</div>
+    <button class="btn btn-warning" style="margin-top: 110px;margin-left: 80px;" onclick="showAddress()">+添加新地址</button>
+
+    <div class="container">
+        {foreach from=$rows item=vo}
+        <div class="address {if $vo.flag eq 1}default{/if}">
+            <div class="top">
+                <span class="pull-left"><i class="fa fa-user" aria-hidden="true"></i> {$vo.uname}</span>
+
+                <span class="pull-right"><i class="fa fa-phone" aria-hidden="true"></i> {$vo.uphone}</span>
+            </div>
+            <div class="center">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>收货地址:{$vo.address}</span>
+            </div>
+            <div class="bottom">
+                <a href="javascript:void(0)" style="color: #FF5000" class="setDefault" onclick="setDefault(this)">{if $vo.flag eq 1}默认{else}设为默认{/if}</a>
+                <a href="">修改</a>
+                <a href="">删除</a>
+            </div>
+            <input type="hidden" name="infoid" id="infoid" value="{$vo.infoid}">
+        </div>
+        {/foreach}
+    </div>
+
+	<div class='address_form' style="display: none">
+		<form action="index.php?m=home&c=center&a=address&act=editAddress" method="post">
+            <div id="distpicker1" style="overflow: hidden">
+                <div class="form-group" style="float: left;margin-left: 90px;margin-right: 10px;">
+                    <label class="sr-only" for="province4">Province</label>
+                    <select class="form-control" id="province4" name="province"></select>
+                </div>
+                <div class="form-group" style="float: left;margin-right: 10px;">
+                    <label class="sr-only" for="city4">City</label>
+                    <select class="form-control" id="city4" name="city"></select>
+                </div>
+                <div class="form-group" style="float: left;margin-right: 10px;">
+                    <label class="sr-only" for="district4">District</label>
+                    <select class="form-control" id="district4" name="district"></select>
+                </div>
+            </div>
+
+			<span  style="margin-left: 14px;">送货地址：</span>
+			<input type="text" name="address" id="address" placeholder="输入具体收货地址" class='ip_2' ><br>
+			<!--<input type="text" value="深圳" readonly="readonly" class='ip_1'>
+			<select name="" placeholder="请选择">
+				<option>&#45;&#45;请选择&#45;&#45;</option>
+				<option value="0">一区</option>
+			</select><br>
+			<input type="text" placeholder="输入小区或大厦名" class='ip_2' style="margin-left: 88px;"><br>
+
+			<span  style="margin-left: 6px;">楼(层)房号：</span>
+			<input type="text" placeholder="例如：3栋14A" class='ip_2'><br>-->
+
+			<span style="margin-left: 28px;">收货人：</span>
+			<input type="text" name="uname" placeholder="请输入收货人姓名" class='ip_3'><br>
+
+			<span>收货人手机：</span>
+			<input type="text" name="uphone" placeholder="请输入收货人手机号码" class='ip_3'><br>
+
+			<div style="margin-left: 80px;">
+				<label>
+					<input name="flag" type="checkbox" value="1" checked>设为默认地址
+				</label> 
+			</div>
+			<input type="submit" value="确定" class='sure' name='sure' onclick="hideAddress()">
+			<input type="reset" value="取消" class='cancel' name='cancel' onclick="hideAddress()">
+		</form>
+	</div>
+<div style="clear: both;height: 300px;"></div>
+{include file="common/footer.html"}
+
+<script>
+    function showAddress() {
+        $('.address_form').show(500);
+    }
+    function hideAddress() {
+        $('.address_form').hide(500);
+    }
+    function setDefault(obj) {
+        var infoid = $(obj).parent().next().val();
+        $('.setDefault').text('设为默认');
+        $(obj).text('默认');
+        var data='infoid='+infoid;
+        $(obj).parent().parent().addClass('default').siblings().removeClass('default');
+        $.ajax({
+            type:'post',
+            url:"{U('Center/ajax_address')}",
+            dataType:'json',
+            data:data,
+            success:function (result) {
+
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+					
+					
+					

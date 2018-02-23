@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js" ></script>
+		<style type="text/css">
+		.noborder {
+			border-top:0px !important;
+		}
+		.tableTd td{
+	      overflow: hidden; 
+	      text-overflow:ellipsis;  
+	      white-space: nowrap; 
+		  max-width: 300px;
+		  line-height:100px !important;	
+	 	}
+	 	.td_2 span {
+			float: right;
+		}
+		</style>
+	</head>
+	<body>
+		<div class="panel panel-success" style="margin-top: 20px;">
+		   <div class="panel-heading">
+		      <h3 class="panel-title">
+		        	用户详细
+		      </h3>
+		   </div>
+		   <div class="panel-body">
+		       <table class="table table-striped">
+			      <tr>
+			      	<td class="noborder">下单用户</td><td class="noborder">{$order.name}</td>
+			      	<td class="noborder">下单时间</td><td class="noborder">{$order.addtime|date_format:'%Y-%m-%d %H:%M:%S'}</td>
+			      </tr>
+			      <tr>
+			      	<td>收货人姓名</td><td>{$order.uname}</td>
+			      	<td>收货人电话</td><td>{$order.uphone}</td>
+			      </tr>
+			      <tr>
+			      	<td>订单留言</td><td colspan="3">{$order.info}</td>
+			      </tr>
+			   </table>
+		   </div>
+		</div>
+		
+		<div class="panel panel-info">
+		   <div class="panel-heading">
+		      <h3 class="panel-title">
+		      	订单信息
+		      </h3>
+		   </div>
+		   <div class="panel-body">
+		     <table class="table table-striped">
+			   <thead>
+			      <tr>
+			         <th>商品ID</th>
+			         <th>商品图片</th>
+			         <th>商品名称</th>
+			         <th>商品规格</th>
+			         <th>单价</th>
+			         <th>数量</th>
+			         <th>小计</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   {foreach item=i from=$goods}
+			      <tr class="tableTd">
+			         <td>{$i.gid}</td>
+			         <td>
+			         	<img alt="图片" src="{$smarty.const.upload_url}{$i.img}">
+			         </td>
+			         <td>{$i.gname}</td>
+			         <td style="line-height:25px !important;">
+			         	<span>{$i.norname}</span><br/>
+			         	<span>{$i.weight1}</span><br/>
+			         	<span>{$i.weight2}</span><br/>
+			         	<span>{$i.enclosure}</span>
+			         </td>
+			         <td>{$i.price}</td>
+			         <td>{$i.num}</td>
+			         <td>{$i.num * $i.price}</td>
+			      </tr>
+			      {/foreach}
+			      <tr>
+			      	<td colspan="7" class="td_2">
+			      		<span style="color: orange;">总价格：{$order.amount}</span>
+			      		<span style="color: olive;">订单编号：{$order.ornum}</span>
+			      		<span style="color: rgb(60, 118, 61);">订单状态：
+			      		 {if $order.state eq 0}待支付
+				         {elseif $order.state eq 1}已支付
+				         {elseif $order.state eq 2}已发货
+				         {elseif $order.state eq 3}已完成
+				         {elseif $order.state eq 4}已取消
+				         {else}异常
+				         {/if}
+			      		</span>
+			      	</td>
+			      </tr>
+			   </tbody>
+			 </table>
+		   </div>
+		</div>
+	</body>
+</html>

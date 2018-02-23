@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>生日蛋糕</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}shengridangao/dingdangao.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}bootstrap.min.css">
+    <link rel="stylesheet" href="{$smarty.const.Public_URL}fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}normalize.css">
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}ydyk.css">
+	<script src="{$smarty.const.JS_URL}jquery_3.2.1.min.js"></script>
+    <script src="{$smarty.const.JS_URL}bootstrap.min.js"></script>
+    <script src="{$smarty.const.Public_URL}layer/layer/layer.js"></script>
+    <style type="text/css">
+	.on{
+		color:#f55000 !important;
+	}
+	</style>
+</head>
+<body>
+	<!-- 头部的照片 -->
+	<header id="shopDetailHead" class="shopDetail-nav" style="margin-bottom: 110px;">
+		{include file="./nav.html"}
+	</header>
+    
+	<!-- 导航条 -->
+	<div id = 'lead'>
+		<div class ='lead_nav'>
+			<span>
+				<a href="index.php?m=home&c=brand&a=cakeList&id=1" 
+					id="cake1">全部蛋糕</a>
+			</span>
+			<span>
+				<a href="index.php?m=home&c=brand&a=cakeList&id=2"
+					id="cake2">新品上市</a>
+			</span>
+			<span>
+				<a href="index.php?m=home&c=brand&a=cakeList&id=3"
+					id="cake3">应季明星</a>
+			</span>
+
+			<span>
+				<a href="index.php?m=home&c=brand&a=cakeList&id=4"
+					id="cake4">人气经典</a>
+			</span>
+			<span>
+				<a href="index.php?m=home&c=brand&a=cakeList&id=5"
+					id="cake5">大师作品</a>
+			</span>
+		</div>
+	</div>
+	<div class='cat_list'>
+		<div class='cat_list_title hide' id="title1">
+			<span class='font_1'>全部蛋糕</span><br/>
+			<span class='font_2'>All Cakes</span>
+		</div>
+		<div class='cat_list_title hide' id="title2">
+	        <span class='font_1'>新品上市</span><br/>
+	        <span class='font_2'>New Arrivals</span>
+	    </div>
+		<div class='cat_list_title hide' id="title3">
+	        <span class='font_1'>应季明星</span><br/>
+	        <span class='font_2'>Seasonal Star</span>
+	    </div>
+	    <div class='cat_list_title hide' id="title4">
+	        <span class='font_1'>人气经典</span><br/>
+	        <span class='font_2'>Popular Cakes</span>
+	    </div>
+	    <div class='cat_list_title hide' id="title5">
+	        <span class='font_1'>大师作品</span><br/>
+        	<span class='font_2'>Master works</span>
+	    </div>
+		<div class="section02">
+		{foreach item=i from=$list name=foo}
+			{if ($smarty.foreach.foo.iteration+2) is div by 3}
+			      <div class='layout'>
+			{/if}
+					<div class='item'>
+						<div align=center>
+							<a href="index.php?m=home&c=goods&a=detail&id={$i.gid}">
+								<img src="{$smarty.const.upload_url}{$i.photo}" alt=""></a>
+						</div>
+						<a href="index.php?m=home&c=goods&a=detail&id={$i.gid}">{$i.gname}</a></br>
+						<span class='ft14'>配送日期:{$today}至{$nextday}</span></br>
+						<span class='ft15'>{$i.taste}</span><br>
+                        <button type="button" class="addCar btn" onclick="addcar({$i.gid})">
+                        <i class="fa fa-shopping-cart"></i> 加入购物车</button>
+					</div>
+			{if ($smarty.foreach.foo.iteration) is div by 3}
+			      </div>
+			{else if $smarty.foreach.foo.last}
+			      </div>
+			{/if}
+		{/foreach}
+				<!-- 
+				<div class='layout'>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengridangao/cake28.jpg" alt=""></a></div>
+						<a href="">西西里美丽传说</a></br>
+						<span class='ft14'>338元</span></br>
+						<span class='ft15'>开心果焦糖巧克力蛋糕</span>
+                        <br><button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengridangao/cake29.jpg" alt=""></a></div>
+						<a href="">儿童餐位小包（一位）</a></br>
+						<span class='ft14'>30元</span></br>
+                        <br><button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengridangao/cake30.jpg" alt=""></a></div>
+						<a href="">生日场景大礼包（含五套餐位小包）</a></br>
+						<span class='ft14'>220元</span></br>
+                        <br><button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+					</div>
+				</div>
+				 -->
+        </div>
+    </div>
+
+    <footer id="shopDetailFooter">
+        {include file="./footer.html"}
+    </footer>
+
+    <div class="commonModal">
+        {include file="./modal.html"}
+    </div>
+<script src="{$smarty.const.JS_URL}ydyk.js"></script>
+        <script>
+        	var id="{$id}";
+            // 导航栏
+            $(function () {
+                $('#nav-logo').attr('src','{$smarty.const.IMAGES_URL}logo.png');
+                $('.band-story').hover(function () {
+                    $('.band').css('border','1px solid #885F40');
+                    $('.band-body').show();
+                },function () {
+                    $('.band').mouseleave(function () {
+                        $('.band').css('border','none');
+                        $('.band-body').hide();
+                    });
+                });
+                $('#cake'+id).addClass('on');
+                $('#title'+id).removeClass('hide');
+            });
+            function addcar(id){
+            	$.ajax({
+            		type:"post",
+            		url:"index.php?m=home&c=Shopcar&a=addCar",
+            		data:{
+            			'gid':id,
+            			'normid':0,
+            			'num':1
+            		},
+            		async:true,
+            		dataType: "json",
+            		success:function(res){
+            			if(res.num=='1'){
+            				$('#shopCount').text(res.count);
+            				modal_show('系统提示',res.msg);
+            			}else if(res.num=='0'){
+            				modal_show('系统提示',res.msg);
+            			}else{
+            				modal_show('系统提示','加入购物车失败');
+            			}
+            		}
+            	});
+            }
+        </script>
+</body>
+</html>
+
+					
+					
+					

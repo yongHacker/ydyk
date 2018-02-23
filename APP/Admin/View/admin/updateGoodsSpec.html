@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap-fileinput.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}shopSet.css"/>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap-fileinput.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>商品规格 <small> 编辑商品规格</small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data"
+				action="{$url}" onsubmit="return updateCheck()">
+			   <div class="form-group">
+			      <label for="norname" class="col-xs-2 control-label">规格名称 </label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="norname" name="norname"
+			          required="required" oninvalid="setCustomValidity('规格名称 不能为空')"
+			          oninput="setCustomValidity('')" maxlength="30"
+			            placeholder="请输入规格名称 " value="{$info.norname}"/>
+			        <small>规格名称，如：3~5人份</small>
+			        {if $info.normid}
+			        <input type="hidden" name="normid" id="normid" value="{$info.normid}" />
+			        {/if}
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="price" class="col-xs-2 control-label">价格</label>
+			      <div class="col-xs-8">
+			         <input type="number" class="form-control" id="price" name="price"
+			            placeholder="请输入价格" value="{$info.price}" min="0"
+			            required="required" oninvalid="setCustomValidity('请输入价格')"
+			         	oninput="setCustomValidity('')"/>
+			         <small>相应的价格，暂不支持小数，请输入整数，单位：元</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="weight1" class="col-xs-2 control-label">规格重量</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="weight1" name="weight1" 
+			         required="required" oninvalid="setCustomValidity('请输入规格重量')"
+			         oninput="setCustomValidity('')" value="{$info.weight1}"
+			            placeholder="请输入规格重量" maxlength="30"/>
+			         <small>规格重量，如：英制规格1磅</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="weight2" class="col-xs-2 control-label">实际重量</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="weight2" name="weight2" 
+			         required="required" oninvalid="setCustomValidity('请输入实际重量')"
+			         oninput="setCustomValidity('')" value="{$info.weight2}"
+			            placeholder="请输入实际重量" maxlength="30"/>
+			         <small>实际重量，如：454g（实重1磅）</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="enclosure" class="col-xs-2 control-label">附件</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="enclosure" name="enclosure" 
+			         required="required" oninvalid="setCustomValidity('请输入附件')"
+			         oninput="setCustomValidity('')" value="{$info.enclosure}"
+			            placeholder="请输入附件" maxlength="30"/>
+			         <small>附件，如：含5套餐具1盒蜡烛</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="photo" class="col-xs-2 control-label">图片</label>
+			      <div class="col-xs-8">
+			      	{if $info.photo}
+			      	<div class="imgbox" id="img1">
+						<img src="{$smarty.const.upload_url}{$info.photo}" />
+						<button type="button" class="btn btn-danger" onclick="dellogo('1')">-</button>
+					</div>
+			      	
+			        <div class="fileinput fileinput-new" data-provides="fileinput"
+			        	id="fileinput" style="display: none;">
+			        {else}
+			        <div class="fileinput fileinput-new" data-provides="fileinput">
+			        {/if}
+	                    <div class="fileinput-new thumbnail">
+	                        <img id="picImg" style="width: 100%;height: auto;min-height: 140px;"
+	                         src="/Public/admin/images/noimage.png" alt="">
+	                    </div>
+	                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+	                    <div>
+	                        <span class="btn btn-primary btn-file">
+	                            <span class="fileinput-new">选择文件</span>
+	                            <span class="fileinput-exists">换一张</span>
+	                            <input type="file" name="photo" id="photo"
+	                            accept="image/gif,image/jpeg,image/x-png" />
+	                        </span>
+	                        <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+	                    </div>
+	                 </div><!-- #exampleInputUpload -->
+			         <small>选择图片</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" id="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+<!-- 模态声明，show 表示显示 -->
+		<div class="modal" tabindex="-1" id="myModal">
+		     <!-- 窗口声明 -->
+		     <div class="modal-dialog">
+		        <!-- 内容声明 -->
+		        <div class="modal-content">
+		              <!-- 头部 -->
+		              <div class="modal-header">
+		                 <button type="button" class="close"
+		                            data-dismiss="modal" onClick="close_modal()">
+		                          <span>&times;</span>
+		                  </button>
+		                  <h4 class="modal-title">标题</h4>
+		              </div>
+		              <!-- 主体 -->
+		              <div class="modal-body">
+		                   <p id="modal-body">内容</p>
+		              </div>
+		              <div class="modal-footer">
+			            <button type="button" class="btn btn-default" onClick="close_modal()"
+			               data-dismiss="modal">关闭
+			            </button>
+			         </div>
+		        </div>
+		     </div>
+		</div><!--.alert end-->
+<script type="text/javascript">
+function updateCheck(){
+	var photo=$('#photo').val();
+	var id=$('#normid').val();
+	if(id){
+		modal_show('系统提示','系统处理中，请耐心等待');
+		return true;
+	}else if(photo){
+		modal_show('系统提示','图片正在上传中，请耐心等待');
+		return true;
+	}else{
+		modal_show('系统提示','请选择广告图片');
+		return false;
+	}
+}
+function dellogo(id){
+	$('#img1').remove();
+	$('#fileinput').css('display','block');
+}
+</script>
+	</body>
+</html>

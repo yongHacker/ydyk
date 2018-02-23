@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../public/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../public/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/shopSet.css"/>
+		<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../public/js/common.js" ></script>
+		<script type="text/javascript" src="../public/js/shopSet.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<ul class="nav nav-tabs" id="tabs">
+				<li>
+					<h4>商城设置  <small>网站全局内容基本选项设置</small></h4>
+				</li>
+				<li>
+					<a href="shopSet.html" >商城信息</a>
+				</li>
+				<li>
+					<a href="shopSet2.html" >短信设置</a>
+				</li>
+				<li class="active">
+					<a href="shopSet3.html" >邮件设置</a>
+				</li>
+				<li>
+					<a href="shopSet4.html" >水印设置</a>
+				</li>
+			</ul>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>网站全局基本设置，商城及其他模块相关内容在其各自栏目设置项内进行操作。</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">邮件发送服务器(SMTP)</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入邮件发送服务器(SMTP)">
+			         <small>发送邮箱的smtp地址。如: smtp.gmail.com或smtp.qq.com</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">服务器(SMTP)端口</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入服务器(SMTP)端口">
+			         <small>smtp的端口。默认为25。具体请参看各STMP服务商的设置说明 （如果使用Gmail，请将端口设为465）</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">邮箱密码/授权码</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入邮箱密码/授权码">
+			         <small>使用发送邮件的邮箱密码,或者授权码。具体请参看各STMP服务商的设置说明</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">邮箱账号</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入邮箱账号">
+			         <small>使用发送邮件的邮箱账号</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">注册启用邮箱</label>
+			      <div class="col-xs-8">
+			      	<div class="myradio checked" onclick="check(this)">
+			         <input type="radio" name="radio1" value="1" checked> 是
+			        </div>
+			        <div class="myradio" onclick="check(this)">
+			         <input type="radio" name="radio1" value="0"> 否
+			        </div>
+			         <small>用户注册时使用邮箱验证</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">测试接收的邮件地址</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="input-sm"
+			            placeholder="请输入测试接收的邮件地址">
+			         <button class="btn btn-sm btn-default">测试</button>
+			         <small>首次请先保存配置再测试</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" class="btn btn-primary">保存</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+		<!--formlist end-->
+	</body>
+</html>

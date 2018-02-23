@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+	<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+	<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+	<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+	<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+</head>
+<body>
+<div class="tabs">
+	<div class="page-header">
+		<h4>收货地址管理 <small>网站系统收货地址列表  </small></h4>
+	</div>
+</div>
+<!--tabs end-->
+<div class="well mywell" id="shopSetWell">
+	<h5>操作提示
+		<small class="pull-right" onclick="closeWell('shopSetWell')">
+			<i class="glyphicon glyphicon-minus"></i>
+		</small>
+	</h5>
+	<div>
+		<span>网站系统收货地址,强烈建议对此处谨慎操作。</span>
+	</div>
+</div>
+<!--well end-->
+<div>
+	<table class="table table-bordered">
+		<caption>收货地址<small>(共{$count}条记录)</small>
+		</caption>
+		<thead>
+		<tr>
+			<th>infoid</th>
+			<th>会员uid</th>
+			<th>收货人姓名</th>
+			<th>收货人电话</th>
+			<th>收货地址</th>
+			<th>状态(flag)</th>
+			<th colspan="2">操作</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td colspan="7">
+				<a class="btn btnA btn-warning" href="index.php?m=admin&c=userinfo&a=addAddress">添加收货地址</a>
+			</td>
+		</tr>
+
+		{foreach item=i from=$list}
+		<tr class="tableTd">
+			<td>{$i.infoid}</td>
+            <td>{$i.uid}</td>
+			<td>{$i.uname}</td>
+			<td>{$i.uphone}</td>
+			<td>{$i.address}</td>
+			<td>{if $i.flag eq 1}默认收货地址{else}备选收货地址{/if}</td>
+			<td>
+				<a href="index.php?m=admin&c=userinfo&a=del&infoid={$i.infoid}">删除</a>
+				<a href="index.php?m=admin&c=userinfo&a=update&infoid={$i.infoid}">编辑</a>
+			</td>
+		</tr>
+		{/foreach}
+		<tr>
+			<td colspan="7" class="td_2">
+				<span>共{$count}条</span>
+				<span>总页数：{$pageNum}</span>
+				<span>
+			      			<a class="btn btn-xs btn-default btn-success"
+							   href="{$pageurl}{$pageUp}">上一页</a>
+			      		</span>
+				<span>
+			      			<a class="btn btn-xs btn-default btn-info"
+							   href="{$pageurl}{$pageDown}">下一页</a>
+			      		</span>
+				<span>
+							<select id="page">
+							{assign var=i value=1}
+							{section name="page" loop=$pageNum}
+								{if $i eq $pageNow}
+								<option value="{$i++}" selected>{$smarty.section.page.index+1}</option>
+								{else}
+								<option value="{$i++}">{$smarty.section.page.index+1}</option>
+								{/if}
+							{/section}
+							</select>
+						</span>
+				<span><button onclick="go()" class="btn btn-primary btn-xs">GO</button></span>
+				<span>当前页：{$pageNow}</span>
+				<span><a href="{$pageurl}{$pageNow}">刷新页面</a></span>
+			</td>
+		</tr>
+		</tbody>
+	</table>
+</div>
+<script type="text/javascript">
+    function go(){
+        var page=document.getElementById('page');
+        window.location.href="{$pageurl}"+page.value;
+    }
+</script>
+</body>
+</html>

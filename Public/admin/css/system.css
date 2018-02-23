@@ -1,0 +1,83 @@
+body{
+	min-width: 500px;
+}
+a:hover{
+	text-decoration: none;
+}
+.page-header{
+	margin: 30px 0px 10px 0px;
+	padding-bottom: 5px;
+}
+.bgcolor1{
+	background: #6C6FBF;
+}
+.bgcolor2{
+	background: #31B4E1;
+}
+.bgcolor3{
+	background: #F54B93;
+}
+.bgcolor4{
+	background: #85CC32;
+}
+.bgcolor5{
+	background: #32CC7F;
+}
+.bgcolor6{
+	background: #F0C550;
+}
+
+.myrow{
+	width: 100%;
+	height: auto;
+	justify-content: space-between;
+}
+.rowItem{
+	width: 150px;
+	height: 160px;
+	margin:10px 20px 0px 0px;
+	box-sizing: border-box;
+	float: left;
+	border-radius: 10px;
+}
+.rowItem img{
+	display: block;
+	height: 76px;
+	width: 76px;
+	margin-top: 15px;
+}
+.rowItem span{
+	display: block;
+	width: 150px;
+	line-height: 37px;
+	color: white;
+	text-align: center;
+}
+.rowItem span:last-child{
+	line-height: 20px;
+	color: red;
+}
+.syswel{
+	float: left;
+	width: 100%;
+	height: auto;
+	margin-top: 20px;
+	background: white;
+	border-radius: 10px;
+}
+.syswel td{
+	padding: 10px 20px !important;
+}
+.tdTitleBg{
+	background: #F1F1F1;
+}
+.tdBg{
+	background: white;
+}
+.syswel:last-child>h4{
+	padding-bottom: 5px;
+	border-bottom:1px solid #DDDDDD;
+}
+.table td{
+	line-height: 35px !important;
+}

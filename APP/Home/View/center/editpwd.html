@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{include file="common/commonHeader.html"}
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}huiyuan/editpwd.css">
+</head>
+<body>
+	<!-- 首页-产品-xxx -  -->
+	<div class='breadcrumb_nav'>
+		<div>
+			<a href="index.php?m=home&c=index&a=index"><span>首页</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=index"><span>个人中心</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=editPwd"><span>修改密码</span></a>
+		</div>
+	</div>
+	<div class='pwd_tt'>
+		<img src="{$smarty.const.IMAGES_URL}huiyuanImg/皇冠.png" width="25px" height="25px">
+		<span style="margin-left: 10px; font-size: 18px;">修改密码</span>
+	</div>
+
+	<div class='pwd_form'>
+		<form action="{U('Center/editPwd')}?act=editPwd" method="post">
+			&nbsp;&nbsp;&nbsp;<span style="color: #F55A19">*</span><span>原密码：</span><input type="password" name="pwd" id="pwd" placeholder="请输入原密码"><br>
+			&nbsp;&nbsp;&nbsp;<span style="color: #F55A19">*</span><span>新密码：</span><input type="password" name="newpwd" id="newpwd" placeholder="请输入新密码"><br>
+			<span style="color: #F55A19">*</span><span>确认密码：</span><input type="password" name="newpwdConfirm" id="newpwdConfirm" placeholder="请确认密码"><br>
+			<input type="submit" value="提   交" class='btn' name='btn'>
+		</form>
+	</div>
+
+	<div style="clear: both;height: 300px;"></div>
+	{include file="common/footer.html"}
+</body>
+</html>
+
+
+
+					
+					
+					

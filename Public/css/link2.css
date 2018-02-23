@@ -1,0 +1,113 @@
+/*#shouye
+	{
+		width: 100%;
+		height: 50px;
+		margin-left: 110px;
+		margin-top:155px;
+	}
+	#shouye #jian
+	{
+		font-size: 14px;
+		color: #ccc;
+		text-decoration: none;
+	}
+	#shouye #jian a
+	{
+		text-decoration: none;
+	}
+	#shouye #jian2
+	{
+		font-size: 16px;
+		color: black;
+		text-decoration: none;
+	}
+	#shouye #jian2 a
+	{
+		text-decoration: none;
+	}
+	  #wen
+	{
+		width: 1200px;
+		height: 50px;
+		margin-left: 110px;*/
+        /*float: left;*/
+	/*}
+	 #wen input
+	{
+		width: 294px;
+		height: 50px;
+		border-top:1px solid #ccc;
+		/*border-buttom:1px solid #ccc;*/
+		/*border-bottom: 1px solid #ccc;
+		border-left:1px solid #ccc;
+		float: left;
+		font-size: 13px;
+		line-height: 50px;
+		text-indent: 120px;
+		cursor: pointer;*/
+
+
+		/*border:0px;*/
+	/*}
+	 #wen a:active
+	{
+		background: #F55A19;
+	}
+	 #wen #wen1
+	{
+		width: 294px;
+		height: 50px;
+		border-top:1px solid #ccc;
+		/*border-buttom:1px solid #ccc;*/
+		/*border-bottom: 1px solid #ccc;
+		border-left:1px solid #ccc;
+		float: left;
+		border-right:1px solid #ccc;
+		font-size: 13px;
+		line-height: 50px;
+		text-indent: 120px;
+        float: left;*/
+    /*}*/
+	#kai #shi 
+	{
+		margin-top: 40px;
+		margin-left:110px;
+	}
+	#kai #shi2 
+	{
+		margin-left: 110px;
+		margin-top: 70px;
+	}
+	#kai #shi2 img
+	{
+		float: left;
+	}
+	#kai  #shi3 
+	{
+		margin-left: 30px;
+		height: 250px;
+		width: 670px;
+		float: left;
+	}
+
+	#kai .wenge
+	{
+		color: #F55A19;
+		font-size: 18px;
+	}
+	#kai .wenge2
+	{
+		color: black;
+		font-size: 14px;
+	}
+	#kai #shi4 img
+	{
+		margin-left: 110px;
+		margin-top: 80px;
+	}
+	#jianjian2
+	{
+		/* background: #F55A19;
+		 display: none;*/
+	}
+	

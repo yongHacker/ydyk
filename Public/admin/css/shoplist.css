@@ -1,0 +1,22 @@
+
+.tabs{
+	width: 100%;
+	height: auto;
+	min-height: 50px;
+}
+.nav-tabs{
+	padding-top: 15px;
+	width: 100%;
+}
+.nav-tabs h4{
+	margin-right: 10px;
+}
+
+.mywell{
+	width: 100%;
+	margin-top: 10px;
+}
+
+div{
+	float: left;
+}

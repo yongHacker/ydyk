@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+		<style type="text/css">
+		.tableTd>td{
+	      line-height:100px !important;
+	      white-space: nowrap; 
+	 	}
+		</style>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>广告列表 <small>广告管理</small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>只需要点击半透明广告图片即可更换广告.</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div>
+			<table class="table table-bordered">
+			   <caption>广告列表<small>(共{$count}条记录)</small>
+			   </caption>
+			   <thead>
+			      <tr>
+			         <th>ID</th>
+			         <th>广告名称</th>
+			         <th>广告图片</th>
+			         <th>链接</th>
+			         <th>广告位置</th>
+			         <th>添加时间</th>
+			         <th>操作</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	  <tr>
+			   	  	<td colspan="7">
+			   	  		<a class="btn btnA btn-warning" href="index.php?m=admin&c=ad&a=addAd">添加广告</a>
+			   	  	</td>
+			   	  </tr>
+			   	  {foreach item=i from=$list}
+			      <tr class="tableTd">
+			         <td>{$i.aid}</td>
+			         <td>{$i.adname}</td>
+			         <td>
+			         	<img alt="图片" src="{$smarty.const.upload_url}{$i.photo}">
+			         </td>
+			         <td>{$i.url}</td>
+			         <td>
+			         {if $i.position eq 0}首页展示
+			         {else}产品轮播
+			         {/if}
+			         </td>
+			         <td>{$i.addtime|date_format:'%Y-%m-%d %H:%M:%S'}</td>
+			         <td>
+			            <a href="index.php?m=admin&c=ad&a=del&id={$i.aid}">删除</a>
+			            <a href="index.php?m=admin&c=ad&a=update&id={$i.aid}">编辑</a>
+			         </td>
+			      </tr>
+			      {/foreach}
+			      <tr>
+			      	<td colspan="7" class="td_2">
+			      		<span>共{$count}条</span>
+			      		<span>总页数：{$pageNum}</span>
+			      		<span>
+			      			<a class="btn btn-xs btn-default btn-success"
+			      				href="{$pageurl}{$pageUp}">上一页</a>
+			      		</span>
+			      		<span>
+			      			<a class="btn btn-xs btn-default btn-info"
+			      				href="{$pageurl}{$pageDown}">下一页</a>
+			      		</span>
+						<span>
+							<select id="page">
+							{assign var=i value=1}
+							{section name="page" loop=$pageNum}
+								{if $i eq $pageNow}
+								<option value="{$i++}" selected>{$smarty.section.page.index+1}</option>
+								{else}
+								<option value="{$i++}">{$smarty.section.page.index+1}</option>
+								{/if}
+							{/section}
+							</select>
+						</span>
+						<span><button onclick="go()" class="btn btn-primary btn-xs">GO</button></span>
+						<span>当前页：{$pageNow}</span>
+						<span><a href="{$pageurl}{$pageNow}">刷新页面</a></span>
+			      	</td>
+			      </tr>
+			   </tbody>
+			</table>
+		</div>
+<script type="text/javascript">
+function go(){
+	var page=document.getElementById('page');
+	window.location.href="{$pageurl}"+page.value; 
+}
+</script>
+	</body>
+</html>

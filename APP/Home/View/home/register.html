@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>新人红包</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="{$smarty.const.CSS_URL}bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{$smarty.const.Public_URL}fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}normalize.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}ydyk.css">
+    <script src="{$smarty.const.JS_URL}jquery_3.2.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="{$smarty.const.JS_URL}bootstrap.min.js"></script>
+    <script src="{$smarty.const.Public_URL}layer/layer/layer.js"></script>
+
+    <style type="text/css">
+        .nan,.gl{
+            display: inline;
+            height: 20px;
+            background: url("{$smarty.const.IMAGES_URL}chk_radio.png") no-repeat 0 -22px;
+            padding-left: 25px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .nv,.nl{
+            display: inline;
+            height: 20px;
+            background: url("{$smarty.const.IMAGES_URL}chk_radio.png") no-repeat 0 0px;
+            padding-left: 25px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body style="background: url({$smarty.const.IMAGES_URL}fix_bg.jpg) no-repeat center center;background-attachment: fixed;background-color: #fff;width: 1423px;height: 2684px;">
+	<!-- 头部导航条位置 -->
+    <header id="shopDetailHead" class="srzb">
+        {include file="./nav.html"}
+    </header>
+	<!-- 结束 -->
+
+<div style="height: 140px;"></div>
+<div class="login_banner" style="width: 100%;height:2500px;padding-top: 0;border: 0;">
+	<div style="width: 100%;height: 820px;background: url({$smarty.const.IMAGES_URL}images01.png) no-repeat center top;">
+		<div style="width:330px;height:680px; border:1px white solid;border-radius:5px;float:right;margin:120px 360px 0 0;color:white;font-size:22px;text-align:center;line-height:60px;">
+			<img id="img" style="height:34px;float:right;margin:-22px -23px " src="{$smarty.const.IMAGES_URL}huangguan.png" alt="壹点壹客">
+			注册领取<span style="color:#d59d05;font-size:28px">20元生日红包</span>
+			 <form onsubmit="return register()"
+			 style="border-top:1px white solid;text-align:left;padding-top:20px;font-size:18px">
+                        <div id="xb">
+                            <span style="margin-left:42px;margin-top:15px;">性别</span>
+                            <div class="nan">男</div>
+                            <div class="nv">女</div>
+                        </div>
+                        
+                        <div>
+                            <span style="margin-left:42px;">生日</span>
+                            <input type="text" id="birthday"
+                            	required="required" oninvalid="setCustomValidity('请输入生日')"
+			          				oninput="setCustomValidity('')"
+                             placeholder="格式为：2018-01-01" style="font-size: 14px;color:#000;padding-left:5px;height:40px;width:200px;margin:25px 0 0 5px;border: 1px solid #ddd;" maxlength="11">
+                        </div>
+
+                        <div>
+                            <span style="margin-left:42px;">手机</span>
+                            <input type="text" id="phone" placeholder="请输入您的手机" 
+                            	required="required" oninvalid="setCustomValidity('请输入手机号码')"
+			          				oninput="setCustomValidity('')"
+                            style="font-size: 14px;color:#000;padding-left:5px;height:40px;width:200px;margin:25px 0 0 5px;border: 1px solid #ddd;" maxlength="11">
+                        </div>
+                        <div>
+                            <span style="margin-left:42px;">密码</span>
+                            <input type="password" id="pwd" placeholder="请输入登录密码"
+                            required="required" oninvalid="setCustomValidity('请输入登录密码')"
+			          				oninput="setCustomValidity('')"
+                             style="font-size: 14px;color:#000;padding-left:5px;height:40px;width:200px;margin:25px 0 0 5px;border: 1px solid #ddd;" maxlength="11">
+                        </div>
+                        <div>
+                            <span style="margin-left:23px;">验证码</span>
+                             <input type="text" id="code" placeholder="输入验证码"
+                             required="required" oninvalid="setCustomValidity('请输入验证码')"
+			          				oninput="setCustomValidity('')"
+                              style="font-size: 14px;color:#000;padding-left:5px;height:40px;width:80px;margin:25px 0 0 5px;border: 1px solid #ddd;" maxlength="11">
+                            <!-- 插入验证码 -->
+							
+							<img src="index.php?m=admin&c=login&a=checkImg" 
+						      		onclick="this.src='index.php?m=admin&c=login&a=checkImg&t='+Math.random()"
+						      		 style="width:100px; height:40px; position:relative; top:0px;left:5px" />
+                        </div>
+							
+                        <button type="submit" style="width:235px;margin:20px 0 0 43px;"
+                        	class="btn btn-warning center-block btn-lg">立即领取</button>
+                    </div>
+                     
+            	</form>
+            <div><img style="width:100%;height:100%" src="{$smarty.const.IMAGES_URL}image02.png"  alt="">
+            </div>
+            <div><img style="width:100%;height:100%;margin-bottom:-4px;" src="{$smarty.const.IMAGES_URL}image03.png" alt="">
+            </div>
+        </div>
+</div>
+
+    <footer id="shopDetailFooter">
+        {include file="./footer.html"}
+    </footer>
+
+    <div class="commonModal">
+        {include file="./modal.html"}
+    </div>
+
+    <script type="text/javascript">
+        //性别、日历按键转换
+        $('.nan').click(function () {
+           $(this).css("background",'url("{$smarty.const.IMAGES_URL}chk_radio.png") no-repeat 0 -22px');
+           $('.nv').css("background",'url("{$smarty.const.IMAGES_URL}chk_radio.png") no-repeat 0 0');
+        });
+        $('.nv').click(function () {
+            $(this).css("background",'url("{$smarty.const.IMAGES_URL}chk_radio.png") no-repeat 0 -22px');
+            $('.nan').css("background",'url("{$smarty.const.IMAGES_URL}chk_radio.png") no-repeat 0 0');
+        });
+        {literal} 
+        function register(){
+        	var uname=$('#phone').val();
+        	var pwd=$('#pwd').val();
+        	var check=$('#code').val();
+        	var birthday=$('#birthday').val();
+        	$.ajax({
+        		type:"post",
+        		url:"index.php?m=home&c=login&a=registerDeal",
+        		data:{
+        			'uname':uname,
+        			'pwd':pwd,
+        			'check':check,
+        			'birthday':birthday
+        		},
+        		dataType: "json",
+        		success:function(res){
+        			
+        			if(res.num=='1'){
+        				window.location.href=res.msg; 
+        			}else{
+        				modal_show('系统提示',res.msg);
+        			}
+        		}
+        	});
+        	return false;
+        }
+        
+
+    </script>
+	{/literal} 
+<script src="{$smarty.const.JS_URL}ydyk.js"></script>
+</body>
+</html>

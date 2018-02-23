@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>儿童生日会</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="{$smarty.const.CSS_URL}bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{$smarty.const.Public_URL}fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}normalize.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}ydyk.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}link6.css">
+    <script src="{$smarty.const.JS_URL}jquery_3.2.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="{$smarty.const.JS_URL}bootstrap.min.js"></script>
+    <script src="{$smarty.const.Public_URL}layer/layer/layer.js"></script>
+    <script>
+        $(function () {
+        	$('.jiange img').eq(0).css('border-color', '#FF6600');
+        	$('.jiange1 img').eq(0).css('border-color', '#FF6600');
+            $('.jiange').each(function () {
+                var n = $(this).index() + 1;
+                $(this).mousedown(function () {
+
+                    var str = 'url({$smarty.const.IMAGES_URL}photos/' + n + '.jpg) no-repeat center';
+
+                    $('#wen2 #wen3').css('background', str);
+                    $('.jiange img').css('border-color', 'white');
+                    $(this).children().css('border-color', '#FF6600')
+                })
+            });
+            
+            $('.jiange1').each(function () {
+                var n = $(this).index() + 1;
+                $(this).mousedown(function () {
+
+                    var str = 'url({$smarty.const.IMAGES_URL}photos2/' + n + '.jpg) no-repeat center';
+
+                    $('#shige #shige1').css('background', str);
+                    $('.jiange1 img').css('border-color', 'white');
+                    $(this).children().css('border-color', '#FF6600')
+                })
+            });
+            $("#dali2").click(function () {
+                // alert("请输入小寿星年龄");
+                var n = $("#en").val();
+                n = parseInt(n);
+                // alert(n)
+                if (n > 0 && n < 160) {
+                    var m = $("#dali3").val();
+                    var y = $("#dali4").val();
+                    var g = $("#dali5").val();
+                    if (m == "选择年份" || y == "选择月份" || g == "选择日期") {
+                        alert("请选择生日会举办时间");
+                    } else {
+                        var s = $("#dali6").val();
+                        if (s == "") {
+                            alert("请输入联系人姓名");
+                        } else {
+                            var j = $("#dali17").val();
+                            // j=parseInt(j);
+                            if (j == "" || j.length < 11) {
+                                alert("请输入联系电话");
+                            }
+                            else {
+                                //这是提交到数据库的语句，哈哈哈
+                            }
+                        }
+
+                    }
+
+                } else {
+                    alert("请输入小寿星年龄");
+                }
+            });
+        })
+        
+
+    </script>
+</head>
+<body>
+
+<!-- 头部导航条位置 -->
+<header id="shopDetailHead" class="srzb">
+    {include file="./nav.html"}
+</header>
+<!-- 结束 -->
+
+<div id="shi">
+    <img src="{$smarty.const.IMAGES_URL}yidian.jpg" alt="">
+</div>
+
+<div id="jian">
+    <span class="jianjian1">被瞩目的瞬间，会沉淀为孩子一生的自信</span><br>
+    <span class="jianjian2">站在圆心的孩子，</span><br>
+    <span class="jianjian2">一双双目光汇聚在他的身上；</span><br>
+    <span class="jianjian2">那是对他的关注，</span><br>
+    <span class="jianjian2">是对他的鼓舞；</span><br>
+    <span class="jianjian2">小小的内心里，</span><br>
+    <span class="jianjian2">已悄悄地种下了一颗成长的种子；</span><br>
+    <span class="jianjian2">告诉自己，将来我要成为他们的骄傲。</span><br>
+</div>
+<div id="jian3">
+    <img src="{$smarty.const.IMAGES_URL}xiaorong.jpg" alt="">
+</div>
+<div id="jian">
+    <span class="jianjian1">成长只有一次，童年礼遇不容错过</span><br>
+    <span class="jianjian2">童年是人生中最纯真美好的时光；</span><br>
+    <span class="jianjian2">成长只有一次，不可逆转，不容错过；</span><br>
+    <span class="jianjian2">孩子小时候的印记，</span><br>
+    <span class="jianjian2">影响着他们未来的人生轨迹，</span><br>
+    <span class="jianjian2">我们一直坚信，</span><br>
+    <span class="jianjian2">播下梦想的种子;</span><br>
+    <span class="jianjian2">细心浇灌，定会长成参天大树。</span><br>
+</div>
+<div id="jian4">
+    <img src="{$smarty.const.IMAGES_URL}shou.jpg" alt="">
+</div>
+<div id="jian5">
+    <span class="jianjian1">在欢乐时光中，铭记内心的感恩与爱</span><br>
+    <span class="jianjian2">缤纷多彩的派对布置、丰富精彩的节目表演，</span><br>
+    <span class="jianjian2">尽享欢乐时光；</span><br>
+    <span class="jianjian2">益智有趣的互动游戏，属于亲子间的珍贵回忆</span><br>
+    <span class="jianjian2">邀请小伙伴们一同参加，让孩子懂得爱与分享；</span><br>
+    <span class="jianjian2">壹点壹客为</span><br>
+    <span class="jianjian2">每一个家庭、每个孩子打造值得记忆一生的生日会</span><br>
+    <span class="jianjian2">给孩子一个精彩难忘的童年</span><br>
+</div>
+<div id="jian6">
+    <img src="{$smarty.const.IMAGES_URL}qiqiu.jpg" alt="">
+</div>
+<div id="jian7">
+    <span>7大派对亮点 难忘生日体验</span>
+</div>
+
+<div id="jian8">
+    <img src="{$smarty.const.IMAGES_URL}happy.jpg" alt="">
+    <div id="jian9">
+        <span class="jianjian3"> 加冕仪式</span><br><br><br>
+        <span class="jianjian4">在一岁与另一岁的交界中，在仪式感的生日里，成长的心只有自己能体会。</span>
+    </div>
+
+</div>
+<div id="jian10" style="">
+    <img src="{$smarty.const.IMAGES_URL}qin.jpg" alt="">
+    <div id="jian11">
+        <span class="jianjian3">  感恩一刻</span><br><br><br>
+        <span class="jianjian4">在生日的仪式中，感恩父母的爱；在时光的礼遇里，感悟生命的美。</span>
+    </div>
+    <div id="wenwen"></div>
+    <div id="jian12">
+        <img src="{$smarty.const.IMAGES_URL}xuyuan.jpg" alt="">
+        <div id="jian23">
+            <span class="jianjian3">许愿时刻</span><br><br><br>
+            <span class="jianjian4">许愿吹蜡烛的瞬间，有小小年纪对自己的期许，也有对亲人朋友的祝福。</span>
+        </div>
+    </div>
+    <div id="jian13">
+        <img src="{$smarty.const.IMAGES_URL}changge.jpg" alt="">
+        <div id="jian14">
+            <span class="jianjian3"> 许愿精灵</span><br><br><br>
+            <span class="jianjian4">她是生日派对的美女司仪，是陪伴孩子许下生日愿望的精灵，有她在，就不会有冷场的PARTY，深知孩子内心的她，总能和小朋友们玩到一起。</span>
+        </div>
+    </div>
+    <div id="jian12">
+        <img src="{$smarty.const.IMAGES_URL}maozi.jpg" alt="">
+        <div id="jian23">
+            <span class="jianjian3"> 魔法师蛋小皮</span><br><br><br>
+            <span class="jianjian4">他，来自遥远的许愿星球，他会变魔术，有着帮助人们实现愿望的超能力。他是个调皮鬼，他喜欢玩，玩出乐子，玩出趣味。</span>
+        </div>
+    </div>
+    <div id="jian13">
+        <img src="{$smarty.const.IMAGES_URL}shou.jpg" alt="">
+        <div id="jian14">
+            <span class="jianjian3"> 妈妈纪念礼</span><br><br><br>
+            <span class="jianjian4">感谢妈妈怀胎十月的辛苦，感谢妈妈年复一年养育的辛劳，感谢妈妈把自己带到这个世界，生日，最不能缺少的，就是感谢妈妈。</span>
+        </div>
+    </div>
+    <div id="jian12">
+        <img src="{$smarty.const.IMAGES_URL}meizi.jpg" alt="">
+        <div id="jian23">
+            <span class="jianjian3"> 小伙伴回礼</span><br><br><br>
+            <span class="jianjian4">感谢每一位小伙伴的到来，感谢他们陪自己度过一个难忘的生日，在这欢乐的氛围中，一份小小的回礼，是孩子礼仪养成的见证。</span>
+        </div>
+    </div>
+    <div id="wen1">
+        <span>派对场景大礼包</span>
+    </div>
+    <div id="wen2">
+        <div id="wen3">
+            <div id="wen4">
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/1.jpg" alt=""></div>
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/2.jpg" alt=""></div>
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/3.jpg" alt=""></div>
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/4.jpg" alt=""></div>
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/5.jpg" alt=""></div>
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/6.jpg" alt=""></div>
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/7.jpg" alt=""></div>
+                <div class="jiange"><img src="{$smarty.const.IMAGES_URL}photos/8.jpg" alt=""></div>
+            </div>
+        </div>
+        <div id="wen5">
+            <div id="wen6">
+                <div id="wen61">
+                    你生命之旅的起点<br/>
+                    意味着家人每年一次的盛大节日<br>
+                    也意味着朋友每年一次的重要聚会<br>
+                </div>
+                <br>
+                <div id="wen62">在生日这个特殊与隆重的日子<br>
+                    理应赋予一次尊贵的礼遇<br>
+                </div>
+            </div>
+            <div id="wen7">
+                <div class="jianjian5">乳胶气球</div>
+                <div class="jianjian6">x 6</div>
+                <div class="jianjian5">金粉Happybirthday生日吊旗</div>
+                <div class="jianjian6">x 1</div>
+                <div class="jianjian5">手拉手生日吊旗</div>
+                <div class="jianjian6">x 1</div>
+                <div class="jianjian5">亮片桌旗</div>
+                <div class="jianjian6">x 1</div>
+                <div class="jianjian5">LED彩灯</div>
+                <div class="jianjian6">x 4</div>
+                <div class="jianjian5">数字LED灯蜡烛</div>
+                <div class="jianjian6">x 1</div>
+                <div class="jianjian5">纸巾</div>
+                <div class="jianjian6">x 10</div>
+                <div class="jianjian5">金箔方餐盘</div>
+                <div class="jianjian6">x 5</div>
+                <div class="jianjian5">圆餐盘</div>
+                <div class="jianjian6">x 5</div>
+                <div class="jianjian5">叉勺</div>
+                <div class="jianjian6">x 5</div>
+                <div class="jianjian5">防滑吸管</div>
+                <div class="jianjian6">x 5</div>
+                <div class="jianjian5">饮料瓶</div>
+                <div class="jianjian6">x 5</div>
+                <div class="jianjian5">饮料瓶腰封</div>
+                <div class="jianjian6">x 10</div>
+                <div class="jianjian5">饮料瓶腰封贴标</div>
+                <div class="jianjian6">x 10</div>
+                <div class="jianjian5">主角生日帽</div>
+                <div class="jianjian6">x 1</div>
+                <div class="jianjian5">嘉宾生日帽</div>
+                <div class="jianjian6">x 10</div>
+                <div class="jianjian5">纹身贴</div>
+                <div class="jianjian6">x 6</div>
+                <div class="jianjian5">牛皮纸收纳盒</div>
+                <div class="jianjian6">x 1</div>
+                <div class="jianjian5">空间装饰氦气球</div>
+                <div class="jianjian6">x 30</div>
+                <div class="jianjian5">妈妈纪念礼</div>
+                <div class="jianjian6">x 1</div>
+                <div class="jianjian5">小伙伴回礼</div>
+                <div class="jianjian6">x 5</div>
+            </div>
+        </div>
+    </div>
+    <div id="wen8">
+        <span>※说明：派对场景大礼包已经包含5套儿童餐位小礼包 ，如超过5个小朋友，可另外购买餐位小礼包 ，<br/>优惠价 ¥30元/套 ，包含： 方餐盘1个，圆餐盘1个，叉勺1对，饮料瓶/吸管1套，嘉宾生日帽1个。</span>
+    </div>
+    <!-- <div id="mingfeng"></div> -->
+    <div id="wen9">
+        <div id="wen91">
+            <div id="wen911">
+                生日会 经济套餐 <span style="color:#FF6600">（超值）</span>
+            </div>
+            <div id="wen912">
+                原价：<span style="text-decoration:line-through;">¥2450</span> <span
+                    style="color:#FF6600">限时优惠价：¥1999</span>
+            </div>
+        </div>
+        <div id="wen92">
+            <span> <strong>服务总时长3小时：</strong> </span><br><br>
+            <span style="margin-left:40px;">● 场景布置 ● 迎宾暖场 ● 生日仪式 ● 互动表演 </span>
+        </div>
+        <div id="wen93">
+            <span style=" font-size: 18px;"> <strong>套餐包含：</strong> </span><br><br>
+            <div class="jianjian7">专业魔术师-蛋小皮表演近景魔术</div>
+            <br>
+            <div class="jianjian7">美女司仪-许愿精灵姐姐主持
+            </div>
+            <br>
+            <div class="jianjian7">布场小哥-上门服务</div>
+            <br>
+            <div class="jianjian7">生日场景大礼包</div>
+            <br>
+            <div class="jianjian7">生日仪式道具</div>
+            <br>
+            <div class="jianjian7">空飘氦气球</div>
+            <br>
+        </div>
+        <div id="wen94">
+            总价：<span style="text-decoration:line-through;">2450元</span> &nbsp&nbsp&nbsp&nbsp8折限时优惠价：<span
+                style="color:#FF6600">¥1999</span>
+        </div>
+        <div id="wen95">
+            <span>备注：免费提供生日仪式规划、场景设计、音响、话筒</span></div>
+
+    </div>
+    <div id="chao">
+        高端定制
+    </div>
+    <div id="shige">
+        <div id="shige1">
+            <div id="shige11">
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/1.jpg" alt=""></div>
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/2.jpg" alt=""></div>
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/3.jpg" alt=""></div>
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/4.jpg" alt=""></div>
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/5.jpg" alt=""></div>
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/6.jpg" alt=""></div>
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/7.jpg" alt=""></div>
+                <div class="jiange1"><img src="{$smarty.const.IMAGES_URL}photos2/8.jpg" alt=""></div>
+            </div>
+        </div>
+        <div id="shige2">
+            <span style="color:#666">以下内容为套餐外项目，您可以根据实际需求选择</span><br><br>
+            <div class="jiange3">壹点壹客出品：</div>
+            <br>
+            <div class="jiange4">蛋糕、mini西点、手工饼干、鲜花</div>
+            <br>
+            <div class="jiange3">定制壹点壹客甜品：</div>
+            <br>
+            <div class="jiange4">马卡龙、巧克力、水果拼盘</div>
+            <br>
+            <div class="jiange3">咖啡茶饮：</div>
+            <br>
+            <div class="jiange4">胶囊咖啡现打、进口伯爵红茶、满足20-30人份。</div>
+            <br>
+            <div class="jiange3">红地毯+气球拱门+气球立柱2个：</div>
+            <br>
+            <div class="jiange3">甜品台：</div>
+            <br>
+            <div class="jiange4">（定制甜品，艺术摆台，按实际需求报价）</div>
+            <br>
+            <div class="jiange3">特邀上门服务：</div>
+            <br>
+            <div class="jiange4">传统手工艺人：糖画儿、脸部彩绘、吹糖人</div>
+            <br>
+            <div class="jiange4">热门现场演艺：小提琴、钢琴、萨克斯、口琴</div>
+            <br>
+            <div class="jiange3">摄影或摄像服务：</div>
+            <br>
+            <div class="jiange3">亲手做蛋糕：</div>
+            <br>
+            <div class="jiange3">魔术师表演加时服务：</div>
+            <br>
+            <div class="jiange3">大师现场创作蛋糕秀：</div>
+        </div>
+    </div>
+    <div id="shige3">
+        <span>生日会场地推荐</span>
+    </div>
+    <div id="shige4"><img src="{$smarty.const.IMAGES_URL}tebie.jpg" alt=""></div>
+    <br>
+    <div id="kangbin"></div>
+    <div id="shige6">
+        <div class="jiange5">
+            <span class="jiange6">家里</span><br>
+            <span class="jiange7">被家的温暖包围，在最熟悉的环境里，让孩子轻轻松<br>&nbsp&nbsp&nbsp&nbsp松完成成长的仪式。</span>
+        </div>
+        <div class="jiange5">
+            <span class="jiange6" style="text-indent: 20px"> 餐厅</span><br>
+            <span class="jiange7">让美食与惊喜的派对在孩子的生日相遇，边吃边玩，<br>&nbsp
+			&nbsp
+			开开心心在长大。
+ </span>
+        </div>
+        <div class="jiange5">
+            <span class="jiange6">歌厅</span><br>
+            <span class="jiange7">童言童语童歌，在祝福声中、在欢声笑语中，让孩子<br>&nbsp&nbsp&nbsp&nbsp唱响未来。</span>
+        </div>
+    </div>
+    <div id="shi7">
+        <div id="shi8"><span>派对预约表</span></div>
+        <div id="shi9">
+            <form action="post">
+                寿星年龄：<input type="text" style="width:100px;" class="jiange8" id="en">&nbsp周岁<br><br>
+                寿星性别：<input type="radio" checked="checked" name="Sex" value="male">男
+                <input type="radio" name="Sex" value="female">女<br><br>
+                <span style="margin-left: -35px">派对举办时间：</span><select name="time" class="jiange9" id="dali3"
+                                                                       value="dali3">
+                <option value="选择年份">选择年份</option>
+                <option value="2017">2017</option>
+                <option value="2018">2018</option>
+            </select>
+                <select name="time1" class="jiange9" id="dali4">
+                    <option value="选择月份">选择月份</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select name="time2" class="jiange9" id="dali5">
+                    <option value="选择日期">选择日期</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="1">13</option>
+                    <option value="2">14</option>
+                    <option value="3">15</option>
+                    <option value="4">16</option>
+                    <option value="5">17</option>
+                    <option value="6">18</option>
+                    <option value="7">19</option>
+                    <option value="8">20</option>
+                    <option value="9">21</option>
+                    <option value="10">22</option>
+                    <option value="11">23</option>
+                    <option value="12">24</option>
+                    <option value="1">25</option>
+                    <option value="2">26</option>
+                    <option value="3">27</option>
+                    <option value="4">28</option>
+                    <option value="5">29</option>
+                    <option value="6">30</option>
+                    <option value="7">31</option>
+                </select>
+                <br><br>
+                <span style="margin-left: 10px">联系人：</span>
+                <input type="text" class="jiange8" id="dali6"><br><br>
+                <span>联系电话：</span><input type="text" class="jiange10" id="dali17">
+                <div id="dali">
+                    <span style="color:#FD661D">温馨提示：</span><br>
+                    <span>提交信息后，工作人员将于24小时内与您联系，请保持电话畅通； 派对最终方案，以工作人员<br>与您沟通结果为准。</span>
+                </div>
+                <div id="dali1">
+                    <div id="dali11">
+                        <span style="line-height:60px">&nbsp&nbsp咨询专线</span>
+                    </div>
+                    <div id="dali12">
+                        <span class="dali">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp陈小姐 13828736431</span><br>
+                        <span class="dali">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp郭小姐 13823759472</span>
+                    </div>
+
+                </div>
+                <div id="dali2">
+                	<input type="button" value="提交预约表"
+                                       style="width:480px;height:57px;color:white;background: #FF6600;font-size:24px;line-height: 57px;">
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<div style="clear: both"></div>
+
+<footer id="shopDetailFooter" style="margin-top: 120px;">
+    {include file="./footer.html"}
+</footer>
+
+<div class="commonModal">
+    {include file="./modal.html"}
+</div>
+<script src="{$smarty.const.JS_URL}ydyk.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

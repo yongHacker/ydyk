@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}shopSet.css"/>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>角色管理  <small>网站系统角色管理   </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form" method="post"
+				action="{$url}">
+			   <div class="form-group">
+			      <label for="title" class="col-xs-4 col-sm-2 control-label">角色名称</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" name="title" 
+			          required="required" oninvalid="setCustomValidity('角色名称不能为空')"
+			          oninput="setCustomValidity('')" maxlength="20"
+			          value="{$info.title}"  placeholder="请输入角色名称">
+			        <small>角色名称</small>
+			        {if $info.id}
+			        <input type="hidden" name="id" value="{$info.id}" />
+			        {/if}
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="intro" class="col-sm-2 control-label">描述</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" name="intro" 
+			          required="required" oninvalid="setCustomValidity('角色描述不能为空')"
+			          oninput="setCustomValidity('')" maxlength="50"
+			          value="{$info.intro}"  placeholder="请输入角色描述">
+			         <small>角色描述</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="rules" class="col-sm-2 control-label">选择权限</label>
+			      <div class="col-xs-8">
+				      <table class="table table-bordered">
+				        {foreach item=i from=$list name=foo}
+			         		{if ($smarty.foreach.foo.iteration+2) is div by 3}
+			         		<tr>
+			         		{/if}
+			         		<td>
+			         		  <label>
+						         <input type="checkbox" name="rules[]" value="{$i.id}" {$i.isCheck}/>
+						          {$i.title}
+						      </label>
+			         		</td>
+			         		{if ($smarty.foreach.foo.iteration) is div by 3}
+			         		</tr>
+			         		{else if $smarty.foreach.products.last}
+			         		</tr>
+			         		{/if}
+			         	{/foreach}
+			         </table>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+	</body>
+</html>

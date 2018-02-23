@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>生日礼品</title>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/shengrizhoubian/shengri-lipin.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/ydyk.css">
+    <script src="../js/jquery_3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../layer-v3.1.1/layer/layer.js"></script>
+
+</head>
+<body>
+	<!-- 头部的照片 -->
+    <header id="shopDetailHead" class="srzb">
+        <script>
+            $('#shopDetailHead').load("nav.html");
+        </script>
+    </header>
+	<div id="top">
+		<img src="../imgs/shengrizhoubian/cel.jpg">
+	</div>
+	<!-- 导航条 -->
+	<div id = 'lead'>
+		<div class ='lead_nav'>
+			<span>
+				<a href="./shengri-lipin.html">全部周边</a>
+			</span>
+			<span>
+				<a href="./paidui-shipin.html">派对物料</a>
+			</span>
+			<span>
+				<a href="./paidui-tianpin.html"  style="color:#f55000">派对甜品</a>
+			</span>
+
+			<span>
+				<a href="./dangao-lipin.html">生日礼品</a>
+			</span>
+			<span>
+				<a href="./category-80-b0.html">生日礼鲜花</a>
+			</span>
+		</div>
+	</div>
+	<div class='cat_list'>
+		<div class='cat_list_title'>
+			<span class='font_1'>派对甜品</span><br/>
+			<span class='font_2'>Party dessert</span>
+		</div>
+		<div class="section02">
+				<div class='layout'>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-01.jpg" alt=""></a></div>
+						<a href="">新鲜水果挞</a></br>
+						<span class='ft14'>298元</span>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-02.jpg" alt=""></a></div>
+						<a href="">布丁慕斯杯</a></br>
+						<span class='ft14'>368元</span>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-03.jpg" alt=""></a></div>
+						<a href="">杯子蛋糕</a></br>
+						<span class='ft14'>298元</span>
+					</div>
+				</div>
+				<div class='layout'>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-04.jpg" alt=""></a></div>
+						<a href="">手工饼干铁盒装</a></br>
+						<span class='ft14'>55元</span>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-05.jpg" alt=""></a></div>
+						<a href="">手工饼干纸袋装</a></br>
+						<span class='ft14'>25元</span>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-06.jpg" alt=""></a></div>
+						<a href="">燕麦提子饼干</a></br>
+						<span class='ft14'>25元</span>
+					</div>
+				</div>
+				<div class='layout'>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-07.jpg" alt=""></a></div>
+						<a href="">红枣碧根果饼干</a></br>
+						<span class='ft14'>25元</span>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-08.jpg" alt=""></a></div>
+						<a href="">巧克力核桃饼干</a></br>
+						<span class='ft14'>25元</span>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-09.jpg" alt=""></a></div>
+						<a href="">抹茶扁桃仁饼干</a></br>
+						<span class='ft14'>25元</span>
+					</div>
+				</div>
+				<div class='layout'>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-10.jpg" alt=""></a></div>
+						<a href="">香草开心果饼干</a></br>
+						<span class='ft14'>25元</span>
+					</div>
+					<div class='item'>
+						<div align=center><a href=""><img src="../imgs/shengrizhoubian/PD-11.jpg" alt=""></a></div>
+						<a href="">柠檬榛子饼干</a></br>
+						<span class='ft14'>25元</span>
+					</div>
+				</div>
+		</div>
+	</div>
+
+	<footer id="shopDetailFooter">
+		<script>
+            $('#shopDetailFooter').load("../footer.html");
+		</script>
+	</footer>
+
+	<div class="commonModal">
+		<script>
+            $('.commonModal').load("../modal.html");
+		</script>
+	</div>
+
+    <!--弹窗内容-->
+    <div class="dialog" id="dialog" style="display: none">
+        <div class="dialog-title">
+            <i class="fa fa-bell-o"></i> <span>提醒</span>
+            <i class="close-popup fa fa-close"></i>
+        </div>
+
+        <div class="dialog-body">
+            <p>请选择商品属性:</p>
+            <div class="guige">
+                <p>规格</p>
+                <div class="select-box on">一位 <i class="triangle"></i></div>
+                <div class="select-box">二位 <i class="triangle"></i></div>
+                <div class="select-box">三位 <i class="triangle"></i></div>
+            </div>
+            <div class="num-select">
+                <i class="fa fa-minus-circle"></i>
+                <span class="num">1</span>
+                <i class="fa fa-plus-circle"></i>
+            </div>
+            <div class="sum-price">
+                <i class="fa fa-shopping-cart"></i>
+                <span class="sum">30</span>元
+            </div>
+        </div>
+    </div>
+    <!--弹窗内容-->
+
+	<script>
+        // 导航栏
+        $(function () {
+            $('#nav-logo').attr('src','../imgs/logo.png');
+            $('.band-story').hover(function () {
+                $('.band').css('border','1px solid #885F40');
+                $('.band-body').show();
+            },function () {
+                $('.band').mouseleave(function () {
+                    $('.band').css('border','none');
+                    $('.band-body').hide();
+                });
+            });
+        });
+
+        //购物车按钮
+        $(function () {
+            // hover
+            $('.addCar').hover(function () {
+                $(this).find('.fa-shopping-cart').show(500);
+            },function () {
+                $(this).find('.fa-shopping-cart').hide(500);
+            });
+
+            //弹窗
+            $(function () {
+                //打开弹窗
+                $('.addCar').click(function () {
+                    layer.open({
+                        type:1,
+                        title:false,
+                        closeBtn:0,
+                        shadeClose:false,
+                        area:['730px'],
+                        scrollbar:false,
+                        content:$('#dialog')
+                    });
+                });
+                //关闭弹窗
+                $('.close-popup').click(function () {
+                    layer.closeAll();
+                });
+                //规格选择
+                $('.select-box').click(function () {
+                    $(this).addClass('on').siblings().removeClass('on');
+                });
+                //-1
+                $('.num-select .fa-minus-circle').click(function () {
+                    var num = $('.num-select .num').text();
+                    num--;
+                    if(num<1){num=1}
+                    $('.num-select .num').text(num);
+                    var sum = parseInt($('.sum-price .sum').text());
+                    var price = 100;
+                    sum = num*price;
+                    $('.sum-price .sum').text(sum);
+                });
+                //+1
+                $('.num-select .fa-plus-circle').click(function () {
+                    var num = $('.num-select .num').text();
+                    num++;
+                    $('.num-select .num').text(num);
+                    var sum = parseInt($('.sum-price .sum').text());
+                    var price = 100;
+                    sum = num*price;
+                    $('.sum-price .sum').text(sum);
+                });
+                var sum = parseInt($('.sum-price .sum').text());
+                var num = parseInt($('.num-select .num').text());
+                var price = 100;
+                sum = num*price;
+                $('.sum-price .sum').text(sum);
+            });
+        });
+	</script>
+</body>
+</html>
+
+
+
+
+					
+					
+					

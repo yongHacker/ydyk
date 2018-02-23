@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .shopCar-content{
+            border: 1px solid #ccc;
+            overflow: hidden;
+        }
+        .chose{
+            width: 110px;
+            height: 30px;
+            border: 1px solid #FF6722;
+            line-height: 30px;
+            text-align: center;
+            position: relative;
+            margin-bottom: 5px;
+        }
+        .chose .triangle{
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background: url("imgs/sprite.png") no-repeat -83px -172px;
+            position: absolute;
+            right: 0;
+            bottom: -1px;
+        }
+        .nums{
+            width: 110px;
+            height: 30px;
+            text-align: center;
+        }
+        .nums .num{
+            margin: 0 10px;
+        }
+        .nums .fa-minus-circle{
+            font-size: 18px;
+            color: #E4E4E4;
+            cursor: pointer;
+        }
+        .nums .fa-plus-circle{
+            font-size: 18px;
+            color: #E4E4E4;
+            cursor: pointer;
+        }
+        .sum{
+            width: 480px;
+            height: 40px;
+            background: #F55A19;
+            color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            line-height:40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="shopCar-content ">
+        <div class="col-xs-2">
+            <p  style="text-align: right">请选择商品属性:</p>
+        </div>
+        <div class="col-xs-2">
+            <img  src="imgs/size.jpg" alt="">
+        </div>
+        <div class="col-xs-8">
+            <p ><img src="imgs/attr_icon_1.jpg" alt="">英制规格2磅</p>
+            <p ><img src="imgs/attr_icon_2.jpg" alt=""> 908g（实重2磅）</p>
+            <p><img src="imgs/attr_icon_3.jpg" alt="">含10套餐具1盒蜡烛</p>
+        </div>
+        <div class="col-xs-offset-2 col-xs-10" style="margin-top: 15px">
+            <p>重量</p>
+        </div>
+        <div class="col-xs-offset-2 col-xs-10">
+            <div class="chose">
+                6~10人份
+                <i class="triangle"></i>
+            </div>
+        </div>
+        <div class="col-xs-offset-2 col-xs-10">
+            <div class="nums">
+                <i class="fa fa-minus-circle" id="minus"></i>
+
+                <input class="num" id="num" type="text" size="2" value="1" data-price="198">
+
+                <i class="fa fa-plus-circle" id="plus"></i>
+            </div>
+        </div>
+        <div class="col-xs-offset-2 col-xs-10">
+            <div class="sum" id="sum">
+               <i class="fa fa-cny"></i>
+                <span id="allsum">198</span>元
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+<!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+<script src="js/jquery_3.2.1.min.js"></script>
+<!-- 包括所有已编译的插件 -->
+<script src="js/bootstrap.min.js"></script>
+<script src="layer-v3.1.1/layer/layer.js"></script>
+<script src="js/ydyk.js"></script>
+
+    <script>
+        $(function () {
+            var sum = parseInt($('#allsum').text());
+            var price = parseInt($('#num').attr('data-price'));
+            var num =  parseInt($('#num').val());
+            // 初始总价格
+            sum = price * num;
+            $('#allsum').text(sum);
+            // 手工输入数量时总价格
+            $('#num').keyup(function () {
+                var input = parseInt($('#num').val());
+                sum = price;
+                if(!isNaN(input)){
+                    sum = price * input;
+                    $('#allsum').text(sum);
+                    if(sum<=0){
+                        $('#allsum').text(price);
+                        $('#num').val(1);
+                    }
+                }else {
+                    alert('请输入购买数量');
+                }
+            });
+            // 点击加号时总价格
+            $('#plus').click(function () {
+                var nums =  parseInt($('#num').val());
+                alert(nums);
+                sum = sum + price;
+                $('#allsum').text(sum);
+                nums++;
+                $('#num').val(nums);
+            });
+            // 点击减号时总价格
+            $('#minus').click(function () {
+                var nums =  parseInt($('#num').val());
+                alert(nums);
+                if(nums>1){
+                    sum = sum - price;
+                    $('#allsum').text(sum);
+                    nums--;
+                    $('#num').val(nums);
+                }else{
+                    sum = price;
+                    $('#allsum').text(sum);
+                }
+
+            });
+        })
+    </script>
+
+</body>
+
+
+</html>

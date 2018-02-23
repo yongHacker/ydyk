@@ -1,0 +1,119 @@
+body{
+		margin: 0;
+}
+.navbar{
+	color: #885F40;
+}
+.navbar a{
+	color: #885F40;
+}
+nav .garden{
+	border: 1px solid #885F40;
+}
+#top{
+	width: 100%;
+	height: 150px;
+	background: #ccc;
+}
+.breadcrumb_nav{
+	width: 300px;
+	height: 77px;
+	/*background:#f0f;*/
+	position: absolute;
+	left: 80px;
+	top: 130px;
+	margin-bottom:20px;
+}
+.breadcrumb_nav a{
+	text-decoration:none;
+}
+.breadcrumb_nav span{
+	line-height:77px;
+	font-size:15px;
+	color:#555555;
+}
+.address_form{
+	height: 550px;
+	width: 655px;
+	/*background:#ccc;*/
+	margin-top: 50px;
+	margin-left: 100px;
+	line-height: 50px;
+	color: #000000;
+	font-size: 14px;
+}
+.address_form input{
+	text-indent: 10px;
+}
+.address_form .ip_1{
+	width: 80px;
+	height: 25px;
+}
+.address_form select{
+	height:31px;
+	width: 100px;
+	/*text-align: center;*/
+}
+.address_form .ip_2{
+	height: 25px;
+	width: 350px;
+}
+.address_form .ip_3{
+	height: 25px;
+	width: 200px;
+}
+.address_form .sure{
+	width: 100px;
+	height: 40px;
+	background: #F55A19;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	margin-top: 10px;
+	margin-left: 60px;
+	text-indent: 0;
+}
+.address_form .cancel{
+	width: 100px;
+	height: 40px;
+	background: #fff;
+	border: 1px #666666 solid;
+	color: #666666;
+	font-size: 16px;
+	margin-top: 10px;
+	margin-left: 40px;
+	text-indent: 0;
+}
+.address{
+	width: 260px;
+	height: 200px;
+	margin-right: 40px;
+	margin-bottom: 30px;
+	margin-top: 20px;
+	border: 2px solid #ccc;
+	padding: 0 10px;
+	overflow: hidden;
+	display: inline-block;
+}
+.address.default{
+	border: 2px solid #FF5000;
+}
+.address .top{
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #ccc;
+
+}
+.address .center{
+	height: 140px;
+	border-bottom: 1px solid #ccc;
+}
+.address .bottom{
+	height: 25px;
+	line-height: 25px;
+	text-align: center;
+}
+.address .bottom a{
+	color: #666666;
+	margin: 0 10px;
+}

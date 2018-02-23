@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="common/commonHeader.html"}
+
+    <style type="text/css">
+        .login_banner {
+            padding-top: 61.98%;
+            position: relative;
+        }
+        .breadcrumb_nav {
+            float: left;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            color: #fff;
+            font-size: 16px;
+        }
+        .clear {
+            clear: both;
+        }
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+        }
+        .login_banner .layout {
+            position: absolute;
+            left: 50%;
+            margin-left: -600px;
+            top: 0;
+        }
+
+        .layout {
+            width: 1200px;
+            margin: 0 auto;
+            /* overflow: hidden; */
+        }
+
+
+        .login_box {
+            position: absolute;
+            width: 350px;
+            height: 320px;
+            right: 80px;
+            top: 180px;
+        }
+        .login_box .win_login {
+            width: 350px;
+            height: 310px;
+        }
+        .win_login {
+            width: 350px;
+            height: 310px;
+            padding: 5px;
+            position: relative;
+        }
+        .win_login .content{
+            background: #fff;
+            width: 350px;
+            height: 320px;
+            position: relative;
+            z-index: 2;
+            padding: 10px;
+            border: 4px #5B666B solid;
+        }
+        .win_login .content .table-item{
+            width: 332px;
+            height: 36px;
+            float: left;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .win_login .content .table-item  .cur {
+            border-bottom: 1px solid #f55a19;
+            color: #f55a19 !important;
+            cursor: pointer;
+        }
+        .win_login .content .table-item .item {
+            width: 133px;
+            height: 35px;
+            line-height: 35px;
+            padding-left: 25px;
+            float: left;
+            font-size: 18px;
+            color: #666;
+            text-align: left;
+            cursor: pointer;
+            box-sizing: border-box;
+            position: relative;
+            top: 1px;
+        }
+
+
+        .login_box .win_login .content  .row{
+            width: 300px;
+            height: 40px;
+            margin-top: 50px;
+            margin-left: 2px;
+        }
+        .input {
+            height: 40px;
+            padding: 10px 0;
+            /*border: 1px solid #ccc;*/
+        }
+        .win_login .content  input {
+            height: 40px;
+            outline: none;
+            margin-left: 2px;
+            padding-left: 12px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        .login_box .win_login .content .tab1{
+            margin-left: 10px;
+        }
+        .login_box .win_login .content .tab1 .row a{
+            font-size: 12px;
+            color: #666666;
+            margin-top: 20px;
+        }
+        .login_box .win_login .content .tab1 .row .f_r{
+            float: right;
+        }
+
+        .login_box .win_login .content .tab2{
+            margin-left: 10px;
+            height: 370px;
+        }
+    </style>
+</head>
+<body>
+{include file="common/header.html"}
+
+<div class="login_banner">
+	<div style="position: absolute;background: url({$smarty.const.IMAGES_URL}lqw_img/login-bg.jpg) no-repeat center top;top:0;left:0;width: 100%;height: 100%;margin-bottom: 150px"></div>
+	<div class="layout">
+		<div>
+			<div class="breadcrumb_nav" style="width:100%">
+				 <span><a href="index.php?m=home&c=index&a=index">首页</a>&gt;<a href="index.php?m=home&c=center&a=index">登录</a></span>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="login_box">
+			<div class="win_login">
+			  <div class="content">
+			  	<div class="table-item">
+			  		<div class="item cur" data-index="1" >账号登录</div>
+			  		<div class="f_1" style="border-right: 1px solid #ccc;width: 1px;height: 20px;position: relative;left: 0;top: 9px;float: left;"></div>
+			  		<div class="item" id="tab_user_register" data-index="2" style="width: 160px;padding-left: 30px;">快捷登录(注册)
+			  		</div>
+			  		<div class="clear"></div>
+			  	</div>
+				 <div class="tab1" style="display: block;">
+                     <form action="{U('Center/login')}" method="post" id="log">
+                        <div class="row">
+                            <div class="input">
+                                <input type="text" placeholder="请输入手机号/用户名" name="uname" id="uname" >
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 20px">
+                            <div class="input">
+                                <input type="password" placeholder="请输入登录密码" name="pwd" id="pwd" >
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="row" style="margin-top: 20px;padding: 0 15px;">
+                            <a class="c666 btn_forget_pwd f_r" href="javascript:void(0);"  title="忘记密码">忘记密码?
+                            </a>
+                            <a class="c666 " href="#" style="display: block; "  title="注册新用户">注册新用户
+                            </a>
+                        </div>
+                        <div class="row" style="margin-top: 25px; background: #F55A19;line-height: 40px;text-align:center;">
+                            <a class="btn_login " href="javascript:void(0);" onclick="loginSubmit()" title="登录" style="color: white;font-size: 18px;">登 录
+                            </a>
+                        </div>
+                     </form>
+               </div>
+
+				<div class="tab2" style="display: none;width: 480px;height: 310px;">
+                    <form action="{U('Center/register')}" method="post" id="reg">
+					 <div class="row">
+                        <!-- 手机号码的代码 -->
+                            <div class="input">
+                            	<input type="text" placeholder="请输入手机号" name="unameReg" id="unameReg" >
+                            </div>
+                      </div>
+                    <div class="row" style="margin-top: 20px">
+                        <div class="input">
+                            <input type="password" placeholder="请输入登录密码" name="pwdReg" id="pwdReg" >
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="row" style="margin-top: 20px">
+                        <div class="input">
+                            <input type="password" placeholder="再次输入登录密码" name="pwdConfirm" id="pwdConfirm" >
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+					  <div class="row" style="margin-top: 20px">
+                            <div class="input">
+                            	<input type="password" placeholder="请输入图形验证码" name="code" id="code" >                           
+                            <div class="clear">
+                            	<img src="{U('Center/verify_img')}" alt="" style="width:110px; height:37px;float: right; position:relative; top:-38px;left: 1px;"  onclick="this.src='{U('Center/verify_img')}?t'+Math.random()">
+                            </div>
+                        </div>
+                     </div>
+                      <div class="row" style="position: relative; top: -30px">
+                            <div class="input">
+                            	<input type="password" placeholder="请输入手机验证码" name="user_mobile_captcha" id="user_mobile_captcha" >
+                           <!-- 这是发送验证码的代码 -->
+                                <a id="dx" href="javascript:void(0);" style="display: block; width: 100px;height: 40px;background-color:#f55a19;color: #fff; float: right;line-height: 40px;text-align: center;text-decoration: none;position: relative;left: 0px;top: -40px">
+                                    <span id="sendMes" onclick="sendMessage()">发送验证码</span>
+                                </a>
+                            </div>
+                     </div>
+                     <div class="zhuce_youli" style="width: 200px;height: 20px;margin-top:-10px;margin-left: 2px;">
+                        <img src="{$smarty.const.IMAGES_URL}lqw_img/r2_coupon.jpg" alt="">
+                        <span style="font-size: 10px;color:#666;text-align: center;">&nbsp;&nbsp;注册有礼</span>
+                        <img src="{$smarty.const.IMAGES_URL}lqw_img/what.jpg" alt="">
+                         <div class="TS" style="width: 190px;height: 30px;color: #F55A19;font-size: 13px;line-height: 30px;margin-left: -10px;display: none;border:1px #f55a19 solid;text-align: center;">
+                                注册新用户即可领取20元抵用券
+                         </div>
+                     </div>
+
+                      <div class="row" style="margin-top: 30px; background: #F55A19;line-height: 40px;text-align: center">
+                                <a href="javascript:void(0);" title="注册"  onclick="checkMessage()" style="color: white;font-size: 18px;display: block;padding-left: 100px;">注 册
+                                </a>
+                        </div>
+                    </form>
+				</div>
+			  </div>
+		  </div>
+		</div>
+
+	</div>
+</div>
+
+{include file="common/footer.html"}
+
+{literal}
+	<script>
+	$(function () {
+		$('.table-item').find('.item').click(function () {
+			  var index=$(this).data('index');
+			$(this).addClass('cur').siblings().removeClass('cur');
+			$('.table-item').find('.item').each(function () {
+
+				if(index==1){
+					$('.tab1').css('display','block');
+					$('.tab2').css('display','none');
+					$('.content').css('height','320px');
+				}
+				if(index==2){
+					$('.tab1').css('display','none');
+					$('.tab2').css('display','block');
+					$('.content').css('height','480px');
+				}
+			})
+
+		});
+
+		$('.zhuce_youli').mouseenter(function () {
+			$('.TS').show();
+		}).mouseleave(function () {
+			$('.TS').hide();
+		});
+
+		$('#sendMes').click(function () {
+            $('#sendMes').attr('disabled',true).text(5);
+            $('#dx').css('background','#ccc');
+            var time = 5;
+            var timer = setInterval(function () {
+                time--;
+                $('#sendMes').text(time);
+                if(time==0){
+                    clearInterval(timer);
+                    $('#dx').css('background','#f55a19');
+                    $('#sendMes').attr('disabled',false).text('重新发送');
+                }
+            },1000);
+        });
+	});
+    function loginSubmit() {
+        $('#log').submit();
+    }
+    var rand=null;
+	function sendMessage() {
+        $.ajax({
+            type: 'get',
+            url: "ajax_return",
+            success:function (result) {
+                rand = result;
+                console.log(rand);
+            }
+        });
+    }
+    function checkMessage() {
+        var message = $('#user_mobile_captcha').val();
+        if (message){
+            if(message!=rand){
+                alert('短信验证码错误！');
+                return;
+            }
+        }
+        $('#reg').submit();
+
+    }
+
+
+	</script>
+{/literal}
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../public/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../public/css/common.css" />
+		<link rel="stylesheet" type="text/css" href="../public/css/shopSet.css"/>
+		<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../public/js/common.js" ></script>
+		<script type="text/javascript" src="../public/js/shopSet.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<ul class="nav nav-tabs" id="tabs">
+				<li>
+					<h4>商城设置  <small>网站全局内容基本选项设置</small></h4>
+				</li>
+				<li>
+					<a href="shopSet.html" >商城信息</a>
+				</li>
+				<li>
+					<a href="shopSet2.html" >短信设置</a>
+				</li>
+				<li>
+					<a href="shopSet3.html" >邮件设置</a>
+				</li>
+				<li class="active">
+					<a href="shopSet4.html" >水印设置</a>
+				</li>
+			</ul>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>网站全局基本设置，商城及其他模块相关内容在其各自栏目设置项内进行操作。</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form">
+			   <div class="form-group">
+			      <label class="col-xs-4 col-sm-2 control-label">商品图片添加水印</label>
+			      <div class="col-xs-8">
+			        <div class="myradio checked" onclick="check(this)">
+			         <input type="radio" name="radio1" value="1" id="shuiyin1" checked/> 
+			         <label for="shuiyin1">是</label>
+			        </div><!--.myradio end-->
+			        <div class="myradio" onclick="check(this)">
+			         <input type="radio" name="radio1" value="0" id="shuiyin2"/> 
+			         <label for="shuiyin2">否</label>
+			        </div><!--.myradio end-->
+			        <small>商品图片添加水印</small>
+			      </div><!--.col end-->
+			   </div><!--.form-group end-->
+			   <div class="form-group">
+			      <label class="col-sm-2 control-label">水印类型</label>
+			      <div class="col-xs-8">
+			            <div class="myradio checked">
+				         <input type="radio" name="radio2" value="1" id="shuiyinType" checked> 
+				         <label for="shuiyinType">文字</label>
+				        </div>
+			         <small>水印类型</small>
+			      </div>
+			   </div><!--.form-group end-->
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">水印文字</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入水印文字">
+			         <small>水印文字</small>
+			      </div>
+			   </div><!--.form-group end-->
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">文字字号</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入字体大小">
+			         <small>字体大小</small>
+			      </div>
+			   </div><!--.form-group end-->
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">文字颜色</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入文字颜色">
+			         <small>如‘#000000’代表黑色</small>
+			      </div>
+			   </div><!--.form-group end-->
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">水印透明度</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="lastname" 
+			            placeholder="请输入字体大小">
+			         <small>0代表完全透明，100代表不透明</small>
+			      </div>
+			   </div><!--.form-group end-->
+			   <div class="form-group">
+			      <label for="lastname" class="col-sm-2 control-label">水印位置</label>
+			      <div class="col-xs-8">
+			         <table class="table table-bordered">
+			         	<tr>
+			         		<td>
+			         			<input type="radio" class="checked" name="where" value="1"
+			         				id="whereradio1" checked/> <label for="whereradio1">顶部居左</label></td>
+			         		<td>
+			         			<input type="radio" name="where"
+			         			id="whereradio2" value="1" /> 
+			         			<label for="whereradio2">顶部居中</label></td>
+			         		<td>
+			         			<input type="radio" name="where"
+			         			id="whereradio3"  value="1" /> 
+			         		<label for="whereradio3">顶部居右</label></td>
+			         	</tr>
+			         	<tr>
+			         		<td><input type="radio" name="where"
+			         			id="whereradio4"  value="1" /> <label for="whereradio4">中部居左</label></td>
+			         		<td><input type="radio" name="where"
+			         			id="whereradio5"  value="1" /> <label for="whereradio5">中部居中</label></td>
+			         		<td><input type="radio" name="where"
+			         			id="whereradio6"  value="1" /> <label for="whereradio6">中部居右</label></td>
+			         	</tr>
+			         	<tr>
+			         		<td><input type="radio" name="where"
+			         			id="whereradio7"  value="1" /> <label for="whereradio7">低部居左</label></td>
+			         		<td><input type="radio" name="where"
+			         			id="whereradio8"  value="1" /> <label for="whereradio8">低部居中</label></td>
+			         		<td><input type="radio" name="where"
+			         			id="whereradio9"  value="1" /> <label for="whereradio9">低部居右</label></td>
+			         	</tr>
+			         </table>
+			      </div>
+			   </div><!--.form-group end-->
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div><!--.form-group end-->
+			</form>
+		</div>
+		<!--formlist end-->
+	</body>
+</html>

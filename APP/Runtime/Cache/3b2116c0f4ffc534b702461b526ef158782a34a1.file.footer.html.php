@@ -1,0 +1,155 @@
+<?php /* Smarty version Smarty-3.1.6, created on 2018-02-06 20:28:32
+         compiled from "./APP/Home/View\common\footer.html" */ ?>
+<?php /*%%SmartyHeaderCode:164925a799f70b14527-36910730%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+$_valid = $_smarty_tpl->decodeProperties(array (
+  'file_dependency' => 
+  array (
+    '3b2116c0f4ffc534b702461b526ef158782a34a1' => 
+    array (
+      0 => './APP/Home/View\\common\\footer.html',
+      1 => 1515401590,
+      2 => 'file',
+    ),
+  ),
+  'nocache_hash' => '164925a799f70b14527-36910730',
+  'function' => 
+  array (
+  ),
+  'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.6',
+  'unifunc' => 'content_5a799f70c7bb7',
+),false); /*/%%SmartyHeaderCode%%*/?>
+<?php if ($_valid && !is_callable('content_5a799f70c7bb7')) {function content_5a799f70c7bb7($_smarty_tpl) {?>
+<!--footer-->
+<div class="footer">
+    <div class="container">
+        <div class="footer-left col-xs-6">
+            <img src="<?php echo @IMAGES_URL;?>
+logo-small.png" class="pull-left" alt="">
+            <span >Copyright© 深圳壹点壹客食品有限公司版权所有 ICP备案证书号:粤ICP备11021841号</span>
+            <i class="fa fa-weibo" title="新浪微博"></i>
+            <i class="fa fa-weixin" title="微信"></i>
+        </div>
+        <div class="footer-right col-xs-6">
+            <a href="">订购指南</a> |
+            <a href="">配送范围</a> |
+            <a href="">壹Club</a> |
+            <a href="">联系我们</a> |
+            <a href="">集团订购</a> |
+            <a href="">食品生产许可证</a>
+            <span class="govIcon" title="深圳市市场监督管理局企业主体身份公示"></span>
+        </div>
+    </div>
+</div>
+<!--footer-->
+
+<!--modal-->
+<div class="modal fade" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                <ul id="myTab" class="nav nav-tabs">
+                    <!--login_tab-->
+                    <li class="active" id="tab-login">
+                        <a href="#log" data-toggle="tab" >
+                            账号登录
+                        </a>
+                    </li>
+                    <!--register_tab-->
+                    <li id="tab-register"><a href="#reg" data-toggle="tab" >快捷登录(注册)</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <!--login页面-->
+                    <div class="tab-pane fade in active" id="log">
+                        <form action="<?php echo U('User/login');?>
+" method="post" class="form-horizontal loginForm" role="form">
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="uname" name="uname" placeholder="请输入手机号/用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="请输入登录密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <a href="" class="pull-left">忘记密码?</a>
+                                    <a href="<?php echo U('Center/index');?>
+" class="pull-right">注册新用户</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <button type="submit" class="btn btn-default">登录</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--login页面-->
+                    <!--registe页面-->
+                    <div class="tab-pane fade" id="reg">
+                        <form action="<?php echo U('User/register');?>
+" method="post" class="form-horizontal registerForm" role="form">
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="请输入手机号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="password" class="form-control" id="pwd" name="pwd" placeholder="请设置密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="password" class="form-control" id="pwdConfirm" name="pwdConfirm" placeholder="请确认密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="code" name="code" placeholder="请输入图形验证码">
+                                </div>
+                                <div class="col-xs-3">
+                                    <img src="<?php echo U('User/verify_img');?>
+" width="120" height="35" onclick="this.src='<?php echo U('User/verify_img');?>
+?t='+Math.random()" alt="">
+                                </div>
+                            </div>
+                            <!--<div class="form-group">
+                                <div class="col-xs-4 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="phoneCode" name="phoneCode" placeholder="请输入手机验证码">
+                                </div>
+                                <div class="col-xs-3">
+                                    <button class="btn" id="send_phone" onclick="">发送验证码</button>
+                                </div>
+                            </div>-->
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <a href="<?php echo U('Center/index');?>
+" class="pull-left">注册有礼</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <button type="submit" class="btn btn-default">注册</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--registe页面-->
+                </div>
+
+            </div><!-- /.modal-body -->
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+
+
+<script src="<?php echo @JS_URL;?>
+ydyk.js"></script>
+
+<?php }} ?>

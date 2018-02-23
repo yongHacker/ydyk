@@ -1,0 +1,102 @@
+#cnt
+{
+	width: 1200px;
+	height: 90%;
+	margin:0px auto;
+	margin-top: 100px;
+}
+.ct-link1
+{
+	float: left;
+	color: #555555;
+	width: 150px;
+	height: 40px;
+	font-size: 14px;
+	text-align: left;
+	cursor: pointer;
+}
+.ct-link1 a
+{
+	text-decoration: none;
+	color: #555555;
+}
+.ct-top1
+{
+	width: 720px;
+	float: right;
+	margin-top: 65px;
+	height: 50px;
+	background: url(/Public/images/shopcar3-1.png) no-repeat center top;
+}
+.ct-t1-txt
+{
+	margin-top: 20px;
+	height: 30px;
+	float: left;
+	line-height: 30px;
+	text-align: center;
+	font-size: 14px;
+	color: #CCCCCC;
+	width: 240px;
+}
+.order_finish{
+	width:1200px;
+	height:717px;
+	
+	float:left;
+	margin:50px auto;
+	text-align:center;
+}
+.order_finish .tips .ft18{
+	line-height: 36px;
+	margin-left: 25px;
+	vertical-align: top;
+	display: inline-block;
+	text-align: left;
+	font-size:18px;
+	color:#000;
+}
+.order{
+	margin-top:100px;
+}
+.order span{
+	color:#808080;
+}
+.order .btn1{
+	margin-left: 20px;
+	width:100px;
+	height:30px;
+	background:#fff;
+	border:1px #FF5000 solid;
+	color: #ff5000;
+}
+.order .btn2{
+	margin-top:30px;
+	width: 150px;
+	height:30px;
+	color: #fff;
+	background: #FF5000;
+	border: none;
+}
+.order .ft{
+	margin-top:30px;
+}
+.order .ft1{
+	color: #F55A19;
+}
+.order .ft2{
+	color: #666666;
+}
+.order .an{
+	margin-top: 100px;
+}
+.order .an .btn3{
+	width: 200px;
+	height: 50px;
+	font-size:20px;
+	color: #666666;
+	background: #fff;
+	border:1px #CCCCCC solid;
+	margin-left: 30px;
+	margin-right: 30px;
+}

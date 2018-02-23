@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}shopSet.css"/>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>管理员- 编辑管理员 <small> 网站系统管理员资料 </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form" method="post" onsubmit="return updateAdminCheck()"
+				action="{$url}">
+			   <div class="form-group">
+			      <label for="uname" class="col-xs-2 control-label">用户账号</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="uname" name="uname"
+			          required="required" oninvalid="setCustomValidity('用户账号不能为空')"
+			          oninput="setCustomValidity('')" maxlength="20"
+			            placeholder="请输入用户账号" value="{$info.uname}"/>
+			        <small>用户名</small>
+			        {if $info.uid}
+			        <input type="hidden" name="uid" value="{$info.uid}" />
+			        {/if}
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="email" class="col-xs-2 control-label">Email地址</label>
+			      <div class="col-xs-8">
+			         <input type="email" class="form-control" id="email" name="email"
+			          required="required" oninvalid="setCustomValidity('email不能为空')"
+			          oninput="setCustomValidity('')" maxlength="50"
+			            placeholder="请输入Email地址" value="{$info.email}"/>
+			         <small>Email地址，用于找回密码</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="pwd" class="col-xs-2 control-label">登陆密码</label>
+			      <div class="col-xs-8">
+			         <input type="password" class="form-control" id="pwd" name="pwd" 
+			         required="required" oninvalid="setCustomValidity('登录密码不能为空')"
+			         oninput="setCustomValidity('')"
+			            placeholder="请输入登陆密码">
+			         <small>登陆密码</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="pwd1" class="col-xs-2 control-label">确认登录密码</label>
+			      <div class="col-xs-8">
+			         <input type="password" class="form-control" id="pwd1" name="pwd1"
+			          required="required" oninvalid="setCustomValidity('确认密码不能为空')"
+			          oninput="setCustomValidity('')"
+			            placeholder="请输入确认登录密码">
+			         <small>确认登录密码</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-xs-2 control-label">所属角色</label>
+			      <div class="col-xs-8">
+			          <select class="form-control input-sm" name="auth_group">
+			          {foreach item=i from=$list}
+				         <option value="{$i.id}">{$i.title}</option>
+				      {/foreach}
+				      </select>
+			         <small>所属角色</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" id="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+		<!-- 模态声明，show 表示显示 -->
+		<div class="modal" tabindex="-1" id="myModal">
+		     <!-- 窗口声明 -->
+		     <div class="modal-dialog">
+		        <!-- 内容声明 -->
+		        <div class="modal-content">
+		              <!-- 头部 -->
+		              <div class="modal-header">
+		                 <button type="button" class="close"
+		                            data-dismiss="modal" onClick="close_modal()">
+		                          <span>&times;</span>
+		                  </button>
+		                  <h4 class="modal-title">标题</h4>
+		              </div>
+		              <!-- 主体 -->
+		              <div class="modal-body">
+		                   <p id="modal-body">内容</p>
+		              </div>
+		              <div class="modal-footer">
+			            <button type="button" class="btn btn-default" onClick="close_modal()"
+			               data-dismiss="modal">关闭
+			            </button>
+			         </div>
+		        </div>
+		     </div>
+		</div><!--.alert end-->
+	</body>
+</html>

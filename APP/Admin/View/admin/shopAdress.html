@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="../public/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../public/css/common.css" />
+		<link rel="stylesheet" href="../public/css/shopAdress.css" />
+		<script type="text/javascript" src="../public/js/jquery.min.js"></script>
+		<script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="../public/js/common.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>地区设置 <small>可对系统内置的地区进行编辑  </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>全站所有涉及的地区均来源于此处，强烈建议对此处谨慎操作。</span>
+				<span>所在层级为该地区的所在的层级深度，如北京>北京市>朝阳区,其中北京层级为1，北京市层级为2，朝阳区层级为3</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div>
+			<table class="table table-bordered">
+			   <caption>地区列表<small>(共34张记录)</small>
+			   		<button class="btn btn-xs btn-primary">刷新</button>
+			   		<small>上级区域:北京市>市辖区</small>
+			   </caption>
+			   <thead>
+			      <tr>
+			         <th>地区</th>
+			         <th>所在层级</th>
+			         <th>上级地区</th>
+			         <th colspan="2">操作</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	  <tr>
+			   	  	<td colspan="8">
+			   	  		<button class="btn btn-sm btn-warning">新增数据</button>
+			   	  		<button class="btn btn-sm btn-success">返回上级地区</button>
+			   	  	</td>
+			   	  </tr>
+			      <tr>
+			         <td>Tanmay</td>
+			         <td>Bangalore</td>
+			         <td>560001</td>
+			         <td><a href="">删除</a><a href="">新增下级</a><a href="">查看下级</a></td>
+			      </tr>
+			      <tr>
+			         <td>Sachin</td>
+			         <td>Mumbai</td>
+			         <td>400003</td>
+			         <td><a href="">删除</a><a href="">新增下级</a><a href="">查看下级</a></td>
+			      </tr>
+			      <tr>
+			         <td>Uma</td>
+			         <td>Pune</td>
+			         <td>411027</td>
+			         <td><a href="">删除</a><a href="">新增下级</a><a href="">查看下级</a></td>
+			      </tr>
+			   </tbody>
+			</table>
+		</div>
+	</body>
+</html>

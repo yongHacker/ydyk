@@ -1,0 +1,223 @@
+#shouye
+	{
+		width: 100%;
+		height: 50px;
+		margin-left: 110px;
+		margin-top:155px;
+	}
+	#shouye #jian
+	{
+		font-size: 14px;
+		color: #ccc;
+		text-decoration: none;
+	}
+	#shouye #jian a
+	{
+		text-decoration: none;
+	}
+	#shouye #jian2
+	{
+		font-size: 16px;
+		color: black;
+		text-decoration: none;
+	}
+	#shouye #jian2 a
+	{
+		text-decoration: none;
+	}
+	  #wen
+	{
+		width: 1300px;
+		height: 50px;
+		margin-left: 110px;
+        float: left;
+	}
+	  .buttom 
+	{
+		width: 299px;
+		height: 50px;
+		border-top:1px solid #ccc;
+		/*border-buttom:1px solid #ccc;*/
+		border-bottom: 1px solid #ccc;
+		border-left:1px solid #ccc;
+		float: left;
+		font-size: 13px;
+		line-height: 50px;
+		/*text-indent: 120px;*/
+        /*margin-left: 20px;*/
+        cursor: pointer;
+        text-align: center;
+        color: #666;
+
+
+		/*border:0px;*/
+	}
+	/* #wen a:active
+    {
+        background: #F55A19;
+    }*/
+	 #wen #jianjian3
+	{
+		width: 298px;
+		height: 50px;
+		border-top:1px solid #ccc;
+		/*border-buttom:1px solid #ccc;*/
+		border-bottom: 1px solid #ccc;
+		border-left:1px solid #ccc;
+		float: left;
+		border-right:1px solid #ccc;
+		font-size: 13px;
+		line-height: 50px;
+		/*text-indent: 120px;*/
+        float: left;
+         text-align: center;
+         color: #666;
+    }
+     #shun #jian
+    {
+    	margin-left: 110px;
+    	margin-top:40px;
+    }
+      #shun #shi
+    {
+    	background: url(./images/dianhua.png) no-repeat center 50px;
+    	margin-left: 465px;
+    	margin-top:50px;
+    	width: 490px;
+    	height: 180px;
+    	border: 1px solid #CCC;
+    }
+      #shun #shi #wenwen
+    {
+    	font-size:30px;
+    	color: black;
+    	margin-left: 180px;
+    	margin-bottom: 10px;
+    	line-height: 100px;
+    	/*text-indent: 250px;
+    	margin-top: 10px;
+    	margin-top: 20px; */
+    }
+     #shun  #shi #wenwen2
+    {
+    	font-size: 50px;
+    	color: #FF5000;
+    	margin-left: 100px;
+    	margin-top: 10px;
+    	/*text-indent: 230px;
+    	margin-top: 50px;*/
+    }
+     #shun #wenwen3
+    {
+    	margin-left:130px;
+    	margin-top: 50px;
+    	background: url(./images/guanwang.png) no-repeat;
+    }
+     #shun #wenwen4
+    {
+    	margin-top: 50px;
+    	margin-left:555px;
+    	color: black;
+    	font-size: 20px;
+    }
+    #shun #wenwen5
+    {
+    	margin-left: 350px;
+    	margin-top: 50px;
+    }
+     #shun #wenwen6
+    {
+		width: 460px;
+		height: 140px;
+		margin-top: 50px;
+		margin-left: 480px;
+    }
+     #shun  #wenwen6 #jian3
+    {
+    	color:#F55A19;
+    	text-indent: 200px;
+    	margin-left:200px;
+    	font-size: 18px;
+    	/*margin-top: */
+    }
+      #shun  #wenwen6 #jian4
+     {
+     	color: #666666;
+     	font-size: 14px;
+     	margin-left: 20px;
+     }
+       #shun #wenwen6 #jian5
+     {
+     	color: #666666;
+     	font-size: 14px;
+     	margin-left:60px;
+     }
+       #shun #wenwen6 #jian6
+     {
+     	color: #666666;
+     	font-size: 14px;
+     	margin-left: 20px;
+     }
+      #shun  #wenwen6 #jian7
+     {
+     	color: #666666;
+     	font-size: 14px;
+     	margin-left: 5px;
+     }
+      #shun #wenwen7
+     {
+     	border: 1px solid #ccc;
+     	width: 1200px;
+     	height:320px;
+     	margin-left: 110px;
+     	margin-top: 50px;
+     }
+      #shun #wenwen7 span
+     {
+     	color: #F55A19;
+     	font-size: 18px;
+     }
+      #shun #wenwen7 #wenwen8
+     {
+     	/*margin-top: 60px;
+     	margin-left:20px;
+     	line-height: 30px;*/
+     	height:80px; 
+     	width:1128px;
+     	margin-left: 20px;
+     	margin-top: 30px;
+     }
+      #shun #wenwen7  li
+     {
+     	color: #666679;
+     	font-size: 14px;
+     }
+       #shun #wenwen7 #wenwen9
+     {
+     	margin-top: 50px;
+     	margin-left:20px;
+     	height: 140px;
+     	width:1128px;
+     }
+      #wen #jianjian
+    {
+         /*background: #F55A19;
+         display: none;*/
+    }
+    #shun
+    {
+        display: none;
+    }
+    #jin
+    {
+        display: none;
+    }
+    #kai
+    {
+        display: none;
+    }
+    #yi
+    {
+        display: none;
+    }
+    

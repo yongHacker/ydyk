@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}shopSet.css"/>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>收货地址- 编辑收货地址 <small> 网站系统收货地址资料 </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form" method="post"
+				action="{$url}">
+
+				{if $info.infoid}
+				<input type="hidden" name="infoid" value="{$info.infoid}" />
+				{/if}
+
+			   <div class="form-group">
+			      <label for="uname" class="col-xs-2 control-label">用户id</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="uid" name="uid"
+			          required="required" oninvalid="setCustomValidity('用户id不能为空')"
+			          oninput="setCustomValidity('')" maxlength="20"
+			            placeholder="请输入用户账号" value="{$info.uid}"/>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="email" class="col-xs-2 control-label">收货人电话</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="uphone" name="uphone"
+			          required="required" oninvalid="setCustomValidity('电话不能为空')"
+			          oninput="setCustomValidity('')" maxlength="50"
+			            placeholder="请输入您的个人电话" value="{$info.uphone}"/>
+			      </div>
+			   </div>
+				<div class="form-group">
+					<label for="email" class="col-xs-2 control-label">收货人姓名</label>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" id="rec_name" name="rec_name"
+							   required="required" oninvalid="setCustomValidity('收货人姓名不能为空')"
+							   oninput="setCustomValidity('')" maxlength="50"
+							   placeholder="请输入收货人姓名" value="{$info.uname}"/>
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="email" class="col-xs-2 control-label">收货地址</label>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" id="address" name="address"
+							   required="required" oninvalid="setCustomValidity('收货地址不能为空')"
+							   oninput="setCustomValidity('')" maxlength="50"
+							   placeholder="请输入收货地址" value="{$info.city}{$info.address}"/>
+					</div>
+				</div>
+			   <div class="form-group">
+			      <label for="lastname" class="col-xs-2 control-label">是否设为默认地址</label>
+			      <div class="col-xs-8">
+			          <select class="form-control input-sm" name="is_default">
+				         <option value="1" {if $info.flag eq 1} selected {/if}>是</option>
+				         <option value="0" {if $info.flag eq 0} selected {/if}>否</option>
+				      </select>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" id="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+		<!-- 模态声明，show 表示显示 -->
+		<div class="modal" tabindex="-1" id="myModal">
+		     <!-- 窗口声明 -->
+		     <div class="modal-dialog">
+		        <!-- 内容声明 -->
+		        <div class="modal-content">
+		              <!-- 头部 -->
+		              <div class="modal-header">
+		                 <button type="button" class="close"
+		                            data-dismiss="modal" onClick="close_modal()">
+		                          <span>&times;</span>
+		                  </button>
+		                  <h4 class="modal-title">标题</h4>
+		              </div>
+		              <!-- 主体 -->
+		              <div class="modal-body">
+		                   <p id="modal-body">内容</p>
+		              </div>
+		              <div class="modal-footer">
+			            <button type="button" class="btn btn-default" onClick="close_modal()"
+			               data-dismiss="modal">关闭
+			            </button>
+			         </div>
+		        </div>
+		     </div>
+		</div><!--.alert end-->
+	</body>
+</html>

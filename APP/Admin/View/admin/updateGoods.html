@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap-fileinput.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}shopSet.css"/>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap-fileinput.js" ></script>
+		
+		<!-- 编辑器源码文件 -->
+		<script type="text/javascript" src="/Public/admin/wangEditor/wangEditor.min.js"></script>
+		<style type="text/css">
+			#editor{
+				width: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>商品管理 <small> 编辑商品详情信息 </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form" method="post" enctype="multipart/form-data"
+			 onsubmit="return updateCheck()" action="{$url}">
+			   <div class="form-group">
+			      <label for="gname" class="col-xs-2 control-label">商品名称</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="gname" name="gname"
+			          required="required" oninvalid="setCustomValidity('商品名称不能为空')"
+			          oninput="setCustomValidity('')" maxlength="20"
+			            placeholder="请输入商品名称" value="{$info.gname}"/>
+			        <small>商品名称，20字以内</small>
+			        {if $info.gid}
+			        <input type="hidden" name="id" id="gid" value="{$info.gid}" />
+			        {/if}
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="intro" class="col-xs-2 control-label">产品介绍</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="intro" name="intro"
+			          required="required" oninvalid="setCustomValidity('产品介绍不能为空')"
+			          oninput="setCustomValidity('')" maxlength="150"
+			            placeholder="请输入产品介绍" value="{$info.intro}"/>
+			         <small>产品介绍，150字以内</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="taste" class="col-xs-2 control-label">产品口味</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="taste" name="taste"
+			          required="required" oninvalid="setCustomValidity('产品口味不能为空')"
+			          oninput="setCustomValidity('')" maxlength="20"
+			            placeholder="请输入产品口味" value="{$info.taste}"/>
+			         <small>示例： 抹茶咖啡轻乳酪复合口味，20字以内</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="wine" class="col-xs-2 control-label">调味酒</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="wine" name="wine"
+			          required="required" oninvalid="setCustomValidity('调味酒不能为空')"
+			          oninput="setCustomValidity('')" maxlength="30"
+			            placeholder="请输入调味酒" value="{$info.wine}"/>
+			         <small>示例： 含少量调味酒，3小时即挥发。30字以内</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="scene" class="col-xs-2 control-label">适合场景</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="scene" name="scene"
+			          required="required" oninvalid="setCustomValidity('适合场景不能为空')"
+			          oninput="setCustomValidity('')" maxlength="50"
+			            placeholder="请输入适合场景" value="{$info.scene}"/>
+			         <small>示例： 生日、下午茶、聚餐、约会、派对。50字以内</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="fresh" class="col-xs-2 control-label">保鲜条件</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="fresh" name="fresh"
+			          required="required" oninvalid="setCustomValidity('保鲜条件不能为空')"
+			          oninput="setCustomValidity('')" maxlength="50"
+			            placeholder="请输入保鲜条件" value="{$info.fresh}"/>
+			         <small>示例：请放入冰箱冷藏(0℃-4℃)，为保最佳风味请于当天食用完。50字以内</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="material" class="col-xs-2 control-label">主要原材料</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="material" name="material"
+			          required="required" oninvalid="setCustomValidity('主要原材料不能为空')"
+			          oninput="setCustomValidity('')" maxlength="100"
+			            placeholder="请输入主要原材料" value="{$info.material}"/>
+			         <small>示例：白巧克力（法国）/总统牌稀奶油（法国）/宇治抹茶粉（日本）/红豆（日本）/马斯卡彭软芝士(意大利)。100字以内</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="lastname" class="col-xs-2 control-label">所属分类</label>
+			      <div class="col-xs-8">
+			          <select class="form-control input-sm" name="cid">
+			          {foreach item=i from=$classify}
+				         <option value="{$i.cid}">{$i.cname1}——分类级别：{$i.level}</option>
+				      {/foreach}
+				      </select>
+			         <small>所属分类</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="rules" class="col-sm-2 control-label">选择规格</label>
+			      <div class="col-xs-8">
+				      <table class="table table-bordered">
+				        {foreach item=i from=$norms name=foo}
+			         		{if ($smarty.foreach.foo.iteration+2) is div by 3}
+			         		<tr>
+			         		{/if}
+			         		<td>
+			         		  <label>
+						         <input type="checkbox" name="normid[]" value="{$i.normid}" {$i.isCheck}/>
+						          ID：{$i.normid}，{$i.norname}
+						      </label>
+			         		</td>
+			         		{if ($smarty.foreach.foo.iteration+1) is div by 4}
+			         		</tr>
+			         		{else if $smarty.foreach.products.last}
+			         		</tr>
+			         		{/if}
+			         	{/foreach}
+			         </table>
+			         <small>商品规格</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="photo" class="col-xs-2 control-label">产品图片</label>
+			      <div class="col-xs-8">
+			      	{if $info.photo}
+			      	<div class="imgbox" id="img1">
+						<img src="{$smarty.const.upload_url}{$info.photo}" />
+						<button type="button" class="btn btn-danger" onclick="dellogo('1')">-</button>
+					</div>
+			      	
+			        <div class="fileinput fileinput-new" data-provides="fileinput"
+			        	id="fileinput" style="display: none;">
+			        {else}
+			        <div class="fileinput fileinput-new" data-provides="fileinput">
+			        {/if}
+	                    <div class="fileinput-new thumbnail">
+	                        <img id="picImg" style="width: 100%;height: auto;min-height: 140px;"
+	                         src="/Public/admin/images/noimage.png" alt="">
+	                    </div>
+	                    <div class="fileinput-preview fileinput-exists thumbnail"></div>
+	                    <div>
+	                        <span class="btn btn-primary btn-file">
+	                            <span class="fileinput-new">选择文件</span>
+	                            <span class="fileinput-exists">换一张</span>
+	                            <input type="file" name="photo" id="photo"
+	                            accept="image/gif,image/jpeg,image/x-png" />
+	                        </span>
+	                        <a href="javascript:;" class="btn btn-warning fileinput-exists" data-dismiss="fileinput">移除</a>
+	                    </div>
+	                 </div><!-- #exampleInputUpload -->
+			         <small>选择产品图片</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <label for="intro" class="col-xs-2 control-label">产品详情</label>
+			      <div class="col-xs-8">
+			         <div id="editor">
+				        <div id="info2">
+				        
+              			</div>
+				     </div>
+				     <input type="hidden" name="infos" id="info" value="{$info.infos}"/>
+			         <small>产品详情</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" id="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+		<!-- 模态声明，show 表示显示 -->
+		<div class="modal" tabindex="-1" id="myModal">
+		     <!-- 窗口声明 -->
+		     <div class="modal-dialog">
+		        <!-- 内容声明 -->
+		        <div class="modal-content">
+		              <!-- 头部 -->
+		              <div class="modal-header">
+		                 <button type="button" class="close"
+		                            data-dismiss="modal" onClick="close_modal()">
+		                          <span>&times;</span>
+		                  </button>
+		                  <h4 class="modal-title">标题</h4>
+		              </div>
+		              <!-- 主体 -->
+		              <div class="modal-body">
+		                   <p id="modal-body">内容</p>
+		              </div>
+		              <div class="modal-footer">
+			            <button type="button" class="btn btn-default" onClick="close_modal()"
+			               data-dismiss="modal">关闭
+			            </button>
+			         </div>
+		        </div>
+		     </div>
+		</div><!--.alert end-->
+{literal} 
+<script type="text/javascript">
+window.onload=function()
+{
+  //把图文信息的值通过innerHTML赋值给编辑器
+  document.getElementById("info2").innerHTML=$('#info').val();
+}
+var E = window.wangEditor;
+var editor = new E('#editor');
+//自定义菜单配置
+/*
+editor.customConfig.menus = [
+    'head',
+    'bold',
+    'italic',
+    'underline',
+    'image'
+];
+*/
+editor.customConfig.showLinkImg = false;  // 隐藏“网络图片”tab 
+editor.customConfig.uploadFileName = 'photo';      //给上传的本地图片文件命名的统一名称  
+editor.customConfig.uploadImgServer = 'index.php?m=admin&c=goods&a=upload';//官方文档上写的是服务器地址，也就是上传图片的方法名
+editor.customConfig.debug = true;
+//限制一次最多上传 1 张图片
+editor.customConfig.uploadImgMaxLength = 1;
+
+// 或者 var editor = new E( document.getElementById('editor') )
+
+editor.customConfig.uploadImgHooks = {
+	    
+	    success: function (xhr, editor, result) {
+	        // 图片上传并返回结果，图片插入成功之后触发
+	        // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+	    },
+	    fail: function (xhr, editor, result) {
+	        // 图片上传并返回结果，但图片插入错误时触发
+	        // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+	    	modal_show('系统提示','图片上传失败，请重新上传');
+	    },
+	    error: function (xhr, editor) {
+	        // 图片上传出错时触发
+	        // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
+	    	modal_show('系统提示','图片上传失败，请重新上传');
+	    },
+	    timeout: function (xhr, editor) {
+	        // 图片上传超时时触发
+	        // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
+	    	modal_show('系统提示','图片上传超时，请重新上传');
+	    },
+
+	    // 如果服务器端返回的不是 {errno:0, data: [...]} 这种格式，可使用该配置
+	    // （但是，服务器端返回的必须是一个 JSON 格式字符串！！！否则会报错）
+	    customInsert: function (insertImg, result, editor) {
+	        // 图片上传并返回结果，自定义插入图片的事件（而不是编辑器自动插入图片！！！）
+	        // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果
+			if(result.errno=='1'){
+				modal_show('系统提示','图片上传失败');
+			}else{
+		        // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：
+		        var url = result.url;
+		        insertImg(url);
+			}
+
+	        // result 必须是一个 JSON 格式字符串！！！否则报错
+	    }
+};
+editor.customConfig.onchange = function (html) {
+    // 监控变化，同步更新到 textarea
+	$('#info').val(html);
+};
+editor.create();
+function updateCheck(){
+	var photo=$('#photo').val();
+	var id=$('#gid').val();
+	var info=$('#info').val();
+	if(!info){
+		modal_show('系统提示','请输入商品详情');
+		return false;
+	}else if(id){
+		modal_show('系统提示','系统处理中，请耐心等待');
+		return true;
+	}else if(photo){
+		modal_show('系统提示','图片正在上传中，请耐心等待');
+		return true;
+	}else{
+		modal_show('系统提示','请选择广告图片');
+		return false;
+	}
+}
+function dellogo(id){
+	$('#img1').remove();
+	$('#fileinput').css('display','block');
+}
+</script>
+{/literal} 
+	</body>
+</html>

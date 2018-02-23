@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}power.js" ></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>权限资源管理  <small>网站系统权限资源管理 </small></h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="well mywell" id="shopSetWell">
+			<h5>操作提示
+				<small class="pull-right" onclick="closeWell('shopSetWell')">
+					<i class="glyphicon glyphicon-minus"></i>
+				</small>
+			</h5> 
+			<div>
+				<span>权限资源管理,强烈建议对此处谨慎操作。</span>
+			</div>
+		</div>
+		<!--well end-->
+		<div>
+			<table class="table table-bordered">
+			   <caption>权限资源列表<small>(共{$count}条记录)</small>
+			   </caption>
+			   <thead>
+			      <tr>
+			         <th>ID</th>
+			         <th>名称</th>
+			         <th>描述</th>
+			         <th>认证规则</th>
+			         <th>权限状态</th>
+			         <th colspan="2">操作</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	  <tr>
+			   	  	<td colspan="7">
+			   	  		<a class="btn btnA btn-warning" href="index.php?m=admin&c=power&a=addPower">添加权限</a>
+			   	  	</td>
+			   	  </tr>
+			   	  {foreach item=i from=$list}
+			      <tr class="tableTd" >
+			         <td>{$i.id}</td>
+			         <td>{$i.title}</td>
+			         <td>{$i.intro}</td>
+			         <td>{$i.name}</td>
+			         <td id="rule{$i.id}">
+			         {if $i.status eq 1}已开启
+			         {else}已关闭
+			         {/if}
+			         </td>
+			         <td>
+			          	<a href="javascript:void(0)" onclick="changeRule({$i.id},this)">
+			          	 {if $i.status eq 1}关闭权限
+				         {else}开启权限
+				         {/if}
+			          	</a>
+			         	<a href="index.php?m=admin&c=power&a=update&id={$i.id}">编辑</a></td>
+			      </tr>
+			      {/foreach}
+			      <tr>
+			      	<td colspan="7" class="td_2">
+			      		<span>共{$count}条</span>
+			      		<span>总页数：{$pageNum}</span>
+			      		<span>
+			      			<a class="btn btn-xs btn-default btn-success"
+			      				href="{$pageurl}{$pageUp}">上一页</a>
+			      		</span>
+			      		<span>
+			      			<a class="btn btn-xs btn-default btn-info"
+			      				href="{$pageurl}{$pageDown}">下一页</a>
+			      		</span>
+						<span>
+							<select id="page">
+							{assign var=i value=1}
+							{section name="page" loop=$pageNum}
+								{if $i eq $pageNow}
+								<option value="{$i++}" selected>{$smarty.section.page.index+1}</option>
+								{else}
+								<option value="{$i++}">{$smarty.section.page.index+1}</option>
+								{/if}
+							{/section}
+							</select>
+						</span>
+						<span><button onclick="go()" class="btn btn-primary btn-xs">GO</button></span>
+						<span>当前页：{$pageNow}</span>
+						<span><a href="{$pageurl}{$pageNow}">刷新页面</a></span>
+			      	</td>
+			      </tr>
+			   </tbody>
+			</table>
+		</div>
+<!-- 模态声明，show 表示显示 -->
+<div class="modal" tabindex="-1" id="myModal">
+     <!-- 窗口声明 -->
+     <div class="modal-dialog">
+        <!-- 内容声明 -->
+        <div class="modal-content">
+              <!-- 头部 -->
+              <div class="modal-header">
+                 <button type="button" class="close"
+                            data-dismiss="modal" onClick="close_modal()">
+                          <span>&times;</span>
+                  </button>
+                  <h4 class="modal-title">标题</h4>
+              </div>
+              <!-- 主体 -->
+              <div class="modal-body">
+                   <p id="modal-body">内容</p>
+              </div>
+        </div>
+     </div>
+</div><!--.alert end-->
+<script type="text/javascript">
+function go(){
+	var page=document.getElementById('page');
+	window.location.href="{$pageurl}"+page.value; 
+}
+</script>
+	</body>
+</html>

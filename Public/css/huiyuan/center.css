@@ -1,0 +1,252 @@
+body{
+	margin: 0;
+}
+.navbar{
+    color: #885F40;
+}
+.navbar a{
+	color: #885F40;
+}
+nav .garden{
+    border: 1px solid #885F40;
+}
+#top{
+	width: 100%;
+	height: 150px;
+	background: #ccc;
+}
+.breadcrumb_nav{
+	width: 300px;
+	height: 77px;
+	/*background:#f0f;*/
+	position: absolute;
+	left: 80px;
+	top: 130px;
+	margin-bottom:20px;
+}
+.breadcrumb_nav a{
+	text-decoration:none;
+}
+.breadcrumb_nav span{
+	line-height:77px;
+	font-size:15px;
+	color:#555555;
+}
+.u_info{
+	width:1300px;
+	height:265px;
+	margin:0 auto;
+	
+}
+.u_info .u_info_1{
+	width:420px;
+	height:200px;
+	border:1px #ccc solid;
+	float:left;
+	margin-right:40px;
+}
+.u_info .u_info_1 .HPor{
+	width:130px;
+	height:130px;
+	border-radius:50%;
+	border:6px solid #ccc;
+	overflow:hidden;
+	margin-left:30px;
+	margin-top:24px;
+	float:left;
+}
+.u_info .u_info_1 ._info{
+	width:218px;
+	height:183px;
+	float:left;
+	margin-top:30px;
+	line-height:30px;
+	margin-left: 30px;
+}
+.u_info .u_info_1 .btns{
+	width:248px;
+	height:99px;
+	background:#f9f;
+}
+.u_info .u_info_1 ._info .ft_1{
+	color:#000000;
+	font-size:14px;
+	
+}
+.u_info .u_info_1 ._info .ft_2{
+	color:#F55A19;
+	font-size:18px;
+}
+
+.u_info .u_info_1 .item{
+	width:218px;
+	height:133px;
+	float:left;
+	line-height:35px;
+	margin-top: 10px;
+	
+	font-size: 15px;
+}
+.u_info .u_info_1 .item img{
+	margin-right: 5px;
+}
+.u_info .u_info_1 .item .item_1 a{
+	color: #666;
+}
+.u_info .u_info_1 .item .item_1 a:hover{
+	color: #F55A19;
+}
+.u_info .u_info_1 .item .item_2 a{
+	color: #666;
+}
+.u_info .u_info_1 .item .item_2 a:hover{
+    color: #F55A19;
+}
+.u_info .u_info_1 .item .item_3{
+	background: #F8F9F3;
+	border: 1px #CECFC7 solid;
+	width: 150px;
+	height: 40px;
+	font-size: 14px;
+	text-align: center;
+	opacity: 0.9;
+	position: relative;
+	left: 105px;
+	top:10px;
+}
+.u_info .u_info_2{
+	width:250px;
+	height:200px;
+	border:1px #ccc solid;
+	background:#fff;
+	float:left;
+	text-align: center;
+}
+.u_info .u_info_2 .my_gift{
+	background: #EA5413;
+	width: 50px;
+	height: 50px;
+	margin: 20px auto;
+	border-radius: 50%;
+	text-align: center;
+}
+.u_info .u_info_2 .my_gift img{
+	width: 30px;
+	height: 30px;
+	margin-top:10px;
+}
+.u_info .u_info_2 ._btn{
+	width: 80px;
+	height: 25px;
+	border: 1px #F55A19 solid;
+	margin: 20px auto;
+}
+.u_info .u_info_2 a{
+	font-size: 13px;
+	text-decoration: none;
+	color: #666666;
+}
+.u_info .ft_3{
+	width: 140px;
+	height: 30px;
+	float: left;
+	/*background:#ccc;*/
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 30px;
+	margin-top: 30px;
+}
+.coupon{
+	width: 1300px;
+	height: 300px;
+	background: #F3F3F3;
+	margin:0 auto;
+}
+.coupon .coupon_left{
+	width: 300px;
+	height: 300px;
+	/*background: #f0f;*/
+	float: left;
+}
+.coupon .coupon_left p{
+	margin-left: 40px;
+}
+.coupon .coupon_list{
+	width: 1000px;
+	height: 300px;
+	/*background: #666;*/
+	float: left;
+}
+.coupon .coupon_list .coupon_value{
+	width: 215px;
+	height: 300px;
+	/*background: #999;*/
+	float: left;
+	margin-left: 25px;
+}
+.coupon .coupon_list .coupon_value .coupon_value_count{
+	width: 215px;
+	height: 136px;
+	margin-top: 50px;
+	background: #fff;
+	border:1px #D4D4D4 solid;
+	/*line-height: 30px;*/
+}
+.coupon .coupon_list .coupon_value .coupon_convert{
+	width: 120px;
+	height: 30px;
+	border:1px #FF6600 solid;
+	margin: 30px auto;
+	text-align: center;
+	line-height: 30px;
+}
+.coupon .coupon_list .coupon_value a{
+	text-decoration: none;
+	color: #FF6600;
+}
+.user_id{
+	width: 500px;
+	height: 50px;
+	margin-top:20px;
+	margin-left:60px;
+	/*background: #ccc;*/
+}
+.user_id a{
+	text-decoration: none;
+	color: #666666;
+	font-size: 15px;
+}
+.lucky{
+	width: 500px;
+	height: 50px;
+	margin-top:20px;
+	margin-left:60px;
+	font-size: 15px;
+	color: #CCCCCC;
+	margin-bottom: 50px;
+}
+.lucky .Hv{
+	margin-left: 110px;
+	margin-top: -25px;
+}
+.lucky .Hv ._qy{
+	height: 30px;
+	line-height: 30px;
+	width: 380px;
+	text-align: center;
+	font-size: 14px;
+	background: #FFF8E9;
+	color: #666666;
+	border: 1px #666666 solid;
+	display: none;
+	position: relative;
+	right: 100px;
+	top:10px;
+}
+.lucky .Hv ._qy a{
+	color: #F55A19;
+	font-size: 14px;
+}
+.lucky .Hv:hover ._qy{
+	display: block;
+}

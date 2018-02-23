@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>应季明星</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/shengridangao/dingdangao.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/normalize.css">
+    <link rel="stylesheet" href="../css/ydyk.css">
+    <script src="../js/jquery_3.2.1.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../layer-v3.1.1/layer/layer.js"></script>
+    <script src="../js/ydyk.js"></script>
+</head>
+<body>
+<!-- 头部的照片 -->
+<header id="shopDetailHead" class="shopDetail-nav" style="margin-bottom: 110px;">
+    <script>
+        $('#shopDetailHead').load("./nav.html");
+    </script>
+</header>
+<!-- 导航条 -->
+<div id='lead'>
+    <div class='lead_nav'>
+			<span>
+				<a href="./dingdangao.html">全部蛋糕</a>
+			</span>
+        <span>
+				<a href="./dangao-xinpin.html">新品上市</a>
+			</span>
+        <span>
+				<a href="./dangao-yingji.html">应季明星</a>
+			</span>
+
+        <span>
+				<a href="./dangao-remai.html">人气经典</a>
+			</span>
+        <span>
+				<a href="./dangao-dashi.html" style="color:#f55000">大师作品</a>
+			</span>
+    </div>
+</div>
+<div class='cat_list'>
+    <div class='cat_list_title'>
+        <span class='font_1'>大师作品</span><br/>
+        <span class='font_2'>Master works</span>
+    </div>
+    <div class="section02">
+        <div class='layout'>
+
+
+            <div class='item'>
+                <div align=center><a href=""><img src="../imgs/shengridangao/cake12.jpg" alt=""></a></div>
+                <a href="">琉璃之心</a></br>
+                <span class='ft14'>208元</span></br>
+                <span class='ft15'>MOF大师榴莲蛋糕</span>
+                <br>
+                <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车
+                </button>
+            </div>
+
+            <div class='item'>
+                <div align=center><a href=""><img src="../imgs/shengridangao/cake21.jpg" alt=""></a></div>
+                <a href="">宇治微风</a></br>
+                <span class='ft14'>198元</span></br>
+                <span class='ft15'>日本“鬼才”抹茶蛋糕</span>
+                <br>
+                <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车
+                </button>
+            </div>
+
+            <div class='item'>
+                <div align=center><a href=""><img src="../imgs/shengridangao/cake27.jpg" alt=""></a></div>
+                <a href="">午后的栗</a></br>
+                <span class='ft14'>198元</span></br>
+                <span class='ft15'>西点冠军咖啡蛋糕</span>
+                <br>
+                <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车
+                </button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<footer id="shopDetailFooter">
+    <script>
+        $('#shopDetailFooter').load("../footer.html");
+    </script>
+</footer>
+
+<div class="commonModal">
+    <script>
+        $('.commonModal').load("../modal.html");
+    </script>
+</div>
+
+
+<script src="js/ydyk.js"></script>
+
+<script>
+    // 导航栏
+    $(function () {
+        $('#nav-logo').attr('src', '../imgs/logo.png');
+        $('.band-story').hover(function () {
+            $('.band').css('border', '1px solid #885F40');
+            $('.band-body').show();
+        }, function () {
+            $('.band').mouseleave(function () {
+                $('.band').css('border', 'none');
+                $('.band-body').hide();
+            });
+        });
+    });
+</script>
+
+
+</body>
+</html>
+
+
+
+
+					
+					
+					

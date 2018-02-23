@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" type="text/css" href="{$smarty.const.ADMIN_CSS_URL}shopSet.css"/>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js"></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="tabs">
+			<div class="page-header">
+				<h4>编辑收货人信息</h4>
+			</div>
+		</div>
+		<!--tabs end-->
+		<div class="formlist">
+			<form class="form-horizontal" role="form" method="post" onsubmit="return updateAdminCheck()"
+				action="{$url}">
+			   <div class="form-group">
+			      <label for="uname" class="col-xs-2 control-label">收货人姓名</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="uname" name="uname"
+			          required="required" oninvalid="setCustomValidity('收货人姓名不能为空')"
+			          oninput="setCustomValidity('')" maxlength="20"
+			            placeholder="请输入收货人姓名" value="{$info.uname}"/>
+			        <small>收货人姓名</small>
+			        <input type="hidden" name="infoid" value="{$info.infoid}" />
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="uphone" class="col-xs-2 control-label">收货人电话</label>
+			      <div class="col-xs-8">
+			         <input type="number" class="form-control" id="uphone" name="uphone"
+			          required="required" oninvalid="setCustomValidity('收货人电话不能为空')"
+			          oninput="setCustomValidity('')" maxlength="50"
+			            placeholder="请输入收货人电话" value="{$info.uphone}"/>
+			         <small>收货人电话</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="city" class="col-xs-2 control-label">省市区</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="city" name="city"
+			          required="required" oninvalid="setCustomValidity('省市区不能为空')"
+			          oninput="setCustomValidity('')" value="{$info.city}"
+			            placeholder="请输入省市区">
+			         <small>省市区</small>
+			      </div>
+			   </div>
+			   <div class="form-group">
+			      <label for="address" class="col-xs-2 control-label">详细地址</label>
+			      <div class="col-xs-8">
+			         <input type="text" class="form-control" id="address" name="address"
+			          required="required" oninvalid="setCustomValidity('详细地址不能为空')"
+			          oninput="setCustomValidity('')" value="{$info.address}"
+			            placeholder="请输入详细地址">
+			         <small>详细地址</small>
+			      </div>
+			   </div>
+			   
+			   <div class="form-group">
+			      <div class="col-sm-offset-2 col-sm-10">
+			         <button type="submit" id="submit" class="btn btn-primary">确认提交</button>
+			      </div>
+			   </div>
+			</form>
+		</div>
+	  <script src="{$smarty.const.ADMIN_JS_URL}js/distpicker.data.js"></script>
+	  <script src="{$smarty.const.ADMIN_JS_URL}js/distpicker.js"></script>
+	  <script src="{$smarty.const.ADMIN_JS_URL}js/main.js"></script>
+	</body>
+</html>

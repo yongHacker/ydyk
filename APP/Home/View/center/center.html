@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{include file="common/commonHeader.html"}
+	<link rel="stylesheet" href="{$smarty.const.CSS_URL}huiyuan/center.css">
+</head>
+<body>
+{include file="common/Header.html"}
+
+<!-- 首页-产品-xxx -  -->
+<div style="padding-top: 110px;">
+	<div class='breadcrumb_nav'>
+		<div>
+			<a href="index.php?m=home&c=index&a=index"><span>首页</span></a>
+			<span>></span>
+			<a href="index.php?m=home&c=center&a=index"><span>个人中心</span></a>
+		</div>
+	</div>
+	<div class="u_info">
+		<div class="u_info_1">
+			<!-- 头像div -->
+			<div class="HPor">
+				<img src="{$smarty.const.IMAGES_URL}huiyuanImg/user.jpg" alt="">
+			</div>
+			<div class='_info'>
+				<!-- ft_1字体1 ft_2字体2 -->
+				<span class="ft_1">欢迎回到壹点壹客！</span></br>
+				<span class="ft_2">{$uname}</span></br>
+				<div class='item'>
+					<div class='item_1'>
+						<img src="{$smarty.const.IMAGES_URL}huiyuanImg/锁.png" width="17" height="17"><a href="index.php?m=home&c=center&a=editPwd">修改密码</a>&nbsp;&nbsp;
+						<img src="{$smarty.const.IMAGES_URL}huiyuanImg/留言.png" width="17" height="17"><a href="index.php?m=home&c=center&a=liuyan">留言</a>
+					</div>
+					<div class = 'item_2'>
+						<img src="{$smarty.const.IMAGES_URL}huiyuanImg/定位.png" width="17" height="17"><a href="index.php?m=home&c=center&a=address">收货地址</a>&nbsp;&nbsp;
+						<img src="{$smarty.const.IMAGES_URL}huiyuanImg/编辑.png" width="17" height="17"><a href="index.php?m=home&c=center&a=information">编辑资料</a>
+					</div>
+					<!--<div class='item_3'>
+						<span style="color: #000;">完善信息领</span>
+						<span style="color: #FF6600;">100</span>
+						<span style="color: #000;">红包</span>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<div class='u_info_2'>
+			<div class='my_gift'>
+				<img src="{$smarty.const.IMAGES_URL}huiyuanImg/订单.png" alt="">
+			</div>
+			<span style=" font-size: 18px;">我的订单</span>
+			<a href="index.php?m=home&c=center&a=order" style="font-size: 16px;">
+				<div class='_btn'>
+					<span style="color: #F55A19;">查看</span>
+				</div>	
+			</a>
+		</div>
+		<div class='u_info_2'>
+			<div class='my_gift'>
+				<img src="{$smarty.const.IMAGES_URL}huiyuanImg/礼品.png" alt="">
+			</div>
+			<span style=" font-size: 18px;">点金</span>&nbsp;
+			<span style=" font-size: 20px;color: #F55A19;">0</span>
+			<div style="margin-top: 20px;">
+				<a href="index.php?m=home&c=center&a=dianjin">[点金说明]</a>
+			</div>
+		</div>
+		<div class='u_info_2'>
+			<div class='my_gift'>
+				<img src="{$smarty.const.IMAGES_URL}huiyuanImg/余额.png" alt="">
+			</div>
+			<span style=" font-size: 18px;">余额</span>&nbsp;
+			<span style=" font-size: 20px;color: #F55A19;">0</span>
+			<span style=" font-size: 18px;">元</span>
+			<div class='_btn'>
+				<a href="javascript:void(0);" onclick="putMoney()" style="font-size: 16px;">
+					<span style="color: #F55A19;">充值</span>
+				</a>
+			</div>
+		</div>
+		<!-- 字体3号 -->
+		<div class = 'ft_3'>
+			<span>点金兑换优惠券：</span>
+		</div>
+	</div>
+	
+	<div class='coupon'>
+		<div class='coupon_left'>
+			<p style="margin-top:50px;">点金兑换规则：</p>
+			<p>1、点金可兑换优惠券</p>
+			<p>2、优惠券有效期1年</p>
+			<p>3、一张订单仅可使用一张券</p>
+			<p>4、优惠券不可与其他优惠同时享受</p>
+			<p>5、优惠券适合所有的商品</p>
+		</div>
+		<div class='coupon_list'>
+			<div class='coupon_value'>
+				<div class='coupon_value_count'>
+					<div style="margin-left: 20px;">
+						<span style="color: #FF6600">¥</span>
+						<span style="color: #FF6600;font-size: 50px;">10</span>
+						<span>元优惠券</span><br/>
+						<span>满158可用</span><br/>
+						<span>全品类</span>
+					</div>
+				</div>
+				<a href="#">
+					<div class="coupon_convert">
+						<span>10点金立即兑换</span>
+					</div>
+				</a>
+			</div>
+			<div class='coupon_value'>
+				<div class='coupon_value_count'>
+					<div style="margin-left: 20px;">
+						<span style="color: #FF6600">¥</span>
+						<span style="color: #FF6600;font-size: 50px;">20</span>
+						<span>元优惠券</span><br/>
+						<span>满258可用</span><br/>
+						<span>全品类</span>
+					</div>
+				</div>
+				<a href="#">
+					<div class="coupon_convert">
+						<span>20点金立即兑换</span>
+					</div>
+				</a>
+			</div>
+			<div class='coupon_value'>
+				<div class='coupon_value_count'>
+					<div style="margin-left: 20px;">
+						<span style="color: #FF6600">¥</span>
+						<span style="color: #FF6600;font-size: 50px;">30</span>
+						<span>元优惠券</span><br/>
+						<span>满358可用</span><br/>
+						<span>全品类</span>
+					</div>
+				</div>
+				<a href="#">
+					<div class="coupon_convert">
+						<span>30点金立即兑换</span>
+					</div>
+				</a>
+			</div>
+			<div class='coupon_value'>
+				<div class='coupon_value_count'>
+					<div style="margin-left: 20px;">
+						<span style="color: #FF6600">¥</span>
+						<span style="color: #FF6600;font-size: 50px;">40</span>
+						<span>元优惠券</span><br/>
+						<span>满458可用</span><br/>
+						<span>全品类</span>
+					</div>
+				</div>
+				<a href="#">
+					<div class="coupon_convert">
+						<span>40点金立即兑换</span>
+					</div>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class='user_id'>
+		<span style="font-weight: bold;font-size: 15px;">您当前的身份是: </span>&nbsp;
+		<img src="{$smarty.const.IMAGES_URL}huiyuanImg/会员.png" width="25px" height="25px">&nbsp;
+		<span style="font-weight: bold;font-size: 15px;">普通会员 </span>&nbsp;
+		<a href="#">[新会员权益]</a>
+	</div>
+	<div class='lucky'>
+		<span style="margin-right: 20px;">您享有的权益:</span>
+		<div class="Hv">
+			<a href="#">
+				<img src="{$smarty.const.IMAGES_URL}huiyuanImg/权益.png" width="25px" height="25px">
+			</a>
+			<div class='_qy'>
+				<span>享受每月会员日指定蛋糕82折优惠，限会员日配送</span>
+				<a href="#">[详情]</a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+	<div style="clear: both"></div>
+
+
+{include file="common/footer.html"}
+
+{literal}
+<script>
+	function putMoney() {
+		alert('亲~~该功能我们的程序员哥哥做不来');
+    }
+</script>
+{/literal}
+
+</body>
+</html>
+
+
+
+					
+					
+					

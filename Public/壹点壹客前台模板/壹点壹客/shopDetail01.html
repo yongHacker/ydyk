@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>shopDetail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ydyk.css">
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="js/jquery_3.2.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layer-v3.1.1/layer/layer.js"></script>
+
+</head>
+<body>
+<header id="shopDetailHead">
+    <script>
+        $('#shopDetailHead').load("nav.html");
+    </script>
+</header>
+
+<!--商品详情-->
+<div class="shopDetail container">
+    <!--面包屑导航-->
+    <ol class="breadcrumb">
+        <li><a href="#">首页</a></li>
+        <li><a href="#">产品列表</a></li>
+        <li class="active">抹茶相思慕斯</li>
+    </ol>
+
+    <div class="goods_detail">
+        <div class="col-xs-8 shop-imgs">
+            <img src="imgs/goods_img/2-1.jpg" class="img-big img-responsive"  alt="">
+            <div class="thumbnail">
+                <img class="thumb on" src="imgs/goods_img/2-1.jpg" width="50" height="36" alt="" style="float: left">
+                <img class="thumb" src="imgs/goods_img/2-2.jpg" width="50" height="36" alt="">
+                <img class="thumb" src="imgs/goods_img/2-3.jpg" width="50" height="36" alt="">
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="shop-desc">
+                <h3>抹茶相思慕斯</h3>
+                <p>壹点壹客人气回归之作，精选经过天然石磨研磨的1年仅15天产期的宇治抹茶粉，
+                    结合日本进口红豆的软甜，跃于舌尖之上，口感细腻绵长，茶香清新浓郁，入口先略苦涩，后觉甘甜。
+                </p>
+            </div>
+            <div class="shopCar-content">
+                <div class="send-time">
+                    <i class="fa fa-clock-o"></i> <span>查看配送时间</span>
+                </div>
+                <div class="col-xs-6">
+                    <img class="img-responsive on" src="imgs/goods_img/size1.jpg" id="img-size1" alt="">
+                    <img class="img-responsive" style="display: none" id="img-size2" src="imgs/goods_img/size2.jpg" alt="">
+                    <img class="img-responsive" style="display: none" id="img-size3" src="imgs/goods_img/size3.jpg" alt="">
+                </div>
+                <div class="col-xs-6" id="weight">
+                    <p><img src="imgs/attr_icon_1.jpg" alt="">英制规格1磅</p>
+                    <p><img src="imgs/attr_icon_2.jpg" alt=""> 454g（实重1磅）</p>
+                    <p><img src="imgs/attr_icon_3.jpg" alt="">含5套餐具1盒蜡烛</p>
+                </div>
+                <div class="col-xs-12" style="margin:10px 0">
+                    <div class="chose on">
+                        3~5人份
+                        <i class="triangle"></i>
+                    </div>
+                    <div class="chose">
+                        6~10人份
+                        <i class="triangle"></i>
+                    </div>
+                    <div class="chose">
+                        11~15人份
+                        <i class="triangle"></i>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="nums">
+                        <i class="fa fa-minus-circle" id="minus"></i>
+
+                        <input class="num" id="num" type="text" size="2" value="1" data-price="198">
+
+                        <i class="fa fa-plus-circle" id="plus"></i>
+                    </div>
+                </div>
+                <div class="col-xs-10">
+                    <div class="sum" id="sum">
+                        <i class="fa fa-cny"></i>
+                        <span id="allsum">198</span>元
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--商品详情-->
+
+<div class="shopDetail-tab container">
+    <div class="col-xs-6 shop-detail active">
+        <i class="fa fa-birthday-cake"></i>
+        商品详情
+    </div>
+    <div class="col-xs-6 shop-eva">
+        <i class="fa fa-user"></i>
+        累计评价(124)
+    </div>
+</div>
+
+<!--图文详情-->
+<div class="container shop-img-detail">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_03.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_05.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_06.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_07.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_08.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_09.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_10.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_11.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_12.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_13.jpg" alt="">
+    <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_14(2).jpg" alt="">
+    <div class="well shopDesc">
+        <p><span>口味:</span> 抹茶咖啡轻乳酪复合口味 <span class="pull-right">甜度： ★★☆☆☆</span></p>
+        <p><span>调味酒:</span> 含少量调味酒，3小时即挥发 </p>
+        <p><span>适合场景:</span> 生日、下午茶、聚餐、约会、派对 </p>
+        <p><span>保鲜条件:</span> 请放入冰箱冷藏(0℃-4℃)，为保最佳风味请于当天食用完。 </p>
+        <p><span>主要原材料:</span> 白巧克力（法国）/总统牌稀奶油（法国）/宇治抹茶粉（日本）/红豆（日本）/马斯卡彭软芝士(意大利)/手指饼干（意大利）/杏仁利口酒（意大利）/可可粉（法国）/特浓咖啡（意大利）</p>
+    </div>
+</div>
+
+<!--商品评价-->
+<div class="container shop-img-eva">
+    <hr>
+    <ul>
+        <li>
+            <div>
+                <span style="color: #666666">45******4</span>
+                <span  style="color: #AAAAAA">(2017-12-17)</span>
+            </div>
+            <div class="people-eva">
+                <span style="color: #AAAAAA">口味:</span>
+                <span style="color: #666666">超好吃</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span style="color: #666666">45******4</span>
+                <span  style="color: #AAAAAA">(2017-12-17)</span>
+            </div>
+            <div class="people-eva">
+                <span style="color: #AAAAAA">口味:</span>
+                <span style="color: #666666">超好吃</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span style="color: #666666">45******4</span>
+                <span  style="color: #AAAAAA">(2017-12-17)</span>
+            </div>
+            <div class="people-eva">
+                <span style="color: #AAAAAA">口味:</span>
+                <span style="color: #666666">超好吃</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span style="color: #666666">45******4</span>
+                <span  style="color: #AAAAAA">(2017-12-17)</span>
+            </div>
+            <div class="people-eva">
+                <span style="color: #AAAAAA">口味:</span>
+                <span style="color: #666666">超好吃</span>
+            </div>
+        </li>
+        <li>
+            <div>
+                <span style="color: #666666">45******4</span>
+                <span  style="color: #AAAAAA">(2017-12-17)</span>
+            </div>
+            <div class="people-eva">
+                <span style="color: #AAAAAA">口味:</span>
+                <span style="color: #666666">超好吃</span>
+            </div>
+        </li>
+    </ul>
+    <div class="pager">
+        总计100个记录，共10页。
+        <span><a href="">第一页</a></span>
+        <span><a href="">上一页</a></span>
+        <span><a href="">下一页</a></span>
+        <span><a href="">最末页</a></span>
+    </div>
+</div>
+
+
+<footer id="shopDetailFooter">
+    <script>
+        $('#shopDetailFooter').load("footer.html");
+    </script>
+</footer>
+
+<div class="commonModal">
+    <script>
+        $('.commonModal').load("modal.html");
+    </script>
+</div>
+
+<script>
+    //图片缩略图切换
+    $(function () {
+        $('.thumb').eq(0).click(function () {
+            var imgBig = $(this).attr('src');
+            $(this).addClass('on').siblings().removeClass('on');
+            $('.img-big').attr('src',imgBig);
+        });
+        $('.thumb').eq(1).click(function () {
+            var imgBig = $(this).attr('src');
+            $(this).addClass('on').siblings().removeClass('on');
+            $('.img-big').attr('src',imgBig);
+        });
+        $('.thumb').eq(2).click(function () {
+            var imgBig = $(this).attr('src');
+            $(this).addClass('on').siblings().removeClass('on');
+            $('.img-big').attr('src',imgBig);
+        });
+
+    });
+    // 选择商品规格
+    $(function () {
+        $('.chose').hover(function () {
+            $(this).css("cursor","pointer");
+        });
+
+        $('.chose').eq(2).click(function () {
+            $(this).addClass('on').siblings().removeClass('on');
+            $('#img-size3').show().siblings().hide();
+            $('#weight').find('p:first').html("<img src=\"imgs/attr_icon_1.jpg\" alt=\"\"> 英制规格3磅");
+            $('#weight').find('p:eq(1)').html("<img src=\"imgs/attr_icon_2.jpg\" alt=\"\"> 1362g（实重3磅）");
+            $('#weight').find('p:last').html("<img src=\"imgs/attr_icon_3.jpg\" alt=\"\"> 含15套餐具1盒蜡烛");
+
+        });
+        $('.chose').eq(1).click(function () {
+            $(this).addClass('on').siblings().removeClass('on');
+            $('#img-size2').show().siblings().hide();
+            $('#weight').find('p:first').html("<img src=\"imgs/attr_icon_1.jpg\" alt=\"\"> 英制规格2磅");
+            $('#weight').find('p:eq(1)').html("<img src=\"imgs/attr_icon_2.jpg\" alt=\"\"> 908g（实重2磅）");
+            $('#weight').find('p:last').html("<img src=\"imgs/attr_icon_3.jpg\" alt=\"\"> 含10套餐具1盒蜡烛");
+
+        });
+        $('.chose').eq(0).click(function () {
+            $(this).addClass('on').siblings().removeClass('on');
+            $('#img-size1').show().siblings().hide();
+            $('#weight').find('p:first').html("<img src=\"imgs/attr_icon_1.jpg\" alt=\"\"> 英制规格1磅");
+            $('#weight').find('p:eq(1)').html("<img src=\"imgs/attr_icon_2.jpg\" alt=\"\"> 454g（实重1磅）");
+            $('#weight').find('p:last').html("<img src=\"imgs/attr_icon_3.jpg\" alt=\"\"> 含5套餐具1盒蜡烛");
+        });
+
+    });
+    // 计算购物车价格
+    $(function () {
+        var sum = parseInt($('#allsum').text());
+        var price = parseInt($('#num').attr('data-price'));
+        var num =  parseInt($('#num').val());
+        // 初始总价格
+        sum = price * num;
+        $('#allsum').text(sum);
+        // 手工输入数量时总价格
+        $('#num').keyup(function () {
+            var input = parseInt($('#num').val());
+            sum = price;
+            if(!isNaN(input)){
+                sum = price * input;
+                $('#allsum').text(sum);
+                if(sum<=0){
+                    $('#allsum').text(price);
+                    $('#num').val(1);
+                }
+            }else {
+                alert('请输入购买数量');
+            }
+        });
+        // 点击加号时总价格
+        $('#plus').click(function () {
+            var nums =  parseInt($('#num').val());
+            sum = sum + price;
+            $('#allsum').text(sum);
+            nums++;
+            $('#num').val(nums);
+        });
+        // 点击减号时总价格
+        $('#minus').click(function () {
+            var nums =  parseInt($('#num').val());
+            if(nums>1){
+                sum = sum - price;
+                $('#allsum').text(sum);
+                nums--;
+                $('#num').val(nums);
+            }else{
+                sum = price;
+                $('#allsum').text(sum);
+            }
+
+        });
+    });
+    //商品详情-评论页切换
+    $(function () {
+        $('.shopDetail-tab').find('.shop-detail').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.shop-img-detail').show(500).siblings('.shop-img-eva').hide(500);
+        });
+        $('.shopDetail-tab').find('.shop-eva').click(function () {
+            $(this).addClass('active').siblings().removeClass('active');
+            $('.shop-img-eva').show(500).siblings('.shop-img-detail').hide(500);
+        });
+    });
+</script>
+<script src="js/ydyk.js"></script>
+
+</body>
+
+
+</html>

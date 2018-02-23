@@ -1,0 +1,149 @@
+*{
+	margin: 0px;
+	padding: 0px;
+    word-wrap: break-word;
+    outline: none;
+
+}
+body{
+	min-width: 800px;
+}
+ul, ol, li {
+    list-style-image: none !important;
+    list-style-type: none !important;
+}
+a {
+    text-decoration: none !important;
+}
+h4,.active{
+	font-weight: 550;
+}
+.nopad{
+	padding: 0px !important;
+}
+.nomag{
+	margin: 0px !important;
+}
+/*顶部tab*/
+
+.tabs{
+	width: 100%;
+	height: auto;
+	min-height: 50px;
+}
+.tabs .page-header{
+	margin: 20px 0px 0px 0px;
+}
+.nav-tabs a{
+	color: black;
+}
+.nav-tabs{
+	padding-top: 15px;
+	width: 100%;
+}
+.nav-tabs h4{
+	margin-right: 10px;
+}
+
+/*操作提示*/
+.mywell{
+	width: 100%;
+	height: auto !important;
+	margin-top: 10px;
+	background-color: #EBF8FD;
+	color: #748A8F;
+	font-size: 12px;
+	padding: 10px 20px;
+}
+.mywell h5{
+	font-size: 16px;
+	color: rgb(44, 188, 163);
+}
+.mywell i{
+	width: 20px !important;
+	height: 18px !important;
+	color: rgb(44, 188, 163);
+}
+.mywell i:hover{
+	cursor: pointer;
+}
+.mywell span{
+	display: block;
+	width: 100%;
+	height: 23px;
+	line-height: 23px;
+}
+
+.table>caption>button{
+	margin-left: 20px;
+}
+.table>caption>a{
+	margin-left: 20px;
+}
+.table>caption{
+	line-height: 30px;
+	font-size: 18px;
+	font-weight: 550;
+	color: #000;
+}
+.table>caption>small,i{
+	margin-left: 10px;
+	color: rgb(119, 119, 119);
+	font-weight: 500;
+}
+
+
+.btnA{
+	padding: 6px 12px !important;
+	border: 1px solid transparent !important;
+}
+.tableTd a{
+	padding: 0px 10px;
+	border-right: 1px solid #9D9D9D;
+}
+
+.tableTd img{
+	height: 100px;
+	width: 150px;
+}
+
+.tableTd a:last-child{
+	border: 0px;
+}
+
+.td_2 {
+	text-align: left;
+	box-sizing: border-box;
+	vertical-align: inherit !important;
+	height: 50px;
+}
+
+.td_2 .pagination {
+	margin: 0px;
+	padding: 0px;
+}
+
+.td_2>span {
+	display: inline-block;
+	color: #666;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+/**/
+.thumbnail{
+	min-width: 200px; min-height: 150px;
+}
+/**/
+		.imgbox{
+			height: 120px;
+			width: 100%;
+		}
+		.imgbox>img{
+			height: 100px;
+			width: 100px;
+		}
+		.imgbox>button{
+			margin-left: 10px;
+		}

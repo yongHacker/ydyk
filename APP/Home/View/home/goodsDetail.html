@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>shopDetail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="{$smarty.const.CSS_URL}bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{$smarty.const.Public_URL}fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}normalize.css">
+    <link rel="stylesheet" href="{$smarty.const.CSS_URL}ydyk.css">
+    
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="{$smarty.const.JS_URL}jquery_3.2.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="{$smarty.const.JS_URL}bootstrap.min.js"></script>
+    <script src="{$smarty.const.Public_URL}layer/layer/layer.js"></script>
+
+</head>
+<body>
+    <header id="shopDetailHead" class="shopDetail-nav">
+        {include file="./nav.html"}
+    </header>
+
+    <!--商品详情-->
+    <div class="shopDetail container">
+        <!--面包屑导航-->
+        <ol class="breadcrumb">
+            <li><a href="#">首页</a></li>
+            <li><a href="#">产品列表</a></li>
+            <li class="active">{$info.gname}</li>
+        </ol>
+        
+        <div class="goods_detail">
+            <div class="col-xs-8 shop-imgs">
+                <img src="{$smarty.const.upload_url}{$info.photo}" class="img-big img-responsive"  alt="">
+            </div>
+            <div class="col-xs-4">
+                <div class="shop-desc">
+                    <h3>{$info.gname}</h3>
+                    <p>{$info.intro}
+                    </p>
+                </div>
+                <div class="shopCar-content">
+                    <div class="send-time">
+                        <i class="fa fa-clock-o"></i> <span>配送日期:{$today}至{$nextday}</span>
+                    </div>
+                    <div class="col-xs-6" id="sizeImg">
+                    	<!-- 
+                        <img class="img-responsive on" src="imgs/goods_img/size1.jpg" id="img-size1" alt="">
+                        <img class="img-responsive" style="display: none" id="img-size2" src="imgs/goods_img/size2.jpg" alt="">
+                        <img class="img-responsive" style="display: none" id="img-size3" src="imgs/goods_img/size3.jpg" alt="">
+                         -->
+                    </div>
+                    <div class="col-xs-6" id="weight">
+                    	<p></p>
+                    	<p></p>
+                    	<p></p>
+                    	<!-- 
+                        <p><img src="imgs/attr_icon_1.jpg" alt="">英制规格1磅</p>
+                        <p><img src="imgs/attr_icon_2.jpg" alt=""> 454g（实重1磅）</p>
+                        <p><img src="imgs/attr_icon_3.jpg" alt="">含5套餐具1盒蜡烛</p>
+                         -->
+                    </div>
+                    <div class="col-xs-12" style="margin:10px 0" id="chose">
+                    {foreach item=i from=$norms name=norms}
+        				{if $smarty.foreach.norms.iteration eq 1}
+                        <div class="chose on" id="normid{$i.normid}" data-id="{$i.normid}"
+                         onclick="chose({$i.normid})">
+                            {$i.norname}
+                            <i class="triangle"></i>
+                        </div>
+                        {else}
+                        <div class="chose" id="normid{$i.normid}" data-id="{$i.normid}"
+                         onclick="chose({$i.normid})">
+                            {$i.norname}
+                            <i class="triangle"></i>
+                        </div>
+                         {/if}
+        			{/foreach}
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="nums">
+                            <i class="fa fa-minus-circle" id="minus"></i>
+                            <input class="num" id="num" type="text" size="2" value="1" data-price="198">
+                            <i class="fa fa-plus-circle" id="plus"></i>
+                        </div>
+                    </div>
+                    <div class="col-xs-10">
+                        <div class="sum" id="sum" onclick="addcar({$info.gid})">
+                            <i class="fa fa-cny"></i>
+                            <span id="allsum">0</span>元
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--商品详情-->
+
+    <div class="shopDetail-tab container">
+        <div class="col-xs-6 shop-detail active">
+            <i class="fa fa-birthday-cake"></i>
+            商品详情
+        </div>
+        <div class="col-xs-6 shop-eva">
+            <i class="fa fa-user"></i>
+            累计评价(124)
+        </div>
+    </div>
+
+    <!--图文详情-->
+    <div class="container shop-img-detail">
+    <div id="infos"></div>
+    <input type="hidden" id="info" value="{$info.infos}"/>
+    
+    <!-- 
+        <img class="img-responsive" src="imgs/uploads/shopDetail/提拉米苏抹茶颂_03.jpg" alt="">
+      -->
+        <div class="well shopDesc">
+            <p><span>口味:</span> {$info.taste} <span class="pull-right">甜度： ★★☆☆☆</span></p>
+            <p><span>调味酒:</span> {$info.wine} </p>
+            <p><span>适合场景:</span> {$info.scene} </p>
+            <p><span>保鲜条件:</span> {$info.fresh} </p>
+            <p><span>主要原材料:</span> {$info.material}</p>
+        </div>
+    </div>
+
+    <!--商品评价-->
+    <div class="container shop-img-eva" style="display: none">
+        <hr>
+        <ul>
+            <li>
+                <div>
+                    <span style="color: #666666">Bo***********6</span>
+                    <span  style="color: #AAAAAA">（2018-01-10）</span>
+                </div>
+                <div class="people-eva">
+                    <span style="color: #AAAAAA">口味:</span>
+                    <span style="color: #666666">蛋糕不甜腻，芒果甜，口感不错！</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span style="color: #666666">EX***********3 </span>
+                    <span  style="color: #AAAAAA">（2018-01-09）</span>
+                </div>
+                <div class="people-eva">
+                    <span style="color: #AAAAAA">口味:</span>
+                    <span style="color: #666666">超好吃:)</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span style="color: #666666">su***********7</span>
+                    <span  style="color: #AAAAAA">（2018-01-09）</span>
+                </div>
+                <div class="people-eva">
+                    <span style="color: #AAAAAA">口味:</span>
+                    <span style="color: #666666">能做芝士的更好了</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span style="color: #666666">78*********2 </span>
+                    <span  style="color: #AAAAAA">（2018-01-09）</span>
+                </div>
+                <div class="people-eva">
+                    <span style="color: #AAAAAA">口味:</span>
+                    <span style="color: #666666">好吃，芒果很新鲜，味道浓郁</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span style="color: #666666">sw***********4</span>
+                    <span  style="color: #AAAAAA">（2018-01-08）</span>
+                </div>
+                <div class="people-eva">
+                    <span style="color: #AAAAAA">口味:</span>
+                    <span style="color: #666666">传统的奶油蛋糕，很好吃，4岁宝宝居然自己吃完了一块，头一回啊。</span>
+                </div>
+            </li>
+            <li>
+                <div>
+                    <span style="color: #666666">85***********6</span>
+                    <span  style="color: #AAAAAA">（2018-01-08）</span>
+                </div>
+                <div class="people-eva">
+                    <span style="color: #AAAAAA">口味:</span>
+                    <span style="color: #666666">这家做的蛋糕真的很好吃！！！已经第二次来关顾了</span>
+                </div>
+            </li>
+        </ul>
+        <div class="pager">
+            总计100个记录，共10页。
+            <span><a href="">第一页</a></span>
+            <span><a href="">上一页</a></span>
+            <span><a href="">下一页</a></span>
+            <span><a href="">最末页</a></span>
+        </div>
+    </div>
+
+
+    <footer id="shopDetailFooter">
+        {include file="./footer.html"}
+    </footer>
+
+    <div class="commonModal">
+        
+        {include file="./modal.html"}
+    </div>
+
+    <script>
+        var norms={$js_norms}; 
+        var normid=0;
+        console.log(norms);
+        function chose(id){
+        	$('#normid'+id).addClass('on').siblings().removeClass('on');
+        	for(var i=0; i<norms.length; i++){
+        		if(id==norms[i].normid){
+        			console.log(norms[i]);
+        			normid=norms[i].normid;
+        			$('#num').val(1);
+        			$('#allsum').text(norms[i].price);
+        			$('#sizeImg').html('<img class="img-responsive on" src="/Public/upload/'+norms[i].photo+'"/>');
+        	        $('#weight').find('p:first').html('<img src="/Public/images/attr_icon_1.jpg"/>&nbsp;'+norms[i].weight1);
+        	        $('#weight').find('p:eq(1)').html('<img src="/Public/images/attr_icon_2.jpg"/>&nbsp;'+norms[i].weight2);
+        	        $('#weight').find('p:last').html('<img src="/Public/images/attr_icon_3.jpg" />&nbsp;'+norms[i].enclosure);
+        		}
+        	}
+        }
+        function addcar(id){
+        	//console.log(normid+'id:'+id);
+        	var num=$('#num').val();
+        	$.ajax({
+        		type:"post",
+        		url:"index.php?m=home&c=Shopcar&a=addCar",
+        		data:{
+        			'gid':id,
+        			'normid':normid,
+        			'num':num
+        		},
+        		async:true,
+        		dataType: "json",
+        		success:function(res){
+        			if(res.num=='1'){
+        				$('#shopCount').text(res.count);
+        				modal_show('系统提示',res.msg);
+        			}else if(res.num=='0'){
+        				modal_show('系统提示',res.msg);
+        			}else{
+        				modal_show('系统提示','加入购物车失败');
+        			}
+        		}
+        	});
+        }
+        // 选择商品规格
+        $(function () {
+        	//图文详情
+           var info=$('#info').val();
+           $('#infos').html(info);
+           //初始化
+           normid=norms[0].normid;
+           $('#allsum').text(norms[0].price);
+           $('#sizeImg').html('<img class="img-responsive on" src="/Public/upload/'+norms[0].photo+'"/>');
+           $('#weight').find('p:first').html('<img src="/Public/images/attr_icon_1.jpg"/>&nbsp;'+norms[0].weight1);
+           $('#weight').find('p:eq(1)').html('<img src="/Public/images/attr_icon_2.jpg"/>&nbsp;'+norms[0].weight2);
+           $('#weight').find('p:last').html('<img src="/Public/images/attr_icon_3.jpg" />&nbsp;'+norms[0].enclosure);
+           $('.chose').hover(function () {
+                $(this).css("cursor","pointer");
+           });
+			/*
+            $('.chose').eq(2).click(function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                $('#img-size3').show().siblings().hide();
+                $('#weight').find('p:first').html("<img src=\"imgs/attr_icon_1.jpg\" alt=\"\"> 英制规格3磅");
+                $('#weight').find('p:eq(1)').html("<img src=\"imgs/attr_icon_2.jpg\" alt=\"\"> 1362g（实重3磅）");
+                $('#weight').find('p:last').html("<img src=\"imgs/attr_icon_3.jpg\" alt=\"\"> 含15套餐具1盒蜡烛");
+
+            });
+           $('.chose').eq(1).click(function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                $('#img-size2').show().siblings().hide();
+                $('#weight').find('p:first').html("<img src=\"imgs/attr_icon_1.jpg\" alt=\"\"> 英制规格2磅");
+                $('#weight').find('p:eq(1)').html("<img src=\"imgs/attr_icon_2.jpg\" alt=\"\"> 908g（实重2磅）");
+                $('#weight').find('p:last').html("<img src=\"imgs/attr_icon_3.jpg\" alt=\"\"> 含10套餐具1盒蜡烛");
+
+            });
+            $('.chose').eq(0).click(function () {
+                $(this).addClass('on').siblings().removeClass('on');
+                $('#img-size1').show().siblings().hide();
+                $('#weight').find('p:first').html("<img src=\"imgs/attr_icon_1.jpg\" alt=\"\"> 英制规格1磅");
+                $('#weight').find('p:eq(1)').html("<img src=\"imgs/attr_icon_2.jpg\" alt=\"\"> 454g（实重1磅）");
+                $('#weight').find('p:last').html("<img src=\"imgs/attr_icon_3.jpg\" alt=\"\"> 含5套餐具1盒蜡烛");
+            });
+			*/
+        });
+        // 计算购物车价格
+        
+        $(function () {
+            var sum = parseInt($('#allsum').text());
+            var price = parseInt($('#num').attr('data-price'));
+            var num =  parseInt($('#num').val());
+            // 初始总价格
+            sum = price * num;
+            $('#allsum').text(sum);
+            // 手工输入数量时总价格
+            $('#num').keyup(function () {
+                var input = parseInt($('#num').val());
+                sum = price;
+                if(!isNaN(input)){
+                    sum = price * input;
+                    $('#allsum').text(sum);
+                    if(sum<=0){
+                        $('#allsum').text(price);
+                        $('#num').val(1);
+                    }
+                }else {
+                    alert('请输入购买数量');
+                }
+            });
+            // 点击加号时总价格
+            $('#plus').click(function () {
+                var nums =  parseInt($('#num').val());
+                sum = sum + price;
+                $('#allsum').text(sum);
+                nums++;
+                $('#num').val(nums);
+            });
+            // 点击减号时总价格
+            $('#minus').click(function () {
+                var nums =  parseInt($('#num').val());
+                if(nums>1){
+                    sum = sum - price;
+                    $('#allsum').text(sum);
+                    nums--;
+                    $('#num').val(nums);
+                }else{
+                    sum = price;
+                    $('#allsum').text(sum);
+                }
+
+            });
+        });
+        
+        //商品详情-评论页切换
+        $(function () {
+           $('.shopDetail-tab').find('.shop-detail').click(function () {
+               $(this).addClass('active').siblings().removeClass('active');
+               $('.shop-img-detail').show(500).siblings('.shop-img-eva').hide(500);
+           });
+            $('.shopDetail-tab').find('.shop-eva').click(function () {
+                $(this).addClass('active').siblings().removeClass('active');
+                $('.shop-img-eva').show(500).siblings('.shop-img-detail').hide(500);
+            });
+        });
+    </script>
+    <script src="{$smarty.const.JS_URL}ydyk.js"></script>
+
+</body>
+
+
+</html>

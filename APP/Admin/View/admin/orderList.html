@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}bootstrap.min.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}common.css" />
+		<link rel="stylesheet" href="{$smarty.const.ADMIN_CSS_URL}goods.css" />
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}jquery.min.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}bootstrap.min.js" ></script>
+		<script type="text/javascript" src="{$smarty.const.ADMIN_JS_URL}common.js" ></script>
+		<style type="text/css">
+		
+	 	#myModal form{
+			display: block;
+    		margin-top: 0em;
+	 		margin-left: 0px;
+	 	}
+		</style>
+	</head>
+	<body>
+			<div class="tabs">
+				<ul class="nav nav-tabs" id="tabs">
+					<li>
+						<h4>订单列表  <small>所有订单索引及管理</small></h4></li>
+					<li>
+						<a href="index.php?m=admin&c=order&a=orderList&state=all" >所有订单</a>
+					</li>
+					<li>
+						<a href="index.php?m=admin&c=order&a=orderList&state=0" >待支付</a>
+					</li>
+					<li>
+						<a href="index.php?m=admin&c=order&a=orderList&state=1" >已支付</a>
+					</li>
+					<li>
+						<a href="index.php?m=admin&c=order&a=orderList&state=2" >已发货</a>
+					</li>
+					<li>
+						<a href="index.php?m=admin&c=order&a=orderList&state=3" >已完成</a>
+					</li>
+					<li>
+						<a href="index.php?m=admin&c=order&a=orderList&state=4" >已取消</a>
+					</li>
+				</ul>
+			</div>
+			
+			<div class="well mywell" id="shopSetWell">
+				<h5>操作提示
+					<small class="pull-right" onclick="closeWell('shopSetWell')">
+						<i class="glyphicon glyphicon-minus"></i>
+					</small>
+				</h5> 
+				<div>
+					<span>点击订单编号，将显示订单（包括订单物品）的详细信息</span>
+					<span>点击取消操作可以取消订单（在线支付但未付款的订单和货到付款但未发货的订单）</span>
+				</div>
+			</div>
+			<!--well end-->
+			<table class="table table-bordered">
+			   <caption>订单列表<small>(共{$count}条记录)</small>
+			   </caption>
+			   <thead>
+			      <tr>
+			         <th>订单ID</th>
+			         <th>订单编号</th>
+			         <th>订单金额</th>
+			         <th>下单用户</th>
+			         <th>添加时间</th>
+			         <th>状态</th>
+			         <th>操作</th>
+			      </tr>
+			   </thead>
+			   <tbody>
+			   	  <tr>
+			   	  	<td colspan="10">
+			   	  		<form class="form-inline" role="form" method="post" 
+							action="index.php?m=admin&c=order&a=search">
+						  <div class="form-group">
+						    <input type="text" class="form-control" name="contant"
+						    required="required" oninvalid="setCustomValidity('请输入搜索内容')"
+			         		oninput="setCustomValidity('')" value="{$c}"
+						    placeholder="请输入搜索内容" />
+						  </div>
+						    <select class="form-control" name="where">
+						      <option value="orid">订单ID</option>
+						      <option value="ornum">订单编号</option>
+						      <option value="user">下单用户</option>
+						    </select>
+						  <button type="submit" class="btn btn-info">提交</button>
+						</form>
+			   	  	</td>
+			   	  </tr>
+			   	  {foreach item=i from=$list}
+			      <tr class="tableTd">
+			         <td>{$i.orid}</td>
+			         <td>
+			         	<a href="index.php?m=admin&c=order&a=orderInfo&ornum={$i.ornum}">{$i.ornum}</a>
+			         </td>
+			         <td>{$i.amount}</td>
+			         <td>{$i.uname}</td>
+			         <td>{$i.addtime|date_format:'%Y-%m-%d %H:%M:%S'}</td>
+			         <td id="state{$i.orid}">
+			         {if $i.state eq 0}待支付
+			         {elseif $i.state eq 1}已支付
+			         {elseif $i.state eq 2}已发货
+			         {elseif $i.state eq 3}已完成
+			         {elseif $i.state eq 4}已取消
+			         {else}异常
+			         {/if}
+			         </td>
+			         <td>
+			            <a href="index.php?m=admin&c=order&a=updateUser&id={$i.infoid}">修改收货人信息</a>
+						<a href="javascript:void(0);" onclick="update('{$i.orid}')">修改状态</a>
+			         </td>
+			      </tr>
+			      {/foreach}
+			      {if !$c}
+			      <tr>
+			      	<td colspan="10" class="td_2">
+			      		<span>共{$count}条</span>
+			      		<span>总页数：{$pageNum}</span>
+			      		<span>
+			      			<a class="btn btn-xs btn-default btn-success"
+			      				href="{$pageurl}{$pageUp}">上一页</a>
+			      		</span>
+			      		<span>
+			      			<a class="btn btn-xs btn-default btn-info"
+			      				href="{$pageurl}{$pageDown}">下一页</a>
+			      		</span>
+						<span>
+							<select id="page">
+							{assign var=i value=1}
+							{section name="page" loop=$pageNum}
+								{if $i eq $pageNow}
+								<option value="{$i++}" selected>{$smarty.section.page.index+1}</option>
+								{else}
+								<option value="{$i++}">{$smarty.section.page.index+1}</option>
+								{/if}
+							{/section}
+							</select>
+						</span>
+						<span><button onclick="go()" class="btn btn-primary btn-xs">GO</button></span>
+						<span>当前页：{$pageNow}</span>
+						<span><a href="{$pageurl}{$pageNow}">刷新页面</a></span>
+			      	</td>
+			      </tr>
+			      {/if}
+			   </tbody>
+			</table>
+<!-- 模态声明，show 表示显示 -->
+<div class="modal" tabindex="-1" id="myModal">
+     <!-- 窗口声明 -->
+     <div class="modal-dialog">
+        <!-- 内容声明 -->
+        <div class="modal-content">
+              <!-- 头部 -->
+              <div class="modal-header">
+                 <button type="button" class="close"
+                            data-dismiss="modal" onClick="close_modal()">
+                          <span>&times;</span>
+                  </button>
+                  <h4 class="modal-title">标题</h4>
+              </div>
+              <!-- 主体 -->
+              <div class="modal-body">
+                   <p id="modal-body">内容</p>
+                   <form class="form form-horizontal hide" role="form" onsubmit="return postState()">
+					   <div class="form-group">
+					      <div class="col-sm-10">
+					          <select class="form-control" name="state" id="state">
+						         <option value="1">已支付</option>
+						         <option value="2">已发货</option>
+						         <option value="3">已完成</option>
+						         <option value="4">已取消</option>
+						      </select>
+						      <input type="hidden" name="id" id="orid" value=""/>
+					      </div>
+					   </div>
+					   <div class="modal-footer">
+				            <button type="button" class="btn btn-default" 
+				               data-dismiss="modal" onClick="close_modal()">关闭
+				            </button>
+				            <button type="submit" id="submit" class="btn btn-primary">
+				               	提交更改
+				            </button>
+				         </div><!--.footer end-->
+					</form>
+              </div>
+        </div>
+     </div>
+</div><!--.alert end-->
+<script type="text/javascript">
+
+var index={$index};
+changeTab(index);
+function go(){
+	var page=document.getElementById('page');
+	window.location.href="{$pageurl}"+page.value; 
+}
+{literal} 
+function changeTab(index){
+	$('#tabs li').eq(index).addClass('active');
+	$('#tabs li').eq(index).siblings().removeClass('active');
+}
+function close_modal(){
+	$('#myModal').modal('hide');
+	$('#myModal form').addClass('hide');
+	$('#modal-body').text('');
+	$('#submit').removeClass('disabled');
+}
+function modal_show(t,s){
+	$('#myModal').modal('show');
+	$('#modal-body').text(s);
+	$('.modal-title').text(t);
+}
+function update(id){
+	$('#myModal form').removeClass('hide');
+	$('#orid').val(id);
+	modal_show('修改订单状态','');
+}
+function postState(){
+	var state=$('#state').val();
+	var id=$('#orid').val();
+	$('#myModal form').addClass('hide');
+	$.ajax({
+		type:"post",
+		url:"index.php?m=admin&c=order&a=changeState",
+		data:{
+			'id':id,
+			'state':state
+		},
+		async:true,
+		dataType: "json",
+		success:function(res){
+			if(res.num=='1'){
+				$('#state'+id).html(res.state);
+			}
+			$('#modal-body').text(res.msg);
+			$('.modal-title').text('系统提示');
+		}
+	});
+	return false;
+}
+</script>
+{/literal} 
+	</body>
+</html>

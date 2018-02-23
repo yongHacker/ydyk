@@ -1,0 +1,89 @@
+<!--modal-->
+<div class="modal fade" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                <ul id="myTab" class="nav nav-tabs">
+                    <!--login_tab-->
+                    <li class="active" id="tab-login">
+                        <a href="#log" data-toggle="tab" >
+                            账号登录
+                        </a>
+                    </li>
+                    <!--register_tab-->
+                    <li id="tab-register"><a href="#reg" data-toggle="tab" >快捷登录(注册)</a></li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <!--login页面-->
+                    <div class="tab-pane fade in active" id="log">
+                        <form class="form-horizontal loginForm" role="form">
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="请输入手机号/邮箱/用户名">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="password" class="form-control" id="userpwd" name="userpwd" placeholder="请输入登录密码">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <a href="" class="pull-left">忘记密码</a>
+                                    <a href="" class="pull-right">注册新用户</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <button type="submit" class="btn btn-default">登录</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--login页面-->
+                    <!--registe页面-->
+                    <div class="tab-pane fade" id="reg">
+                        <form class="form-horizontal registerForm" role="form">
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="phone" name="phone" placeholder="请输入手机号">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="code" name="code" placeholder="请输入图形验证码">
+                                </div>
+                                <div class="col-xs-3">
+                                    <img src="imgs/captcha.png" alt="">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-4 col-xs-offset-2">
+                                    <input type="text" class="form-control" id="phoneCode" name="phoneCode" placeholder="请输入手机验证码">
+                                </div>
+                                <div class="col-xs-3">
+                                    <button class="btn">发送验证码</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <a href="" class="pull-left">注册有礼</a>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-7 col-xs-offset-2">
+                                    <button type="submit" class="btn btn-default">登录</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!--registe页面-->
+                </div>
+
+            </div><!-- /.modal-body -->
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>

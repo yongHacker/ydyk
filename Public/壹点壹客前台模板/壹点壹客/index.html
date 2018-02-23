@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>my壹点壹客</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- 引入 Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/ydyk.css">
+    <!-- HTML5 Shiv 和 Respond.js 用于让 IE8 支持 HTML5元素和媒体查询 -->
+    <!-- 注意： 如果通过 file://  引入 Respond.js 文件，则该文件无法起效果 -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.min.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+    <script src="js/jquery_3.2.1.min.js"></script>
+    <!-- 包括所有已编译的插件 -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="layer-v3.1.1/layer/layer.js"></script>
+
+</head>
+<body>
+    <!--大背景轮播-->
+    <div id="slideshow">
+        <img  src="imgs/bg/fix-bg00.png" alt="">
+        <img  src="imgs/bg/fix-bg01.jpg" alt="">
+        <img  src="imgs/bg/fix-bg02.jpg" alt="">
+        <img  src="imgs/bg/fix-bg03.jpg" alt="">
+    </div>
+
+    <!--slide-menu-->
+    <div class="slide-menu">
+        <a href="#">
+            <i class="fa fa-shopping-cart"></i>
+            <p>购物车</p>
+            <span class="badge">1</span>
+        </a>
+        <a href="#">
+            <i class="slider-icon02"></i>
+            <p>在线客服</p>
+        </a>
+        <a href="#">
+            <i class="slider-icon03"></i>
+            <p>新人红包</p>
+        </a>
+        <a href="javascript:void(0);" id="return-top">
+            <i class="fa fa-arrow-circle-o-up"></i>
+            <p>回顶部</p>
+        </a>
+    </div>
+
+    <!--nav-top-->
+    <div class="nav-top navbar-fixed-top container-fluid">
+        <div class="container clearfix">
+            <div class="pull-left">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span>深圳</span>
+                <span class="caret" style="font-size: 10px"></span>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <i class="fa fa-user-o"></i>
+                <span class="user">Hi , 欢迎访问壹点壹客</span>
+                [ <a href="javascript:void(0);" id="login" style="color: #DD541B;font-weight: bold">登录</a>&nbsp|&nbsp<a href="#" id="register">注册</a> ] <a href="#">[ 会员中心 ]</a>
+            </div>
+            <div class="pull-right">
+                <span class="phone">客服电话：4006-517-217 / 0755-36885360 </span>
+                &nbsp;&nbsp;|&nbsp;&nbsp;
+                <i class="fa fa-question-circle"></i>
+                <span>订购指南</span>
+                <i class="fa fa-navicon"></i>
+                <span>网站导航</span>
+            </div>
+        </div>
+    </div>
+    <!--nav-top-->
+
+    <!--nav-->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="index.html"><img src="imgs/logo.png" width="150" height="40" alt="logo"></a>
+            </div>
+            <div>
+                <ul class="nav navbar-nav" id="nav-ul">
+                    <li><a href="index.html">HOME<br>首页</a></li>
+                    <li><a href="./shengridangao/dingdangao.html">BIRTHDAY CAKE<br>生日蛋糕</a></li>
+                    <li><a href="#">BIRTHDAY PARTY<br>儿童生日会</a></li>
+                    <li><a href="./shengrizhoubian/shengri-lipin.html">SURROUNDING<br>生日周边</a></li>
+                    <li>
+                        <div class="band">
+                            <a href="brandStory.html" class="band-story" id="band-story">BRAND STORY<br>品牌故事</a>
+                            <div class="band-body" style="display: none;">
+                                <a href="brandStory.html">品牌介绍</a>
+                                <a href="brandIdea.html">品牌理念</a>
+                                <a href="brandTrip.html">原料之旅</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li><div class="garden"><a href="#">家庭烘焙教师</a> | <a href="#">散漫后花园</a></div></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--nav-->
+
+    <!--轮播-->
+    <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active">
+                <a href="#"><img src="imgs/carousel-3.jpg" alt="0"></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="imgs/carousel-2.jpg" alt="0"></a>
+            </div>
+            <div class="item">
+                <a href="#"><img src="imgs/carousel-1.jpg" alt="0"></a>
+            </div>
+        </div>
+    </div>
+    <!--轮播-->
+
+    <!--cate-->
+    <div class="cate">
+        <div class="cate-item">
+            <img class="cate-img" src="imgs/animate-img01.png" alt="">
+            <div class="cate-item-text">
+                <a href="">生日蛋糕</a>
+                <p>Birthday Cake</p>
+            </div>
+        </div>
+        <div class="cate-item">
+            <img class="cate-img" src="imgs/animate-img02.png" alt="">
+            <div class="cate-item-text">
+                <a href="">生日派对</a>
+                <p>Birthday Party</p>
+            </div>
+        </div>
+        <div class="cate-item">
+            <img class="cate-img" src="imgs/animate-img03.png" alt="">
+            <div class="cate-item-text">
+                <a href="">生日周边</a>
+                <p>Birthday Material</p>
+            </div>
+        </div>
+    </div>
+    <!--cate-->
+
+    <!--products-->
+    <div class="products">
+        <div class="title">
+            <h3>人气经典</h3>
+            <p>Popular classic recommend</p>
+        </div>
+        <div class="container" id="products-group">
+            <div class="products-item">
+                <a href="./shopDetail.html"><img src="imgs/uploads/513_thumb_G_1510882972812.jpg" width="220" height="220" alt=""></a>
+                <div class="shopInfo">
+                    <a href="./shopDetail.html" style="color:#885F3F;font-size: 16px;">提拉米苏抹茶颂</a>
+                    <p style="color:#FF6600">198</p>
+                    <p style="color:#FF6600">配送日期:2017-12-09至2017-12-31</p>
+                    <p style="color:#A5A5A5">抹茶可可双重风味蛋糕</p>
+                    <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+                </div>
+            </div>
+            <div class="products-item">
+                <a href=""><img src="imgs/uploads/506_thumb_G_1510900796777.jpg" width="220" height="220" alt=""></a>
+                <div class="shopInfo">
+                    <a href="" style="color:#885F3F;font-size: 16px;">抹茶相思慕斯</a>
+                    <p style="color:#FF6600">198</p>
+                    <p style="color:#FF6600">配送日期:2017-12-09至2017-12-31</p>
+                    <p style="color:#A5A5A5">抹茶口味蛋糕</p>
+                    <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+                </div>
+            </div>
+            <div class="products-item">
+                <a href=""><img src="imgs/uploads/517_thumb_G_1512695877507.jpg" width="220" height="220" alt=""></a>
+                <div class="shopInfo">
+                    <a href="" style="color:#885F3F;font-size: 16px;">圣诞之吻</a>
+                    <p style="color:#FF6600">298</p>
+                    <p style="color:#FF6600">配送日期:2017-12-09至2017-12-31</p>
+                    <p style="color:#A5A5A5">草莓香草奶油蛋糕</p>
+                    <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+                </div>
+            </div>
+            <div class="products-item">
+                <a href=""><img src="imgs/uploads/518_thumb_G_1513127855186.jpg" width="220" height="220" alt=""></a>
+                <div class="shopInfo">
+                    <a href="" style="color:#885F3F;font-size: 16px;">圣诞幸运年轮</a>
+                    <p style="color:#FF6600">218</p>
+                    <p style="color:#FF6600">配送日期:2017-12-09至2017-12-31</p>
+                    <p style="color:#A5A5A5">草莓奶油戚风卷</p>
+                    <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+                </div>
+            </div>
+            <div class="products-item">
+                <a href=""><img src="imgs/uploads/492_thumb_G_1506482079107.jpg" width="220" height="220" alt=""></a>
+                <div class="shopInfo">
+                    <a href="" style="color:#885F3F;font-size: 16px;">初生</a>
+                    <p style="color:#FF6600">168</p>
+                    <p style="color:#FF6600">配送日期:2017-12-09至2017-12-31</p>
+                    <p style="color:#A5A5A5">芒果奶油蛋糕</p>
+                    <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+                </div>
+            </div>
+            <div class="products-item">
+                <a href=""><img src="imgs/uploads/503_thumb_G_1506758051157.jpg" width="220" height="220" alt=""></a>
+                <div class="shopInfo">
+                    <a href="" style="color:#885F3F;font-size: 16px;">爱的告白</a>
+                    <p style="color:#FF6600">399</p>
+                    <p style="color:#FF6600">配送日期:2017-12-09至2017-12-31</p>
+                    <p style="color:#A5A5A5">&nbsp;</p>
+                    <button type="button" class="addCar btn"><i class="fa fa-shopping-cart" style="display: none"></i> 加入购物车</button>
+                </div>
+            </div>
+
+        </div>
+        <a href="javascript:void(0);" class="more-products center-block" style="margin: 30px auto;color: #BFAEA0;">more+</a>
+    </div>
+    <!--products-->
+
+    <!--footer-->
+    <div class="footer">
+        <div class="container">
+            <div class="footer-left col-xs-6">
+                <img src="imgs/logo-small.png" class="pull-left" alt="">
+                <span >Copyright© 深圳壹点壹客食品有限公司版权所有 ICP备案证书号:粤ICP备11021841号</span>
+                <i class="fa fa-weibo" title="新浪微博"></i>
+                <i class="fa fa-weixin" title="微信"></i>
+            </div>
+            <div class="footer-right col-xs-6">
+                <a href="">订购指南</a> |
+                <a href="">配送范围</a> |
+                <a href="">壹Club</a> |
+                <a href="">联系我们</a> |
+                <a href="">集团订购</a> |
+                <a href="">食品生产许可证</a>
+                <span class="govIcon" title="深圳市市场监督管理局企业主体身份公示"></span>
+            </div>
+        </div>
+    </div>
+    <!--footer-->
+
+    <!--modal-->
+    <div class="modal fade" id="myLoginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+                    <ul id="myTab" class="nav nav-tabs">
+                        <!--login_tab-->
+                        <li class="active" id="tab-login">
+                            <a href="#log" data-toggle="tab" >
+                                账号登录
+                            </a>
+                        </li>
+                        <!--register_tab-->
+                        <li id="tab-register"><a href="#reg" data-toggle="tab" >快捷登录(注册)</a></li>
+                    </ul>
+                    <div id="myTabContent" class="tab-content">
+                        <!--login页面-->
+                        <div class="tab-pane fade in active" id="log">
+                            <form class="form-horizontal loginForm" role="form">
+                                <div class="form-group">
+                                    <div class="col-xs-7 col-xs-offset-2">
+                                        <input type="text" class="form-control" id="username" name="username" placeholder="请输入手机号/邮箱/用户名">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-7 col-xs-offset-2">
+                                        <input type="password" class="form-control" id="userpwd" name="userpwd" placeholder="请输入登录密码">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-7 col-xs-offset-2">
+                                        <a href="" class="pull-left">忘记密码?</a>
+                                        <a href="" class="pull-right">注册新用户</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-7 col-xs-offset-2">
+                                        <button type="submit" class="btn btn-default">登录</button>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <!--login页面-->
+                        <!--registe页面-->
+                        <div class="tab-pane fade" id="reg">
+                            <form class="form-horizontal registerForm" role="form">
+                                <div class="form-group">
+                                    <div class="col-xs-7 col-xs-offset-2">
+                                        <input type="text" class="form-control" id="phone" name="phone" placeholder="请输入手机号">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-4 col-xs-offset-2">
+                                        <input type="text" class="form-control" id="code" name="code" placeholder="请输入图形验证码">
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <img src="imgs/captcha.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-4 col-xs-offset-2">
+                                        <input type="text" class="form-control" id="phoneCode" name="phoneCode" placeholder="请输入手机验证码">
+                                    </div>
+                                    <div class="col-xs-3">
+                                       <button class="btn">发送验证码</button>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-7 col-xs-offset-2">
+                                        <a href="" class="pull-left">注册有礼</a>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-7 col-xs-offset-2">
+                                        <button type="submit" class="btn btn-default">登录</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <!--registe页面-->
+                    </div>
+
+                </div><!-- /.modal-body -->
+
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div>
+
+
+    <script src="js/ydyk.js"></script>
+
+</body>
+</html>
